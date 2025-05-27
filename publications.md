@@ -18,12 +18,13 @@ permalink: /publications/
 
 ---
 
-### 📚 Online Profiles
+###  Online Profiles
 
-<a href="https://orcid.org/0000-0002-6037-814X" target="_blank" style="margin-right: 20px;">
-  <img src="https://raw.githubusercontent.com/orcid/orcid-logo/master/orcid.logo.icon.svg" alt="ORCID iD" width="32" style="vertical-align: middle;">
-</a>
-
-<a href="https://scholar.google.com/citations?user=MD8OzNcAAAAJ&hl=en" target="_blank">
-  <img src="https://upload.wikimedia.org/wikipedia/commons/c/c7/Google_Scholar_logo.svg" alt="Google Scholar" width="32" style="vertical-align: middle;">
-</a>
+<div style="text-align: center; margin-top: 2em;">
+  <a href="https://orcid.org/0000-0002-6037-814X" target="_blank" style="margin: 0 15px;">
+    <i class="fab fa-orcid fa-2x" aria-hidden="true" title="ORCID Profile"></i>
+  </a>
+  <a href="https://scholar.google.com/citations?user=MD8OzNcAAAAJ&hl=en" target="_blank" style="margin: 0 15px;">
+    <i class="fas fa-graduation-cap fa-2x" aria-hidden="true" title="Google Scholar"></i>
+  </a>
+</div>
