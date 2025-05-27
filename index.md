@@ -4,7 +4,7 @@ title: "Welcome"
 header:
   overlay_image: /assets/images/banner.jpg
   overlay_filter: 0.3
-  caption: "Photo by [Photographer Name]"
+  caption: "Photo by..."
 ---
 
 👋 Hi, I’m **Brandon Fricker**, a postdoctoral fellow studying behavioral neuroscience.
