@@ -4,11 +4,15 @@ title: "About"
 permalink: /about/
 ---
 
-<img src="/assets/images/headshot.jpg" alt="Brandon Fricker" style="max-width: 180px; border-radius: 50%; float: left; margin-right: 20px;">
+<div style="display: flex; align-items: center; gap: 30px; flex-wrap: wrap; margin-bottom: 2em;">
+  <img src="/assets/images/headshot.jpg" alt="Brandon Fricker" style="width: 180px; height: 180px; object-fit: cover; border-radius: 50%; box-shadow: 0 0 10px rgba(0,0,0,0.1);">
+  
+  <div style="flex: 1; min-width: 250px;">
+    <p>I’m a postdoctoral researcher at Harvard University studying the behavioral manipulation of <em>Drosophila</em> infected by <em>Entomophthora muscae</em>.</p>
+    
+    <p>My current research investigates [brief explanation].  
+    I’m interested in [research interests or techniques].</p>
 
-I’m a postdoctoral researcher at Harvard University studying the behavioral manipulation of Drosophila infected by E. muscae.
-
-My current research investigates [brief explanation].  
-I’m interested in [research interests or techniques].
-
-Outside the lab, I’m passionate about [optional personal touch].
+    <p>Outside the lab, I’m passionate about [optional personal touch].</p>
+  </div>
+</div>
