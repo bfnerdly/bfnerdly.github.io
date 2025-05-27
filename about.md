@@ -1,11 +1,5 @@
----
-layout: single
-title: "About"
-permalink: /about/
----
-
-<div style="display: flex; align-items: center; gap: 30px; flex-wrap: wrap; margin-bottom: 2em;">
-  <img src="/assets/images/headshot.jpg" alt="Brandon Fricker" style="width: 180px; height: 180px; object-fit: cover; border-radius: 50%; box-shadow: 0 0 10px rgba(0,0,0,0.1);">
+<div style="display: flex; align-items: flex-start; gap: 30px; flex-wrap: wrap; margin-bottom: 2em;">
+  <img src="/assets/images/headshot.jpg" alt="Brandon Fricker" style="width: 220px; height: 220px; object-fit: cover; border-radius: 50%; box-shadow: 0 0 10px rgba(0,0,0,0.1);">
   
   <div style="flex: 1; min-width: 250px;">
     <p>I’m a postdoctoral researcher at Harvard University studying the behavioral manipulation of <em>Drosophila</em> infected by <em>Entomophthora muscae</em>.</p>
