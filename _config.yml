@@ -1,4 +1,4 @@
-title: "Brandon Fricker- Behavioral Neuroscientist"
+title: "Brandon Fricker, PhD- Behavioral Neuroscientist"
 name: "Brandon Fricker"
 description: >-
   Postdoctoral fellow in The Elya Lab at Harvard University. I study behavioral manipulation in Zombie Flies.
@@ -17,7 +17,7 @@ author:
   bio: "Postdoctoral fellow studying Zombie flies."
 
 nav:
-  - title: "About"
+  - title: "About Me"
     url: /about/
   - title: "Publications"
     url: /publications/
