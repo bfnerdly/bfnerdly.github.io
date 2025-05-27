@@ -12,8 +12,8 @@ plugins:
 
 author:
   name: "Brandon Fricker"
-  avatar: "/assets/images/headshot.JPG"
-  bio: "Postdoctoral fellow studying Zombieflies."
+  avatar: "/assets/images/headshot.jpg"
+  bio: "Postdoctoral fellow studying Zombie flies."
 
 nav:
   - title: "About"
