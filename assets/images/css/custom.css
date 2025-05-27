@@ -1,0 +1,4 @@
+/* Override accent color */
+:root {
+  --mm-accent: #8e44ad; /* Change to your preferred purple */
+}

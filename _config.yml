@@ -6,6 +6,7 @@ url: "https://bfnerdly.github.io"
 baseurl: ""
 
 remote_theme: "mmistakes/minimal-mistakes"
+minimal_mistakes_skin: "mint"
 
 plugins:
   - jekyll-include-cache
@@ -24,3 +25,18 @@ nav:
     url: /contact/
 
 markdown: kramdown
+
+include:
+  - assets/css/custom.css
+
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      css: "/assets/css/custom.css"
+  - scope:
+      path: ""
+      type: "pages"
+    values:
+      css: "/assets/css/custom.css"
