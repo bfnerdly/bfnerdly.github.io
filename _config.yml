@@ -29,3 +29,11 @@ markdown: kramdown
 include:
   - assets/css/custom.css
 
+footer:
+  links:
+    - label: "Updates!"
+      url: /feed.xml
+    - label: "LinkedIn"
+      url: https://www.linkedin.com/in/brandonfricker/
+    - label: "Bluesky"
+      url: https://bsky.app/profile/your-handle.bsky.social
