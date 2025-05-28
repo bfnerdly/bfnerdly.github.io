@@ -17,13 +17,13 @@ permalink: /publications/
 <div>
   <strong style="font-size: 1.1em;">Cingulate to septal circuitry facilitates the preference to affiliate with large peer groups</strong><br>
   <span style="font-size: 0.9em;"><strong>Fricker, B.A.</strong>, Murugan, M., Seifert, A.W., Kelly, A.M. (2024)</span><br>
-  <em>[Add journal here]</em>. <a href="https://doi.org/10.1016/j.cub.2024.08.019" target="_blank">DOI</a>
+  <em>Current Biology</em>. <a href="https://doi.org/10.1016/j.cub.2024.08.019" target="_blank">DOI</a>
 </div>
 
 <div>
   <strong style="font-size: 1.1em;">Hypothalamic vasopressin neural densities are higher in male Mongolian gerbils after separation from a pair bond partner and may facilitate behavior to form a new bond</strong><br>
   <span style="font-size: 0.9em;"><strong>Fricker, B.A.</strong><sup>*</sup>, Jiang, J.<sup>*</sup>, Esquilin-Rodriguez, C.J., Dowling, M.L., Kelly, A.M. (2024)</span><br>
-  <em>[Add journal here]</em>. <a href="https://doi.org/10.1016/j.bbr.2024.115181" target="_blank">DOI</a>
+  <em>Behavioural Brain Research</em>. <a href="https://doi.org/10.1016/j.bbr.2024.115181" target="_blank">DOI</a>
 </div>
 
 <div>
