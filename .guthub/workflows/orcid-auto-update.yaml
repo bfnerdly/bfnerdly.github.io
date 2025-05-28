@@ -1,0 +1,32 @@
+name: Monthly ORCID Auto-Post
+
+on:
+  schedule:
+    - cron: '0 0 1 * *'  # Runs at midnight on the 1st of every month
+  workflow_dispatch:  # Allows manual run from GitHub UI
+
+jobs:
+  generate-posts:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.x'
+
+      - name: Install dependencies
+        run: pip install requests
+
+      - name: Run ORCID post generator
+        run: python generate_orcid_posts.py
+
+      - name: Commit and push new posts
+        run: |
+          git config user.name "github-actions"
+          git config user.email "actions@github.com"
+          git add _posts/
+          git diff --cached --quiet || git commit -m "🔄 Auto-post new ORCID publications"
+          git push
