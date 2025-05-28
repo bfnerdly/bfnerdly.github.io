@@ -18,7 +18,17 @@ permalink: /about/
 
 <p>During my PhD in the Kelly Lab at Emory University, my research focused on the neural mechanisms of social behavior across non-model rodent species. I began by investigating how pair bonding affects nonapeptide-producing neurons in the prairie vole, <em>Microtus ochrogaster</em>. Using behavioral assays and immunohistochemistry, I found that pair bonding leads to a reduction in paraventricular (PVN) oxytocin neurons, which is reversed upon partner separation. I found similar results in Mongolian gerbils, <em>Meriones unguiculatus</em>.</p>
 
-<p>Later, I studied the communally breeding spiny mouse, <em>Acomys dimidiatus</em>, to explore the neural circuits driving group affiliation. My work revealed that male spiny mice prefer larger social groups and use kinship cues to guide social decisions. Through chemogenetic manipulations, I identified a projection from the anterior cingulate cortex (ACC) to the lateral septum (LS) that regulates group size preference. This work highlights how specialized neural circuitry may evolve in species with complex social structures and demonstrates the value of comparative approaches to studying social recognition and affiliation.</p>
+<div style="display: flex; align-items: flex-start; gap: 20px; flex-wrap: wrap; margin-top: 1.2em;">
+
+  <figure style="margin: 0;">
+    <img src="/assets/images/smice.jpg" alt="Spiny mice" style="width: 200px; height: auto; border-radius: 10px; box-shadow: 0 0 10px rgba(0,0,0,0.1); flex-shrink: 0;">
+    <figcaption style="font-size: 0.8em; color: #666; margin-top: 0.3em;">A group of spiny mice. Image by Dr. Aubrey Kelly.</figcaption>
+  </figure>
+
+  <div style="flex: 1; min-width: 250px;">
+    <p>Later, I studied the communally breeding spiny mouse, <em>Acomys dimidiatus</em>, to explore the neural circuits driving group affiliation. My work revealed that male spiny mice prefer larger social groups and use kinship cues to guide social decisions. Through chemogenetic manipulations, I identified a projection from the anterior cingulate cortex (ACC) to the lateral septum (LS) that regulates group size preference. This work highlights how specialized neural circuitry may evolve in species with complex social structures and demonstrates the value of comparative approaches to studying social recognition and affiliation.</p>
+  </div>
+</div>
 
 <p>As a graduate student I also developed and validated several key experimental tools for use in spiny mice, including iDISCO, fiber photometry, CRISPR-Cas9, Cre-dependent chemogenetics, and neural tracing techniques.</p>
 
