@@ -1,4 +1,9 @@
 /* Override accent color */
 :root {
-  --mm-accent: #8e44ad; /* Change to your preferred purple */
+  --mm-accent: #8e44ad; /* your preferred purple */
+}
+
+/* Force footer background to match */
+.page__footer {
+  background-color: var(--mm-accent) !important;
 }
