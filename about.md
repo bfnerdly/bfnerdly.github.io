@@ -14,6 +14,11 @@ permalink: /about/
 
 <h2 style="font-size: 1.8em;">Current Research- The Neural basis of Zombie Fly Behavior</h2>
 
+<div style="margin: 1.5em 0; text-align: center;">
+  <img src="/assets/images/zombies1.jpg" alt="Zombie Flies" style="width: 100%; max-width: 800px; height: auto; border-radius: 10px; box-shadow: 0 0 10px rgba(0,0,0,0.1);">
+  <div style="font-size: 0.75em; color: #777; margin-top: 0.5em;">A group of zombies. Image by Dr. Carolyn Elya.</div>
+</div>
+
 <div style="display: flex; flex-direction: column; gap: 1.4em; font-size: 0.95em;">
 
 <p>In my postdoctoral work in the Elya Lab at Harvard University, I study how parasitic infections can manipulate animal behavior through neural pathways. I’m especially interested in how simple nervous systems, such as those in insects, produce complex, highly stereotyped behaviors. The <em>Drosophila</em>–<em>Entomophthora muscae</em> “zombie fly” system offers a unique model: the fungus infects and consumes the fly from within, ultimately controlling its behavior through the nervous system before death.</p>
