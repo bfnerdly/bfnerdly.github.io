@@ -25,7 +25,7 @@ header:
 
 <div style="text-align: center; margin-top: 1.5em;">
 
-  <a href="https://bsky.app/profile/your-handle.bsky.social" target="_blank" style="display: inline-block; background-color: #8e44ad; color: white; padding: 10px 18px; border-radius: 5px; font-weight: 600; text-decoration: none; margin: 5px;">
+  <a href="https://bsky.app/profile/brandonfricker.bsky.social" target="_blank" style="display: inline-block; background-color: #8e44ad; color: white; padding: 10px 18px; border-radius: 5px; font-weight: 600; text-decoration: none; margin: 5px;">
     🌐 Follow me on Bluesky
   </a>
 
