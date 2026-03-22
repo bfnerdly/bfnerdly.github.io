@@ -1,0 +1,38 @@
+name: Sync ORCID Publications
+
+on:
+  schedule:
+    - cron: "0 5 1 * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  sync-publications:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Validate sync script
+        run: python -m py_compile sync_orcid_publications.py
+
+      - name: Sync ORCID publication data
+        run: python sync_orcid_publications.py
+
+      - name: Commit updated publication data
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add _data/orcid_publications.json
+          git diff --cached --quiet || git commit -m "Sync ORCID publications"
+          git push

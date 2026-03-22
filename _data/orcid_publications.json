@@ -1,0 +1,334 @@
+{
+  "generated_at_utc": "2026-03-22T00:00:00+00:00",
+  "orcid_id": "0000-0002-6037-814X",
+  "publication_types": [
+    "book",
+    "book-chapter",
+    "book-review",
+    "conference-abstract",
+    "conference-paper",
+    "dictionary-entry",
+    "dissertation-thesis",
+    "edited-book",
+    "encyclopedia-entry",
+    "journal-article",
+    "magazine-article",
+    "manual",
+    "newspaper-article",
+    "online-resource",
+    "preprint",
+    "report",
+    "review",
+    "supervised-student-publication",
+    "technical-standard",
+    "working-paper"
+  ],
+  "publications": [
+    {
+      "put_code": 1,
+      "title": "Not just for bonding: Nucleus accumbens oxytocin receptors facilitate huddling with strangers and feeding in male spiny mice",
+      "type": "journal-article",
+      "publication_year": "2025",
+      "publication_month": null,
+      "publication_day": null,
+      "journal_title": "PsychoNeuroEndocrinology",
+      "source_name": null,
+      "doi": "10.1016/j.psyneuen.2025.107496",
+      "url": "https://doi.org/10.1016/j.psyneuen.2025.107496",
+      "orcid_url": "https://orcid.org/0000-0002-6037-814X",
+      "authors": [
+        "Fricker, B.A.",
+        "Boender, A.J.",
+        "Young, L.J.",
+        "Kelly, A.M."
+      ],
+      "authors_html": "<strong>Fricker, B.A.</strong>, Boender, A.J., Young, L.J., Kelly, A.M.",
+      "external_ids": [
+        {
+          "type": "doi",
+          "value": "10.1016/j.psyneuen.2025.107496",
+          "url": "https://doi.org/10.1016/j.psyneuen.2025.107496"
+        }
+      ]
+    },
+    {
+      "put_code": 2,
+      "title": "Cingulate to septal circuitry facilitates the preference to affiliate with large peer groups",
+      "type": "journal-article",
+      "publication_year": "2024",
+      "publication_month": null,
+      "publication_day": null,
+      "journal_title": "Current Biology",
+      "source_name": null,
+      "doi": "10.1016/j.cub.2024.08.019",
+      "url": "https://doi.org/10.1016/j.cub.2024.08.019",
+      "orcid_url": "https://orcid.org/0000-0002-6037-814X",
+      "authors": [
+        "Fricker, B.A.",
+        "Murugan, M.",
+        "Seifert, A.W.",
+        "Kelly, A.M."
+      ],
+      "authors_html": "<strong>Fricker, B.A.</strong>, Murugan, M., Seifert, A.W., Kelly, A.M.",
+      "external_ids": [
+        {
+          "type": "doi",
+          "value": "10.1016/j.cub.2024.08.019",
+          "url": "https://doi.org/10.1016/j.cub.2024.08.019"
+        }
+      ]
+    },
+    {
+      "put_code": 3,
+      "title": "Hypothalamic vasopressin neural densities are higher in male Mongolian gerbils after separation from a pair bond partner and may facilitate behavior to form a new bond",
+      "type": "journal-article",
+      "publication_year": "2024",
+      "publication_month": null,
+      "publication_day": null,
+      "journal_title": "Behavioural Brain Research",
+      "source_name": null,
+      "doi": "10.1016/j.bbr.2024.115181",
+      "url": "https://doi.org/10.1016/j.bbr.2024.115181",
+      "orcid_url": "https://orcid.org/0000-0002-6037-814X",
+      "authors": [
+        "Fricker, B.A.*",
+        "Jiang, J.*",
+        "Esquilin-Rodriguez, C.J.",
+        "Dowling, M.L.",
+        "Kelly, A.M."
+      ],
+      "authors_html": "Fricker, B.A.*, Jiang, J.*, Esquilin-Rodriguez, C.J., Dowling, M.L., Kelly, A.M.",
+      "external_ids": [
+        {
+          "type": "doi",
+          "value": "10.1016/j.bbr.2024.115181",
+          "url": "https://doi.org/10.1016/j.bbr.2024.115181"
+        }
+      ]
+    },
+    {
+      "put_code": 4,
+      "title": "From grouping and cooperation to menstruation: Spiny mice (Acomys cahirinus) are an emerging mammalian model for sociality and beyond",
+      "type": "journal-article",
+      "publication_year": "2024",
+      "publication_month": null,
+      "publication_day": null,
+      "journal_title": "Hormones and Behavior",
+      "source_name": null,
+      "doi": "10.1016/j.yhbeh.2023.105462",
+      "url": "https://doi.org/10.1016/j.yhbeh.2023.105462",
+      "orcid_url": "https://orcid.org/0000-0002-6037-814X",
+      "authors": [
+        "Fricker, B.A.",
+        "Kelly, A.M."
+      ],
+      "authors_html": "<strong>Fricker, B.A.</strong>, Kelly, A.M.",
+      "external_ids": [
+        {
+          "type": "doi",
+          "value": "10.1016/j.yhbeh.2023.105462",
+          "url": "https://doi.org/10.1016/j.yhbeh.2023.105462"
+        }
+      ]
+    },
+    {
+      "put_code": 5,
+      "title": "An AAV-CRISPR/Cas9 strategy for gene editing across divergent rodent species: Targeting neural oxytocin receptors as a proof of concept",
+      "type": "journal-article",
+      "publication_year": "2023",
+      "publication_month": null,
+      "publication_day": null,
+      "journal_title": "Science Advances",
+      "source_name": null,
+      "doi": "10.1126/sciadv.adf4950",
+      "url": "https://doi.org/10.1126/sciadv.adf4950",
+      "orcid_url": "https://orcid.org/0000-0002-6037-814X",
+      "authors": [
+        "Boender, A.J.",
+        "Boon, M.",
+        "Albers, H.E.",
+        "Eck, S.R.",
+        "Fricker, B.A.",
+        "Kelly, A.M.",
+        "LeDoux, J.E.",
+        "Motta, S.C.",
+        "Shrestha, P.",
+        "Taylor, J.H.",
+        "Trainor, B.C.",
+        "Triana-Del Rio, R.",
+        "Young, L.J."
+      ],
+      "authors_html": "Boender, A.J., Boon, M., Albers, H.E., Eck, S.R., <strong>Fricker, B.A.</strong>, Kelly, A.M., LeDoux, J.E., Motta, S.C., Shrestha, P., Taylor, J.H., Trainor, B.C., Triana-Del Rio, R., Young, L.J.",
+      "external_ids": [
+        {
+          "type": "doi",
+          "value": "10.1126/sciadv.adf4950",
+          "url": "https://doi.org/10.1126/sciadv.adf4950"
+        }
+      ]
+    },
+    {
+      "put_code": 6,
+      "title": "Biased brain and behavioral responses towards kin in males of a communally breeding species",
+      "type": "journal-article",
+      "publication_year": "2023",
+      "publication_month": null,
+      "publication_day": null,
+      "journal_title": "Scientific Reports",
+      "source_name": null,
+      "doi": "10.1038/s41598-023-44257-6",
+      "url": "https://doi.org/10.1038/s41598-023-44257-6",
+      "orcid_url": "https://orcid.org/0000-0002-6037-814X",
+      "authors": [
+        "Fricker, B.A.",
+        "Ho, D.",
+        "Seifert, A.W.",
+        "Kelly, A.M."
+      ],
+      "authors_html": "<strong>Fricker, B.A.</strong>, Ho, D., Seifert, A.W., Kelly, A.M.",
+      "external_ids": [
+        {
+          "type": "doi",
+          "value": "10.1038/s41598-023-44257-6",
+          "url": "https://doi.org/10.1038/s41598-023-44257-6"
+        }
+      ]
+    },
+    {
+      "put_code": 7,
+      "title": "Partner separation rescues pair bond-induced decreases in hypothalamic oxytocin neural densities",
+      "type": "journal-article",
+      "publication_year": "2023",
+      "publication_month": null,
+      "publication_day": null,
+      "journal_title": "Scientific Reports",
+      "source_name": null,
+      "doi": "10.1038/s41598-023-32076-8",
+      "url": "https://doi.org/10.1038/s41598-023-32076-8",
+      "orcid_url": "https://orcid.org/0000-0002-6037-814X",
+      "authors": [
+        "Fricker, B.A.",
+        "Roshko, V.C.",
+        "Jiang, J.",
+        "Kelly, M.A."
+      ],
+      "authors_html": "<strong>Fricker, B.A.</strong>, Roshko, V.C., Jiang, J., Kelly, M.A.",
+      "external_ids": [
+        {
+          "type": "doi",
+          "value": "10.1038/s41598-023-32076-8",
+          "url": "https://doi.org/10.1038/s41598-023-32076-8"
+        }
+      ]
+    },
+    {
+      "put_code": 8,
+      "title": "Characterization of social behavior in the spiny mouse, Acomys cahirinus",
+      "type": "journal-article",
+      "publication_year": "2022",
+      "publication_month": null,
+      "publication_day": null,
+      "journal_title": "Ethology",
+      "source_name": null,
+      "doi": "10.1111/eth.13234",
+      "url": "https://doi.org/10.1111/eth.13234",
+      "orcid_url": "https://orcid.org/0000-0002-6037-814X",
+      "authors": [
+        "Fricker, B.A.",
+        "Seifert, A.W.",
+        "Kelly, A.M."
+      ],
+      "authors_html": "<strong>Fricker, B.A.</strong>, Seifert, A.W., Kelly, A.M.",
+      "external_ids": [
+        {
+          "type": "doi",
+          "value": "10.1111/eth.13234",
+          "url": "https://doi.org/10.1111/eth.13234"
+        }
+      ]
+    },
+    {
+      "put_code": 9,
+      "title": "Protocol for multiplex fluorescent immunohistochemistry in free-floating rodent brain tissues",
+      "type": "journal-article",
+      "publication_year": "2022",
+      "publication_month": null,
+      "publication_day": null,
+      "journal_title": "STAR Protocols",
+      "source_name": null,
+      "doi": "10.1016/j.xpro.2022.101672",
+      "url": "https://doi.org/10.1016/j.xpro.2022.101672",
+      "orcid_url": "https://orcid.org/0000-0002-6037-814X",
+      "authors": [
+        "Kelly, M.A.",
+        "Fricker, B.A.",
+        "Wallace, K.J."
+      ],
+      "authors_html": "Kelly, M.A., <strong>Fricker, B.A.</strong>, Wallace, K.J.",
+      "external_ids": [
+        {
+          "type": "doi",
+          "value": "10.1016/j.xpro.2022.101672",
+          "url": "https://doi.org/10.1016/j.xpro.2022.101672"
+        }
+      ]
+    },
+    {
+      "put_code": 10,
+      "title": "Species-typical group size differentially influences social reward neural circuitry during nonreproductive social interactions",
+      "type": "journal-article",
+      "publication_year": "2022",
+      "publication_month": null,
+      "publication_day": null,
+      "journal_title": "iScience",
+      "source_name": null,
+      "doi": "10.1016/j.isci.2022.104230",
+      "url": "https://doi.org/10.1016/j.isci.2022.104230",
+      "orcid_url": "https://orcid.org/0000-0002-6037-814X",
+      "authors": [
+        "Gonzalez Abreu, J.A.",
+        "Rosenberg, A.E.",
+        "Fricker, B.A.",
+        "Wallace, K.J.",
+        "Seifert, A.W.",
+        "Kelly, A.M."
+      ],
+      "authors_html": "Gonzalez Abreu, J.A., Rosenberg, A.E., <strong>Fricker, B.A.</strong>, Wallace, K.J., Seifert, A.W., Kelly, A.M.",
+      "external_ids": [
+        {
+          "type": "doi",
+          "value": "10.1016/j.isci.2022.104230",
+          "url": "https://doi.org/10.1016/j.isci.2022.104230"
+        }
+      ]
+    },
+    {
+      "put_code": 11,
+      "title": "Activity-dependent long-term potentiation of electrical synapses in the mammalian thalamus",
+      "type": "journal-article",
+      "publication_year": "2021",
+      "publication_month": null,
+      "publication_day": null,
+      "journal_title": "Journal of Neurophysiology",
+      "source_name": null,
+      "doi": "10.1152/jn.00471.2020",
+      "url": "https://doi.org/10.1152/jn.00471.2020",
+      "orcid_url": "https://orcid.org/0000-0002-6037-814X",
+      "authors": [
+        "Fricker, B.A.",
+        "Heckman, E.",
+        "Cunningham, P.C.",
+        "Wang, H.",
+        "Haas, J.S."
+      ],
+      "authors_html": "<strong>Fricker, B.A.</strong>, Heckman, E., Cunningham, P.C., Wang, H., Haas, J.S.",
+      "external_ids": [
+        {
+          "type": "doi",
+          "value": "10.1152/jn.00471.2020",
+          "url": "https://doi.org/10.1152/jn.00471.2020"
+        }
+      ]
+    }
+  ]
+}
