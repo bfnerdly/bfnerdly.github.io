@@ -4,42 +4,59 @@ title: "Publications"
 permalink: /publications/
 ---
 
-<p style="margin-bottom: 2em;">
-  This page is automatically generated from ORCID publication data and refreshes on a monthly GitHub Actions schedule.
-</p>
-
-<h2 style="font-size: 1.8em;">Publications</h2>
-
 {% assign publications = site.data.orcid_publications.publications %}
+{% assign current_year = "" %}
 
-{% if publications and publications.size > 0 %}
-<div style="display: flex; flex-direction: column; gap: 1.8em;">
-{% for publication in publications %}
-<div>
-  <strong style="font-size: 1.1em;">{{ publication.title }}</strong><br>
-  <span style="font-size: 0.9em;">{{ publication.authors_html }}{% if publication.publication_year %} ({{ publication.publication_year }}){% endif %}</span><br>
-  {% if publication.journal_title %}<em>{{ publication.journal_title }}</em>{% elsif publication.source_name %}<em>{{ publication.source_name }}</em>{% endif %}
-  {% if publication.doi %}
-    . <a href="https://doi.org/{{ publication.doi }}" target="_blank" rel="noopener noreferrer">DOI</a>
-  {% elsif publication.url %}
-    . <a href="{{ publication.url }}" target="_blank" rel="noopener noreferrer">Link</a>
+<section class="journal-shell journal-section">
+  <div class="journal-section__header">
+    <h2 class="journal-section__title">Publications</h2>
+    <span class="journal-section__meta">Synced from ORCID</span>
+  </div>
+
+  <p class="journal-publications__intro">
+    This page is generated automatically from ORCID publication data and refreshed by GitHub Actions. Entries are grouped by publication year for easier scanning.
+  </p>
+
+  {% if publications and publications.size > 0 %}
+    {% for publication in publications %}
+      {% if publication.publication_year != current_year %}
+        {% assign current_year = publication.publication_year %}
+        <h3 class="journal-publications__year">{{ current_year }}</h3>
+        <div class="journal-publications__list">
+      {% endif %}
+
+      <article class="journal-card journal-publication">
+        <p class="journal-publication__title">{{ publication.title }}</p>
+        <p class="journal-publication__meta">{{ publication.authors_html }}</p>
+        <p class="journal-publication__venue">
+          {% if publication.journal_title %}<em>{{ publication.journal_title }}</em>{% elsif publication.source_name %}<em>{{ publication.source_name }}</em>{% endif %}
+          {% if publication.doi %}
+            . <a href="https://doi.org/{{ publication.doi }}" target="_blank" rel="noopener noreferrer">DOI</a>
+          {% elsif publication.url %}
+            . <a href="{{ publication.url }}" target="_blank" rel="noopener noreferrer">Link</a>
+          {% endif %}
+        </p>
+      </article>
+
+      {% assign next_index = forloop.index %}
+      {% assign next_publication = publications[next_index] %}
+      {% if forloop.last or next_publication.publication_year != current_year %}
+        </div>
+      {% endif %}
+    {% endfor %}
+  {% else %}
+    <p>No publications are available right now. The ORCID sync may still be running or may need attention.</p>
   {% endif %}
-</div>
-{% endfor %}
-</div>
-{% else %}
-<p>No publications are available right now. The ORCID sync may still be running or may need attention.</p>
-{% endif %}
+</section>
 
----
+<section class="journal-shell journal-section">
+  <div class="journal-section__header">
+    <h2 class="journal-section__title">Profiles</h2>
+    <span class="journal-section__meta">External records</span>
+  </div>
 
-<h2 style="font-size: 1.8em;">Online Profiles</h2>
-
-<div style="text-align: center; margin-top: 2em;">
-  <a href="https://orcid.org/0000-0002-6037-814X" target="_blank" rel="noopener noreferrer" style="margin: 0 15px;">
-    <i class="fab fa-orcid fa-2x" aria-hidden="true" title="ORCID Profile"></i>
-  </a>
-  <a href="https://scholar.google.com/citations?user=MD8OzNcAAAAJ&hl=en" target="_blank" rel="noopener noreferrer" style="margin: 0 15px;">
-    <i class="fas fa-graduation-cap fa-2x" aria-hidden="true" title="Google Scholar"></i>
-  </a>
-</div>
+  <div class="journal-links">
+    <a class="journal-button" href="https://orcid.org/0000-0002-6037-814X" target="_blank" rel="noopener noreferrer">ORCID</a>
+    <a class="journal-button journal-button--ghost" href="https://scholar.google.com/citations?user=MD8OzNcAAAAJ&hl=en" target="_blank" rel="noopener noreferrer">Google Scholar</a>
+  </div>
+</section>

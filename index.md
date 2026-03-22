@@ -1,40 +1,78 @@
 ---
 layout: splash
-title: "Welcome!"
+title: "Behavior, Brains, and Infection"
+excerpt: "Research on the neural basis of behavior, sociality, and fungal manipulation."
 header:
-  overlay_image: /assets/images/banner.jpg
-  overlay_filter: 0.3
-  caption: "Photo by..."
+  overlay_image: /assets/images/zombies1.jpg
+  overlay_filter: 0.45
+  caption: "Research image by Dr. Carolyn Elya."
 ---
 
-<div style="display: flex; align-items: flex-start; gap: 30px; flex-wrap: wrap; margin-bottom: 2em;">
-  <img src="/assets/images/headshot.jpg" alt="Brandon Fricker" style="width: 220px; height: 220px; object-fit: cover; border-radius: 50%; box-shadow: 0 0 10px rgba(0,0,0,0.1);">
-
-  <div style="flex: 1; min-width: 250px;">
-    <p>Hi, I’m <strong>Brandon Fricker</strong>, a postdoctoral fellow in the Elya Lab at Harvard University. I study the behavioral manipulation of <em>Drosophila</em> by the pathogenic fungus <em>Entomophthora muscae</em>. How do brains produce behavior? How does this particular funugs alter circadian rhythms and locomotor patterns? These questions and many more motivate my work.</p>
-
-    <p>This site features my research, publications, and project updates.</p>
-
-    <p>🔬 Learn more <a href="/about/">about me</a>, or check out my <a href="/publications/">publications</a>.</p>
+<section class="journal-shell journal-card journal-hero">
+  <div class="journal-hero__content">
+    <span class="journal-kicker">Field Journal</span>
+    <h1>Brandon Fricker</h1>
+    <p class="journal-hero__lede">
+      I am a postdoctoral fellow in the Elya Lab at Harvard University studying how infection reshapes the nervous system to produce precise, dramatic changes in behavior.
+    </p>
+    <p>
+      My work centers on the "zombie fly" system, where <em>Entomophthora muscae</em> manipulates <em>Drosophila</em> behavior through the brain. Across my research, I am interested in how neural circuits generate social behavior, circadian rhythms, and adaptive action.
+    </p>
+    <div class="journal-actions">
+      <a class="journal-button" href="/about/">Read About My Research</a>
+      <a class="journal-button journal-button--ghost" href="/publications/">Browse Publications</a>
+    </div>
   </div>
-</div>
 
----
+  <div class="journal-hero__visual">
+    <img class="journal-hero__portrait" src="/assets/images/headshot.jpg" alt="Portrait of Brandon Fricker">
+  </div>
+</section>
 
-### 💬 Connect with Me
+<section class="journal-shell journal-grid">
+  <article class="journal-card journal-note">
+    <h3>Current Focus</h3>
+    <p>Neural mechanisms of fungal behavioral manipulation in flies, with emphasis on locomotion, circadian timing, and state transitions near death.</p>
+  </article>
 
-<div style="text-align: center; margin-top: 1.5em;">
+  <article class="journal-card journal-note">
+    <h3>Research Thread</h3>
+    <p>How do compact nervous systems generate complex behavior, and how can parasites exploit those systems with such precision?</p>
+  </article>
 
-  <a href="https://bsky.app/profile/brandonfricker.bsky.social" target="_blank" style="display: inline-block; background-color: #8e44ad; color: white; padding: 10px 18px; border-radius: 5px; font-weight: 600; text-decoration: none; margin: 5px;">
-    🌐 Follow me on Bluesky
-  </a>
+  <article class="journal-card journal-note">
+    <h3>Earlier Work</h3>
+    <p>Comparative social neuroscience in prairie voles, gerbils, and spiny mice, including bonding, kin bias, and group affiliation.</p>
+  </article>
+</section>
 
-  <a href="mailto:bfricker@g.harvard.edu" style="display: inline-block; background-color: #8e44ad; color: white; padding: 10px 18px; border-radius: 5px; font-weight: 600; text-decoration: none; margin: 5px;">
-    📧 Email Me
-  </a>
+<section class="journal-shell journal-card journal-feature">
+  <div>
+    <p class="journal-feature__eyebrow">From The Bench</p>
+    <h2>Studying behavior where infection meets circuitry</h2>
+    <p>
+      The zombie fly model offers a rare chance to connect neural circuits, hormones, infection biology, and whole-animal behavior within a single system.
+    </p>
+    <p>
+      This site collects research context, selected publications, and updates from ongoing work in behavioral neuroscience.
+    </p>
+  </div>
 
-  <a href="https://www.linkedin.com/in/brandonfricker/" target="_blank" style="display: inline-block; background-color: #8e44ad; color: white; padding: 10px 18px; border-radius: 5px; font-weight: 600; text-decoration: none; margin: 5px;">
-    💼 LinkedIn
-  </a>
+  <figure class="journal-figure">
+    <img src="/assets/images/zombies1.jpg" alt="Infected flies used in behavioral neuroscience research">
+    <figcaption>A colony image from the zombie fly system. Photo by Dr. Carolyn Elya.</figcaption>
+  </figure>
+</section>
 
-</div>
+<section class="journal-shell journal-section">
+  <div class="journal-section__header">
+    <h2 class="journal-section__title">Connect</h2>
+    <span class="journal-section__meta">Open channels</span>
+  </div>
+
+  <div class="journal-links">
+    <a class="journal-button" href="https://bsky.app/profile/brandonfricker.bsky.social" target="_blank" rel="noopener noreferrer">Bluesky</a>
+    <a class="journal-button journal-button--ghost" href="mailto:bfricker@g.harvard.edu">Email</a>
+    <a class="journal-button journal-button--ghost" href="https://www.linkedin.com/in/brandonfricker/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+  </div>
+</section>
