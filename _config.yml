@@ -1,45 +1,92 @@
-title: "Brandon Fricker, PhD- Behavioral Neuroscientist"
-name: "Brandon Fricker"
+title: "Brandon Fricker, PhD"
+tagline: "Behavioral neuroscientist · Decision scientist"
 description: >-
-  Postdoctoral fellow in The Elya Lab at Harvard University. I study behavioral manipulation in Zombie Flies.
+  Brandon Fricker, PhD: behavioral neuroscientist and decision scientist at Harvard.
+  I design controlled experiments, measure behavior at scale, and turn
+  high-dimensional data into clear decisions.
 url: "https://bfnerdly.github.io"
 baseurl: ""
+lang: en_US
+timezone: America/New_York
 
-remote_theme: "mmistakes/minimal-mistakes"
-minimal_mistakes_skin: "mint"
-
-plugins:
-  - jekyll-include-cache
-  - jekyll-feed
+# Shown as a small status pill on the home page. Delete the line to hide it.
+open_to: "Open to decision science, experimentation & behavioral data science roles"
 
 author:
   name: "Brandon Fricker"
-  avatar: "/assets/images/headshot.jpg"
-  bio: "Postdoctoral fellow studying Zombie flies."
+  email: "bfricker@g.harvard.edu"
+  image: /assets/images/headshot-square.jpg
 
-nav:
-  - title: "About Me"
-    url: /about/
-  - title: "Publications"
-    url: /publications/
-  - title: "Contact"
-    url: /contact/
+# Used by jekyll-seo-tag for social cards and search-engine structured data.
+social:
+  name: "Brandon Fricker"
+  links:
+    - https://www.linkedin.com/in/brandonfricker/
+    - https://bsky.app/profile/brandonfricker.bsky.social
+    - https://orcid.org/0000-0002-6037-814X
+    - https://scholar.google.com/citations?user=MD8OzNcAAAAJ
+    - https://github.com/bfnerdly
+
+links:
+  linkedin: https://www.linkedin.com/in/brandonfricker/
+  bluesky: https://bsky.app/profile/brandonfricker.bsky.social
+  github: https://github.com/bfnerdly
+  orcid: https://orcid.org/0000-0002-6037-814X
+  scholar: https://scholar.google.com/citations?user=MD8OzNcAAAAJ&hl=en
+  # Drop a PDF at assets/files/ and set this to show a "Résumé" button.
+  cv: ""
+
+# EthoCrypt lives in its own private repo (bfnerdly/ethocrypt). Its GitHub Pages
+# site publishes to https://bfnerdly.github.io/ethocrypt/, which is why the tab
+# here lives at /projects/ethocrypt/ instead (the project site would shadow it).
+#   pages_live:  set true once Pages is enabled on the repo (needs GitHub Pro,
+#                free with the GitHub Student Developer Pack, while it stays private)
+#   repo_public: set true if/when the repository itself is made public
+ethocrypt:
+  pages_live: false
+  repo_public: false
+  pages_url: https://bfnerdly.github.io/ethocrypt/
+  field_guide_url: https://bfnerdly.github.io/ethocrypt/EthoCrypt_Field_Guide.html
+  report_url: https://bfnerdly.github.io/ethocrypt/example_report_smoke_test.html
+  repo_url: https://github.com/bfnerdly/ethocrypt
+
+# No theme: layouts, includes and CSS all live in this repo.
+theme: null
 
 markdown: kramdown
+kramdown:
+  input: GFM
+  hard_wrap: false
 
-include:
-  - assets/css/custom.css
-head:
-  custom: _includes/custom-head.html
-atom_feed:
-  hide: true
+permalink: /news/:year/:month/:title/
 
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+  - jekyll-sitemap
 
-footer:
-  links:
-    - label: "Updates!"
-      url: /feed.xml
-    - label: "LinkedIn"
-      url: https://www.linkedin.com/in/brandonfricker/
-    - label: "Bluesky"
-      url: https://bsky.app/profile/brandonfricker.bsky.social
+feed:
+  path: feed.xml
+
+defaults:
+  - scope:
+      path: ""
+    values:
+      layout: page
+      image: /assets/images/social-card.jpg   # social preview card (1200x630)
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: page
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - README.md
+  - sync_orcid_publications.py
+  - requirements.txt
+  - __pycache__
+  - vendor
+  - .jekyll-cache
+  - tools

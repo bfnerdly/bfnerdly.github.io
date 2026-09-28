@@ -1,0 +1,160 @@
+---
+layout: default
+title: "Brandon Fricker, PhD · Behavioral neuroscientist & decision scientist"
+body_class: home
+---
+{%- assign pubs = site.data.orcid_publications.publications -%}
+{%- assign first_count = pubs | where: "first_author", true | size -%}
+
+<section class="hero">
+  <div class="wrap hero__grid">
+    <div>
+      {% if site.open_to %}<span class="pill"><span class="pill__dot" aria-hidden="true"></span>{{ site.open_to }}</span>{% endif %}
+      <h1>Brandon Fricker<span class="accent">, PhD</span></h1>
+      <p class="hero__role">Behavioral neuroscientist &amp; decision scientist</p>
+      <p class="hero__lede">
+        I design controlled experiments, measure behavior at scale, and turn noisy, high-dimensional
+        data into decisions people can act on.
+      </p>
+      <p class="hero__lede">
+        At Harvard I study how a fungus hijacks a fly's brain. The toolkit behind that work
+        (randomized and blinded designs, causal interventions, time-to-event and time-series models,
+        and ML pipelines on GPU clusters) is the same one that drives product experimentation.
+      </p>
+      <div class="btn-row">
+        <a class="btn" href="#toolkit">How I work {% include icon.html name="arrow" %}</a>
+        <a class="btn btn--ghost" href="{{ '/projects/ethocrypt/' | relative_url }}">EthoCrypt</a>
+        {% if site.links.cv != "" %}<a class="btn btn--ghost" href="{{ site.links.cv | relative_url }}">{% include icon.html name="file" %} Résumé</a>{% endif %}
+        <a class="btn btn--ghost" href="{{ site.links.linkedin }}" rel="noopener">{% include icon.html name="linkedin" %} LinkedIn</a>
+      </div>
+    </div>
+    <figure class="portrait">
+      <img src="{{ '/assets/images/headshot-square.jpg' | relative_url }}" alt="Portrait of Brandon Fricker" width="640" height="640" fetchpriority="high">
+      <figcaption><strong>Postdoctoral Fellow</strong>Harvard University · Elya Lab</figcaption>
+    </figure>
+  </div>
+</section>
+
+<section class="wrap" aria-label="At a glance">
+  <div class="stats">
+    <div class="stat"><div class="stat__num">{{ pubs.size }}</div><div class="stat__label">peer-reviewed publications</div></div>
+    <div class="stat"><div class="stat__num">{{ first_count }}</div><div class="stat__label">as first author, incl. <em>Current Biology</em></div></div>
+    <div class="stat"><div class="stat__num">NDSEG</div><div class="stat__label">3-year U.S. Department of Defense fellowship</div></div>
+    <div class="stat"><div class="stat__num">4</div><div class="stat__label">species studied, from voles to fruit flies</div></div>
+  </div>
+</section>
+
+<section class="section" id="toolkit">
+  <div class="wrap">
+    <div class="section__head">
+      <div>
+        <p class="kicker">Research skills → industry outcomes</p>
+        <h2>What I bring to a data team</h2>
+        <p>Neuroscience is applied decision science under hard constraints: small samples, noisy signals, expensive experiments and real stakes on getting the causal story right.</p>
+      </div>
+    </div>
+    <div class="grid grid--3">
+      <article class="card">
+        <div class="feature-icon">{% include icon.html name="split" %}</div>
+        <h3>Experimentation &amp; A/B testing</h3>
+        <p>Randomized, blinded, controlled designs with pre-specified comparisons and adequate power. Define the metric, randomize, remove confounds, then make the call.</p>
+        <p class="from"><strong>In the lab:</strong> treatment-vs-control behavioral assays, plus a blinded re-scoring audit I built (BlindTOD) to test a key outcome metric for bias.</p>
+      </article>
+      <article class="card">
+        <div class="feature-icon">{% include icon.html name="target" %}</div>
+        <h3>Causal inference</h3>
+        <p>Correlation is where I start, not where I stop. I test mechanisms by intervening directly, then confirm the effect is specific with matched controls.</p>
+        <p class="from"><strong>In the lab:</strong> chemogenetic circuit silencing and CRISPR knockdowns with non-social control conditions.</p>
+      </article>
+      <article class="card">
+        <div class="feature-icon">{% include icon.html name="chart" %}</div>
+        <h3>Behavioral &amp; time-series analytics</h3>
+        <p>Survival (time-to-event) models, rhythms and periodicity, bout and transition analysis: the same math as retention, seasonality and user funnels.</p>
+        <p class="from"><strong>In the lab:</strong> circadian activity, periodograms and time-of-death analyses in infected flies.</p>
+      </article>
+      <article class="card">
+        <div class="feature-icon">{% include icon.html name="scan" %}</div>
+        <h3>Machine learning &amp; computer vision</h3>
+        <p>Unsupervised discovery with foundation models (SAM 2, DINOv2), PCA/UMAP and clustering, plus validation so noise is never reported as a new segment.</p>
+        <p class="from"><strong>In the lab:</strong> <a href="{{ '/projects/ethocrypt/' | relative_url }}">EthoCrypt</a>, a keypoint-free behavior-mapping pipeline.</p>
+      </article>
+      <article class="card">
+        <div class="feature-icon">{% include icon.html name="server" %}</div>
+        <h3>Data pipelines at scale</h3>
+        <p>Config-driven, resumable GPU/CPU batch jobs with preflight validation and automated reports, built to be rerun by someone who isn't me.</p>
+        <p class="from"><strong>In the lab:</strong> Slurm pipelines on Harvard's FASRC Cannon cluster.</p>
+      </article>
+      <article class="card">
+        <div class="feature-icon">{% include icon.html name="present" %}</div>
+        <h3>Communicating to decision-makers</h3>
+        <p>Clear narratives from complex data: {{ pubs.size }} peer-reviewed papers, conference talks, a competitive federal fellowship, and interactive reports for non-specialists.</p>
+        <p class="from"><strong>In the lab:</strong> plain-language field guides and HTML run reports for colleagues new to machine vision.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="section section--tight">
+  <div class="wrap">
+    <a class="promo" href="{{ '/projects/ethocrypt/' | relative_url }}" aria-label="Read about EthoCrypt">
+      <div>
+        <p class="kicker">Featured project</p>
+        <h2>EthoCrypt</h2>
+        <p>Unsupervised behavior mapping of zombie flies. EthoCrypt watches every frame, discovers the behaviors on its own, tests whether each one is reproducible, and compares healthy with infected animals. No keypoints, no hand labels.</p>
+        <ul class="chips" aria-label="Stack">
+          <li>PyTorch</li><li>SAM 2</li><li>DINOv2</li><li>UMAP</li><li>Slurm</li>
+        </ul>
+        <p style="margin-top:22px"><span class="btn">Explore EthoCrypt {% include icon.html name="arrow" %}</span></p>
+      </div>
+      <img class="promo__logo" src="{{ '/assets/images/ethocrypt/ethocrypt_icon.svg' | relative_url }}" alt="" width="260" height="260">
+    </a>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap feature">
+    <div>
+      <p class="kicker">Current research</p>
+      <h2>How does a parasite take the wheel?</h2>
+      <p>The fungus <em>Entomophthora muscae</em> infects fruit flies and, just before dusk on the day it kills them, drives a precise sequence: climbing ("summiting"), gluing the mouthparts down, and raising the wings to spread spores.</p>
+      <p>I study which neural and hormonal changes make that takeover possible, from disrupted circadian clock output to the circuit that triggers summiting.</p>
+      <a class="section__link" href="{{ '/about/' | relative_url }}">More about my research {% include icon.html name="arrow" %}</a>
+    </div>
+    <figure>
+      <img src="{{ '/assets/images/zombies-1600.jpg' | relative_url }}" alt="Fruit flies killed by Entomophthora muscae, wings raised" width="1600" height="1200" loading="lazy">
+      <figcaption>Flies after <em>E. muscae</em> infection. Photo by Dr. Carolyn Elya.</figcaption>
+    </figure>
+  </div>
+</section>
+
+<section class="section section--tint">
+  <div class="wrap">
+    <div class="section__head">
+      <div>
+        <p class="kicker">Selected publications</p>
+        <h2>Recent work</h2>
+      </div>
+      <a class="section__link" href="{{ '/publications/' | relative_url }}">All {{ pubs.size }} publications {% include icon.html name="arrow" %}</a>
+    </div>
+    <div class="pub-list">
+      {%- for p in pubs -%}
+        {%- assign o = site.data.publication_overrides[p.doi] -%}
+        {%- if o.featured -%}{% include pub.html pub=p show_year=true %}{%- endif -%}
+      {%- endfor -%}
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <div class="card" style="padding: clamp(28px, 5vw, 48px); text-align: center;">
+      <p class="kicker">Get in touch</p>
+      <h2>Building an experimentation or decision science team?</h2>
+      <p class="muted" style="max-width: 56ch; margin-inline: auto;">I'd love to hear about it. I'm also always happy to talk zombie flies, social behavior, or unsupervised behavior mapping.</p>
+      <div class="btn-row" style="justify-content: center; margin-top: 22px;">
+        <a class="btn" href="mailto:{{ site.author.email }}">{% include icon.html name="mail" %} Email me</a>
+        <a class="btn btn--ghost" href="{{ site.links.linkedin }}" rel="noopener">{% include icon.html name="linkedin" %} LinkedIn</a>
+      </div>
+    </div>
+  </div>
+</section>

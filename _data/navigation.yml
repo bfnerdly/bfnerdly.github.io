@@ -1,0 +1,11 @@
+# Top navigation. Order here is the order on the site.
+- title: About
+  url: /about/
+- title: Projects
+  url: /projects/
+- title: EthoCrypt
+  url: /projects/ethocrypt/
+- title: Publications
+  url: /publications/
+- title: Contact
+  url: /contact/

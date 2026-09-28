@@ -1,0 +1,73 @@
+---
+title: Projects
+permalink: /projects/
+kicker: Projects & code
+heading: "Tools I've built"
+lede: >-
+  Most of my analysis lives in code that other people can rerun: pipelines, scoring tools and
+  analysis packages written for real lab problems.
+description: "Software and analysis pipelines by Brandon Fricker: EthoCrypt, behavior analytics, brain registration and blinded scoring tools."
+---
+
+<section class="section" style="padding-top: 24px;">
+  <div class="wrap grid" style="gap: 24px;">
+
+    <a class="promo" href="{{ '/projects/ethocrypt/' | relative_url }}" aria-label="Read about EthoCrypt">
+      <div>
+        <p class="kicker">Flagship · Python · Pre-release</p>
+        <h2>EthoCrypt</h2>
+        <p>Keypoint-free, unsupervised behavior mapping of healthy and <em>E. muscae</em>-infected fruit flies. Segmentation with SAM 2, per-region DINOv2 features, optical flow, UMAP maps, and built-in reproducibility checks, run as Slurm batch jobs on Harvard's FASRC cluster.</p>
+        <ul class="chips" aria-label="Stack">
+          <li>PyTorch</li><li>SAM 2</li><li>DINOv2</li><li>OpenCV</li><li>UMAP</li><li>scikit-learn</li><li>Slurm</li>
+        </ul>
+        <p style="margin-top:22px"><span class="btn">Read more {% include icon.html name="arrow" %}</span></p>
+      </div>
+      <img class="promo__logo" src="{{ '/assets/images/ethocrypt/ethocrypt_icon.svg' | relative_url }}" alt="" width="260" height="260">
+    </a>
+
+    <article class="card project">
+      <div class="project__icon">{% include icon.html name="chart" %}</div>
+      <div>
+        <p class="card__eyebrow">Python · Behavioral analytics</p>
+        <h3>Speed behavior analysis pipelines</h3>
+        <p>Analysis package for multi-day locomotor tracking from MARGO arenas: actograms, 24 h autocorrelation, chi-square periodograms, survival-aligned activity around time of death, and spatial maps that check whether an intervention landed unevenly across a 4 × 32 arena grid. Configurable for infected and uninfected runs.</p>
+        <ul class="chips"><li>pandas</li><li>SciPy</li><li>seaborn</li><li>Time series</li><li>Survival analysis</li></ul>
+      </div>
+      <div class="project__links"><span class="btn btn--ghost" aria-disabled="true">{% include icon.html name="lock" %} Private repo</span></div>
+    </article>
+
+    <article class="card project">
+      <div class="project__icon">{% include icon.html name="split" %}</div>
+      <div>
+        <p class="card__eyebrow">MATLAB · Elya Lab</p>
+        <h3>BlindTOD</h3>
+        <p>A measurement-bias audit, as a tool. It finds every cadaver in a tracking run, scrambles the arenas, and has me re-call each fly's time of death with box, date and genotype hidden. Comparing blinded with original calls tests for systematic bias in a key outcome metric.</p>
+        <ul class="chips"><li>MATLAB</li><li>Blinding</li><li>Bias audit</li><li>Survival data</li></ul>
+      </div>
+      <div class="project__links"><a class="btn btn--ghost" href="https://github.com/Elya-Lab/BlindTOD" rel="noopener">{% include icon.html name="github" %} GitHub</a></div>
+    </article>
+
+    <article class="card project">
+      <div class="project__icon">{% include icon.html name="scan" %}</div>
+      <div>
+        <p class="card__eyebrow">R · natverse · Imaging</p>
+        <h3>Drosophila brain registration &amp; neuropil analysis</h3>
+        <p>Pipeline from .tiff image stacks to registered <em>Drosophila</em> brains and per-neuropil cell counts, built on the natverse registration toolkit.</p>
+        <ul class="chips"><li>R</li><li>natverse</li><li>Image registration</li></ul>
+      </div>
+      <div class="project__links"><a class="btn btn--ghost" href="https://github.com/bfnerdly/Drosophila-Brain-Registration-and-Neuropil-Analysis-Pipeline" rel="noopener">{% include icon.html name="github" %} GitHub</a></div>
+    </article>
+
+    <article class="card project">
+      <div class="project__icon">{% include icon.html name="server" %}</div>
+      <div>
+        <p class="card__eyebrow">Python · GitHub Actions</p>
+        <h3>This website</h3>
+        <p>Jekyll site with no theme dependency. Publications sync monthly from ORCID and Crossref through a GitHub Actions job, so a new paper appears here without anyone touching the page.</p>
+        <ul class="chips"><li>Jekyll</li><li>Python</li><li>GitHub Actions</li><li>ORCID API</li><li>Crossref API</li></ul>
+      </div>
+      <div class="project__links"><a class="btn btn--ghost" href="https://github.com/bfnerdly/bfnerdly.github.io" rel="noopener">{% include icon.html name="github" %} GitHub</a></div>
+    </article>
+
+  </div>
+</section>

@@ -1,0 +1,161 @@
+---
+title: EthoCrypt
+permalink: /projects/ethocrypt/
+hide_title: true
+description: "EthoCrypt: keypoint-free, unsupervised behavior mapping of healthy and Entomophthora muscae-infected fruit flies, run as batch jobs on Harvard's FASRC cluster."
+image: /assets/images/ethocrypt/ethocrypt_social_preview.png
+favicon: /assets/images/ethocrypt/ethocrypt_icon.svg
+touch_icon: /assets/images/ethocrypt/ethocrypt_icon_180.png
+---
+{%- assign eth = site.ethocrypt -%}
+
+<section class="eth-hero">
+  <div class="wrap">
+    <img class="eth-lockup eth-lockup--light" src="{{ '/assets/images/ethocrypt/ethocrypt_lockup.svg' | relative_url }}" alt="EthoCrypt" width="460" height="140">
+    <img class="eth-lockup eth-lockup--dark" src="{{ '/assets/images/ethocrypt/ethocrypt_lockup_dark.svg' | relative_url }}" alt="" aria-hidden="true" width="460" height="140">
+    <div><span class="pill pill--gold"><span class="pill__dot" aria-hidden="true"></span>Pre-release · first real fly video run end to end on FASRC; tuning in progress</span></div>
+    <h1 class="visually-hidden">EthoCrypt</h1>
+    <p class="lede">
+      <strong>Unsupervised behavior mapping of zombie flies.</strong> EthoCrypt watches one fruit fly per
+      video, sorts every moment into behaviors it discovers on its own, checks that each behavior is real,
+      and compares healthy flies with <em>Entomophthora muscae</em>-infected ones. No keypoints, no
+      skeletons, no trained detectors.
+    </p>
+    <div class="btn-row">
+      {% if eth.pages_live %}
+        <a class="btn" href="{{ eth.field_guide_url }}" rel="noopener">Field Guide {% include icon.html name="external" %}</a>
+        <a class="btn btn--ghost" href="{{ eth.report_url }}" rel="noopener">Example run report {% include icon.html name="external" %}</a>
+      {% else %}
+        <span class="btn" aria-disabled="true">{% include icon.html name="lock" %} Field Guide · coming soon</span>
+        <span class="btn btn--ghost" aria-disabled="true">Example report · coming soon</span>
+      {% endif %}
+      {% if eth.repo_public %}
+        <a class="btn btn--ghost" href="{{ eth.repo_url }}" rel="noopener">{% include icon.html name="github" %} Code on GitHub</a>
+      {% endif %}
+    </div>
+    {% unless eth.pages_live %}
+      <p class="eth-note">{% include icon.html name="lock" %} The code is private while in pre-release. The Field Guide, with live demos, and an example run report will be published here soon.</p>
+    {% endunless %}
+  </div>
+</section>
+
+<section class="section section--tint">
+  <div class="wrap">
+    <div class="section__head">
+      <div>
+        <p class="kicker">The problem</p>
+        <h2>Scoring behavior by eye doesn't scale, and it misses what you didn't know to look for</h2>
+        <p>The fungus changes a fly's behavior in ways that are dramatic at the end and subtle before it. To catch the subtle part, you need to measure everything, without deciding in advance what to count.</p>
+      </div>
+    </div>
+    <div class="compare">
+      <div>
+        <h3>Typical approach</h3>
+        <ul>
+          <li>Hand-score a few predefined behaviors</li>
+          <li>Or train a pose tracker on thousands of labeled keypoints</li>
+          <li>Categories fixed before the data are seen</li>
+          <li>Hard to tell a real new behavior from clustering noise</li>
+        </ul>
+      </div>
+      <div>
+        <h3>EthoCrypt</h3>
+        <ul>
+          <li>Segments the whole fly automatically with a foundation model</li>
+          <li>No labels, keypoints or training needed</li>
+          <li>Behaviors emerge from the data and are named afterwards</li>
+          <li>Every cluster is stress-tested for reproducibility before it's reported</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <div class="section__head">
+      <div>
+        <p class="kicker">How it works</p>
+        <h2>Ten stages, from raw video to a validated behavior map</h2>
+        <p>Each stage is a resumable batch job on Harvard's FASRC Cannon cluster. A preflight check catches missing videos, metadata mismatches or model weights in seconds, before anything is queued.</p>
+      </div>
+    </div>
+    <ol class="pipeline">
+      <li><span class="stage-tag">CPU</span><strong>Find the fly</strong><span>Model the empty arena; the fly is whatever differs from it.</span></li>
+      <li><span class="stage-tag stage-tag--gpu">GPU</span><strong>Follow it</strong><span>SAM 2 tracks a full-body mask, legs and wings included, through every frame.</span></li>
+      <li><span class="stage-tag stage-tag--gpu">GPU</span><strong>Line it up</strong><span>Crop, scale and rotate so every fly is the same size and orientation.</span></li>
+      <li><span class="stage-tag stage-tag--gpu">GPU</span><strong>Describe it</strong><span>DINOv2 features per body region, plus optical flow for limb and wing motion.</span></li>
+      <li><span class="stage-tag">CPU</span><strong>Compress</strong><span>PCA, with the variance retained reported every run.</span></li>
+      <li><span class="stage-tag">CPU</span><strong>Add time</strong><span>Wavelet rhythms (Berman) or short frame windows (CASTLE).</span></li>
+      <li><span class="stage-tag">CPU</span><strong>Map &amp; cluster</strong><span>UMAP lays every moment on a 2-D map; dense peaks become candidate behaviors.</span></li>
+      <li><span class="stage-tag">CPU</span><strong>Zoom in</strong><span>The behavior microscope re-maps one behavior to split it into sub-types.</span></li>
+      <li><span class="stage-tag">CPU</span><strong>Check it's real</strong><span>Does each cluster survive new random seeds and held-out flies?</span></li>
+      <li><span class="stage-tag">CPU</span><strong>Compare</strong><span>Time budgets, bout lengths and transitions: healthy vs infected.</span></li>
+    </ol>
+  </div>
+</section>
+
+<section class="section section--tint">
+  <div class="wrap">
+    <div class="grid grid--2">
+      <article class="card">
+        <div class="feature-icon">{% include icon.html name="scan" %}</div>
+        <h3>Keypoint-free</h3>
+        <p>The fly is segmented by SAM 2, described per body region by DINOv2 (or DINOv3) features, and its limb and wing motion is measured with optical flow relative to the body. Nothing has to be hand-labeled.</p>
+      </article>
+      <article class="card">
+        <div class="feature-icon">{% include icon.html name="chart" %}</div>
+        <h3>Two ways to add time</h3>
+        <p>Berman-style wavelet spectra, as in MotionMapper, capture rhythmic movements like grooming. CASTLE-style short windows capture brief transitions. Pick per experiment.</p>
+      </article>
+      <article class="card">
+        <div class="feature-icon">{% include icon.html name="target" %}</div>
+        <h3>Behavior microscope</h3>
+        <p>Name a behavior (say, "grooming"), then rebuild the map from only those frames to split it into sub-types and microbehaviors that the whole-repertoire map blurs together.</p>
+      </article>
+      <article class="card">
+        <div class="feature-icon">{% include icon.html name="check" %}</div>
+        <h3>Validation built in</h3>
+        <p>Each cluster is tested for stability across random seeds and across maps built from different flies, for whether most flies use it, and for confounds like body size or tracking quality.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap feature">
+    <div>
+      <p class="kicker">Beyond flies</p>
+      <h2>The same problem as behavioral segmentation</h2>
+      <p>Strip away the fruit flies and EthoCrypt solves a familiar data-science problem: <strong>find natural segments in high-dimensional behavioral data, then prove they're real</strong> before anyone makes a decision on them.</p>
+      <ul>
+        <li><strong>Representation learning</strong> with pretrained foundation models instead of hand-built features.</li>
+        <li><strong>Segment validation</strong>: stability across seeds and held-out subjects, and checks that no single subject drives a segment.</li>
+        <li><strong>Confound checks</strong>: is a "behavior" just a proxy for body size or data quality?</li>
+        <li><strong>Production habits</strong>: config-driven runs, resumable jobs, preflight validation, and one interactive HTML report per run for non-technical users.</li>
+      </ul>
+    </div>
+    <figure>
+      <img src="{{ '/assets/images/ethocrypt/ethocrypt_social_preview.png' | relative_url }}" alt="EthoCrypt logo: a fly in the zombie death pose inside a hexagon of behavior-map cells" width="1280" height="640" loading="lazy" style="aspect-ratio: 2 / 1;">
+      <figcaption>The mark is a watershed-style behavior map, with a fly in the <em>E. muscae</em> death pose: wings up, fungal bands showing.</figcaption>
+    </figure>
+  </div>
+</section>
+
+<section class="section section--tint">
+  <div class="wrap grid grid--2">
+    <div class="card">
+      <h3>Stack</h3>
+      <ul class="chips">
+        <li>Python 3.11</li><li>PyTorch</li><li>SAM 2</li><li>DINOv2 / DINOv3</li><li>OpenCV</li>
+        <li>scikit-learn</li><li>scikit-image</li><li>umap-learn</li><li>pandas</li><li>h5py</li>
+        <li>Slurm</li><li>FASRC Cannon</li><li>GitHub Actions</li>
+      </ul>
+    </div>
+    <div class="card credits">
+      <h3>Credits &amp; license</h3>
+      <p>Built by Brandon Fricker in the <a href="https://carolynelya.com/" rel="noopener">Elya Lab</a>, Harvard University. A standalone, cluster-friendly reimplementation of the <a href="https://doi.org/10.1101/2025.08.22.671685" rel="noopener">CASTLE</a> approach (Liu et al., 2025), with movement encoding after <a href="https://doi.org/10.1098/rsif.2014.0672" rel="noopener">Berman et al. (2014)</a>.</p>
+      <p>Licensed GPL-3.0-or-later. If you use EthoCrypt, please cite it along with CASTLE and Berman et al.</p>
+    </div>
+  </div>
+</section>

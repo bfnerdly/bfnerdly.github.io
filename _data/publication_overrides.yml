@@ -1,0 +1,42 @@
+# Hand-edited details merged over the ORCID/Crossref data at build time.
+# Key = the paper's DOI in lower case. Every field is optional:
+#   featured:     true  -> shown on the home page and pinned with a badge
+#   summary:      one plain-language sentence (great for non-specialist readers)
+#   title:        replaces the synced title (HTML allowed, e.g. <i>species</i>)
+#   authors_html: replaces the synced author line (HTML allowed)
+#   note:         small line under the authors, e.g. "* Equal contribution"
+
+"10.1016/j.cub.2024.08.019":
+  featured: true
+  summary: >-
+    Male spiny mice prefer to join larger peer groups. Chemogenetically silencing one
+    projection, anterior cingulate cortex → lateral septum, reverses that preference: a
+    causal test of a single circuit, with a matched non-social control.
+
+"10.1016/j.psyneuen.2025.107496":
+  featured: true
+  summary: >-
+    Gene-editing (AAV-CRISPR/Cas9) knockdown of oxytocin receptors in the nucleus
+    accumbens shows they support huddling with unfamiliar peers, and feeding, in male
+    spiny mice.
+
+"10.1038/s41598-023-44257-6":
+  featured: true
+  summary: >-
+    Kinship cues bias both behavior and neural responses in males of a communally
+    breeding species, shaping who they choose to affiliate with.
+
+"10.1038/s41598-023-32076-8":
+  summary: >-
+    Pair bonding lowers hypothalamic oxytocin neuron densities in prairie voles;
+    separating the pair reverses the effect.
+
+"10.1016/j.bbr.2024.115181":
+  authors_html: "<strong>Fricker, B.A.</strong>*, Jiang, J.*, Esquilin-Rodriguez, C.J., Dowling, M.L., Kelly, A.M."
+  note: "* Equal contribution"
+
+"10.1016/j.yhbeh.2023.105462":
+  title: "From grouping and cooperation to menstruation: Spiny mice (<i>Acomys cahirinus</i>) are an emerging mammalian model for sociality and beyond"
+
+"10.1152/jn.00471.2020":
+  authors_html: "<strong>Fricker, B.A.</strong>, Heckman, E., Cunningham, P.C., Wang, H., Haas, J.S."

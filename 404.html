@@ -1,25 +1,15 @@
 ---
+title: Page not found
 permalink: /404.html
-layout: page
+layout: default
+sitemap: false
 ---
-
-<style type="text/css" media="screen">
-  .container {
-    margin: 10px auto;
-    max-width: 600px;
-    text-align: center;
-  }
-  h1 {
-    margin: 30px 0;
-    font-size: 4em;
-    line-height: 1;
-    letter-spacing: -1px;
-  }
-</style>
-
-<div class="container">
+<section class="notfound wrap">
+  <img src="{{ '/assets/images/ethocrypt/ethocrypt_fly_ghost.svg' | relative_url }}" alt="" width="120" height="120">
   <h1>404</h1>
-
-  <p><strong>Page not found :(</strong></p>
-  <p>The requested page could not be found.</p>
-</div>
+  <p class="lede" style="margin-inline:auto">This page has wandered off, possibly toward the nearest high point.</p>
+  <div class="btn-row" style="justify-content:center">
+    <a class="btn" href="{{ '/' | relative_url }}">Back home</a>
+    <a class="btn btn--ghost" href="{{ '/publications/' | relative_url }}">Publications</a>
+  </div>
+</section>

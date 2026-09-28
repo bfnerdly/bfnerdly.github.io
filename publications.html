@@ -1,0 +1,37 @@
+---
+title: Publications
+permalink: /publications/
+kicker: Publications
+heading: "Peer-reviewed work"
+lede: >-
+  Synced automatically from my ORCID record, with full author lists from Crossref. My name is in bold.
+description: "Peer-reviewed publications by Brandon Fricker, PhD, synced from ORCID."
+---
+{%- assign pubs = site.data.orcid_publications.publications -%}
+{%- assign first_count = pubs | where: "first_author", true | size -%}
+
+<section class="section" style="padding-top: 24px;">
+  <div class="wrap">
+    {% if pubs and pubs.size > 0 %}
+      <div class="pub-toolbar">
+        <div class="chips" role="group" aria-label="Filter publications">
+          <button class="chip" type="button" data-pub-filter="all" aria-pressed="true">All ({{ pubs.size }})</button>
+          <button class="chip" type="button" data-pub-filter="first" aria-pressed="false">First author ({{ first_count }})</button>
+        </div>
+        <p class="muted" style="margin:0; font-size:.9rem;">Showing <span data-pub-count>{{ pubs.size }}</span> · <a href="{{ site.links.orcid }}" rel="noopener">ORCID</a> · <a href="{{ site.links.scholar }}" rel="noopener">Google Scholar</a></p>
+      </div>
+
+      {%- assign by_year = pubs | group_by: "publication_year" -%}
+      {%- for group in by_year -%}
+        <div class="pub-year" data-pub-year-group>
+          <div class="pub-year__label">{{ group.name }}</div>
+          <div class="pub-list">
+            {%- for p in group.items -%}{% include pub.html pub=p show_featured=true %}{%- endfor -%}
+          </div>
+        </div>
+      {%- endfor -%}
+    {% else %}
+      <p>Publications are temporarily unavailable. See my <a href="{{ site.links.orcid }}">ORCID profile</a> in the meantime.</p>
+    {% endif %}
+  </div>
+</section>

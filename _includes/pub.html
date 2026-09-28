@@ -1,0 +1,16 @@
+{%- assign p = include.pub -%}
+{%- assign o = site.data.publication_overrides[p.doi] -%}
+<article class="pub" data-pub{% if p.first_author %} data-first-author{% endif %}>
+  <h3 class="pub__title">
+    {%- if p.url -%}<a href="{{ p.url }}" rel="noopener">{{ o.title | default: p.title }}</a>{%- else -%}{{ o.title | default: p.title }}{%- endif -%}
+  </h3>
+  <p class="pub__authors">{{ o.authors_html | default: p.authors_html }}{% if o.note %} <span class="muted">({{ o.note }})</span>{% endif %}</p>
+  <p class="pub__venue">
+    {% if p.journal_title %}<em>{{ p.journal_title }}</em>{% endif %}
+    {% if include.show_year %}<span class="muted">{{ p.publication_year }}</span>{% endif %}
+    {% if p.first_author %}<span class="badge">First author</span>{% endif %}
+    {% if o.featured and include.show_featured %}<span class="badge badge--gold">Featured</span>{% endif %}
+    {% if p.doi %}<a href="https://doi.org/{{ p.doi }}" rel="noopener">doi:{{ p.doi }}</a>{% endif %}
+  </p>
+  {% if o.summary and include.summary != false %}<p class="pub__summary">{{ o.summary }}</p>{% endif %}
+</article>

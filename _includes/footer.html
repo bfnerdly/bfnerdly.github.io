@@ -1,0 +1,21 @@
+<footer class="site-footer">
+  <div class="wrap site-footer__inner">
+    <div>
+      <p class="site-footer__name">Brandon Fricker, PhD</p>
+      <p class="muted">Behavioral neuroscience · Experimentation · Decision science</p>
+    </div>
+    <ul class="icon-links" aria-label="Elsewhere">
+      <li><a href="mailto:{{ site.author.email }}" aria-label="Email">{% include icon.html name="mail" %}</a></li>
+      <li><a href="{{ site.links.linkedin }}" aria-label="LinkedIn" rel="noopener">{% include icon.html name="linkedin" %}</a></li>
+      <li><a href="{{ site.links.github }}" aria-label="GitHub" rel="noopener">{% include icon.html name="github" %}</a></li>
+      <li><a href="{{ site.links.bluesky }}" aria-label="Bluesky" rel="noopener">{% include icon.html name="bluesky" %}</a></li>
+      <li><a href="{{ site.links.orcid }}" aria-label="ORCID" rel="noopener">{% include icon.html name="orcid" %}</a></li>
+      <li><a href="{{ site.links.scholar }}" aria-label="Google Scholar" rel="noopener">{% include icon.html name="scholar" %}</a></li>
+      <li><a href="{{ '/feed.xml' | relative_url }}" aria-label="RSS feed">{% include icon.html name="rss" %}</a></li>
+    </ul>
+  </div>
+  <div class="wrap site-footer__fine muted">
+    <span>© {{ site.time | date: '%Y' }} Brandon Fricker</span>
+    <span>Publications synced from ORCID{% if site.data.orcid_publications.generated_at_utc %} · updated {{ site.data.orcid_publications.generated_at_utc | date: '%b %-d, %Y' }}{% endif %}</span>
+  </div>
+</footer>

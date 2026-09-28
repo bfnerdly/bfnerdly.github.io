@@ -1,262 +1,263 @@
+"""Sync publications from ORCID into _data/orcid_publications.json.
+
+ORCID supplies the list of works (so adding a paper to ORCID is all it takes).
+Crossref, looked up by DOI, supplies the full author list, journal and date,
+which ORCID records often lack. Hand-tuned details (equal-contribution marks,
+plain-language summaries, featured papers) live in _data/publication_overrides.yml
+and are merged at render time, so this script never overwrites them.
+
+Standard library only. Run locally with:  python3 sync_orcid_publications.py
+"""
+
 import argparse
 import json
+import re
 import sys
 import time
 from datetime import datetime, timezone
 from html import escape
 from pathlib import Path
 from typing import Any
-from urllib import error, request
-
+from urllib import error, parse, request
 
 ORCID_ID = "0000-0002-6037-814X"
-API_ROOT = f"https://pub.orcid.org/v3.0/{ORCID_ID}"
+ORCID_API = f"https://pub.orcid.org/v3.0/{ORCID_ID}"
+CROSSREF_API = "https://api.crossref.org/works/"
 OUTPUT_PATH = Path("_data/orcid_publications.json")
-REQUEST_HEADERS = {
-    "Accept": "application/json",
-    "User-Agent": "bfnerdly.github.io publication sync",
-}
-REQUEST_TIMEOUT_SECONDS = 20
+USER_AGENT = "bfnerdly.github.io publication sync (https://bfnerdly.github.io; mailto:bfricker@g.harvard.edu)"
+TIMEOUT_SECONDS = 20
 MAX_RETRIES = 3
 RETRY_DELAY_SECONDS = 2
-HIGHLIGHTED_AUTHOR_NAMES = {
-    "Brandon Fricker",
-    "Brandon A. Fricker",
-    "B.A. Fricker",
-    "Fricker, B.A.",
-    "Fricker, Brandon",
-}
+OWNER_FAMILY_NAME = "fricker"
+OWNER_GIVEN_INITIAL = "b"
+
+# Work types from ORCID that count as publications on the site.
 PUBLICATION_TYPES = {
-    "book",
-    "book-chapter",
-    "book-review",
-    "conference-abstract",
-    "conference-paper",
-    "dictionary-entry",
-    "dissertation-thesis",
-    "edited-book",
-    "encyclopedia-entry",
-    "journal-article",
-    "magazine-article",
-    "manual",
-    "newspaper-article",
-    "online-resource",
-    "preprint",
-    "report",
-    "review",
-    "supervised-student-publication",
-    "technical-standard",
-    "working-paper",
+    "book", "book-chapter", "conference-paper", "dissertation-thesis", "edited-book",
+    "journal-article", "preprint", "report", "review", "working-paper",
 }
+# Tags allowed through from Crossref titles (species names are italicised there).
+ALLOWED_TITLE_TAGS = re.compile(r"</?(i|em|sub|sup)>", re.IGNORECASE)
 
 
 def log(message: str) -> None:
-    print(message)
+    print(message, flush=True)
 
 
-def fetch_json(url: str) -> dict[str, Any]:
+def fetch_json(url: str, *, required: bool = True) -> dict[str, Any] | None:
     last_error: Exception | None = None
     for attempt in range(1, MAX_RETRIES + 1):
         try:
-            req = request.Request(url, headers=REQUEST_HEADERS)
-            with request.urlopen(req, timeout=REQUEST_TIMEOUT_SECONDS) as response:
+            req = request.Request(url, headers={"Accept": "application/json", "User-Agent": USER_AGENT})
+            with request.urlopen(req, timeout=TIMEOUT_SECONDS) as response:
                 return json.load(response)
-        except (error.HTTPError, error.URLError, TimeoutError, json.JSONDecodeError) as exc:
+        except error.HTTPError as exc:
             last_error = exc
-            if attempt == MAX_RETRIES:
+            if exc.code == 404:
                 break
-            log(f"Request failed for {url} (attempt {attempt}/{MAX_RETRIES}): {exc}")
-            time.sleep(RETRY_DELAY_SECONDS)
-    raise RuntimeError(f"Unable to fetch ORCID data from {url}: {last_error}") from last_error
+        except (error.URLError, TimeoutError, json.JSONDecodeError) as exc:
+            last_error = exc
+        if attempt < MAX_RETRIES:
+            time.sleep(RETRY_DELAY_SECONDS * attempt)
+    if required:
+        raise RuntimeError(f"Unable to fetch {url}: {last_error}")
+    log(f"  warning: could not fetch {url}: {last_error}")
+    return None
 
 
-def clean_text(value: Any) -> str | None:
+def dig(obj: Any, *keys: str) -> Any:
+    """Safe nested lookup: ORCID returns null for many optional objects."""
+    for key in keys:
+        if not isinstance(obj, dict):
+            return None
+        obj = obj.get(key)
+    return obj
+
+
+def clean(value: Any) -> str | None:
     if value is None:
         return None
-    text = str(value).strip()
+    text = re.sub(r"\s+", " ", str(value)).strip()
     return text or None
 
 
-def extract_doi(external_ids: dict[str, Any]) -> str | None:
-    for ext in external_ids.get("external-id", []):
-        ext_type = clean_text(ext.get("external-id-type"))
-        if ext_type and ext_type.lower() == "doi":
-            return clean_text(ext.get("external-id-value"))
-    return None
+def initials(given: str) -> str:
+    """'Brandon A.' -> 'B.A.', 'Jose-Luis' -> 'J.-L.', 'B.A.' -> 'B.A.'"""
+    parts = [p for p in re.split(r"[\s.]+", given) if p]
+    out = []
+    for part in parts:
+        out.append("-".join(f"{piece[0].upper()}." for piece in part.split("-") if piece))
+    return "".join(out)
 
 
-def preferred_url(detail: dict[str, Any], doi: str | None) -> str | None:
-    url_value = clean_text(detail.get("url", {}).get("value"))
-    if url_value:
-        return url_value
-    if doi:
-        return f"https://doi.org/{doi}"
-    return None
+def is_owner(family: str | None, given: str | None) -> bool:
+    return bool(family) and family.lower() == OWNER_FAMILY_NAME and (given or "b").lower().startswith(OWNER_GIVEN_INITIAL)
 
 
-def format_authors(contributors: dict[str, Any]) -> tuple[list[str], str]:
-    names: list[str] = []
-    for contributor in contributors.get("contributor", []):
-        credit_name = clean_text(contributor.get("credit-name", {}).get("value"))
-        if credit_name:
-            names.append(credit_name)
+def split_credit_name(name: str) -> tuple[str | None, str]:
+    """ORCID gives 'Brandon A. Fricker' or 'Fricker, B.A.'; return (given, family)."""
+    if "," in name:
+        family, given = [p.strip() for p in name.split(",", 1)]
+        return given or None, family
+    parts = name.split()
+    if len(parts) == 1:
+        return None, parts[0]
+    return " ".join(parts[:-1]), parts[-1]
 
-    unique_names: list[str] = []
-    seen: set[str] = set()
-    for name in names:
-        if name not in seen:
-            unique_names.append(name)
-            seen.add(name)
 
-    if not unique_names:
-        return [], "Authors unavailable"
-
-    formatted: list[str] = []
-    for name in unique_names:
-        safe_name = escape(name)
-        if name in HIGHLIGHTED_AUTHOR_NAMES:
-            formatted.append(f"<strong>{safe_name}</strong>")
+def format_authors(people: list[tuple[str | None, str]]) -> tuple[list[str], str, bool]:
+    names, html, first_author = [], [], False
+    for index, (given, family) in enumerate(people):
+        label = f"{family}, {initials(given)}" if given else family
+        names.append(label)
+        if is_owner(family, given):
+            html.append(f"<strong>{escape(label)}</strong>")
+            first_author = first_author or index == 0
         else:
-            formatted.append(safe_name)
-    return unique_names, ", ".join(formatted)
+            html.append(escape(label))
+    return names, ", ".join(html), first_author
 
 
-def extract_publication_date(detail: dict[str, Any]) -> tuple[str | None, str | None, str | None]:
-    publication_date = detail.get("publication-date", {})
-    year = clean_text(publication_date.get("year", {}).get("value"))
-    month = clean_text(publication_date.get("month", {}).get("value"))
-    day = clean_text(publication_date.get("day", {}).get("value"))
-    return year, month, day
+def clean_title(raw: str) -> str:
+    kept = ALLOWED_TITLE_TAGS.sub(lambda m: m.group(0).lower(), raw)
+    # Escape everything, then restore the allowed tags.
+    safe = escape(re.sub(r"<(?!/?(i|em|sub|sup)>)[^>]+>", "", kept, flags=re.IGNORECASE), quote=False)
+    safe = re.sub(r"&lt;(/?(?:i|em|sub|sup))&gt;", r"<\1>", safe)
+    return clean(safe) or ""
+
+
+def crossref_record(doi: str) -> dict[str, Any] | None:
+    payload = fetch_json(CROSSREF_API + parse.quote(doi, safe=""), required=False)
+    return dig(payload, "message") if payload else None
+
+
+def date_parts(record: dict[str, Any] | None) -> list[int]:
+    for key in ("published-print", "published-online", "issued", "published"):
+        parts = dig(record, key, "date-parts")
+        if parts and parts[0] and parts[0][0]:
+            return [int(p) for p in parts[0]]
+    return []
 
 
 def build_publication(summary: dict[str, Any], detail: dict[str, Any]) -> dict[str, Any] | None:
-    work_type = clean_text(summary.get("type"))
-    if not work_type:
-        return None
-    work_type = work_type.lower()
+    work_type = (clean(summary.get("type")) or "").lower()
     if work_type not in PUBLICATION_TYPES:
         return None
 
-    put_code = summary.get("put-code")
-    title = clean_text(detail.get("title", {}).get("title", {}).get("value"))
-    if put_code is None or not title:
+    doi = None
+    for ext in dig(detail, "external-ids", "external-id") or []:
+        if (clean(dig(ext, "external-id-type")) or "").lower() == "doi":
+            doi = clean(dig(ext, "external-id-value"))
+            break
+    if doi:
+        doi = re.sub(r"^https?://(dx\.)?doi\.org/", "", doi, flags=re.IGNORECASE).lower()
+
+    cr = crossref_record(doi) if doi else None
+
+    # Authors: Crossref first (complete, ordered), ORCID contributors as fallback.
+    people: list[tuple[str | None, str]] = []
+    for author in (cr or {}).get("author") or []:
+        family = clean(author.get("family")) or clean(author.get("name"))
+        if family:
+            people.append((clean(author.get("given")), family))
+    if not people:
+        for contributor in dig(detail, "contributors", "contributor") or []:
+            credit = clean(dig(contributor, "credit-name", "value"))
+            if credit:
+                people.append(split_credit_name(credit))
+    authors, authors_html, first_author = format_authors(people)
+
+    title = None
+    cr_titles = (cr or {}).get("title") or []
+    if cr_titles:
+        title = clean_title(cr_titles[0])
+    title = title or escape(clean(dig(detail, "title", "title", "value")) or "", quote=False)
+    if not title:
         return None
 
-    external_ids = detail.get("external-ids", {})
-    doi = extract_doi(external_ids)
-    authors, authors_html = format_authors(detail.get("contributors", {}))
-    year, month, day = extract_publication_date(detail)
+    parts = date_parts(cr)
+    if not parts:
+        year = clean(dig(detail, "publication-date", "year", "value"))
+        month = clean(dig(detail, "publication-date", "month", "value"))
+        parts = [int(p) for p in (year, month) if p]
+
+    container = (cr or {}).get("container-title") or []
+    journal = clean(container[0]) if container else clean(dig(detail, "journal-title", "value"))
+    url = f"https://doi.org/{doi}" if doi else clean(dig(detail, "url", "value"))
 
     return {
-        "put_code": put_code,
+        "put_code": summary.get("put-code"),
         "title": title,
         "type": work_type,
-        "publication_year": year,
-        "publication_month": month,
-        "publication_day": day,
-        "journal_title": clean_text(detail.get("journal-title", {}).get("value")),
-        "source_name": clean_text(detail.get("source", {}).get("source-name", {}).get("value")),
+        "publication_year": str(parts[0]) if parts else None,
+        "publication_month": parts[1] if len(parts) > 1 else None,
+        "journal_title": journal,
+        "volume": clean((cr or {}).get("volume")),
+        "pages": clean((cr or {}).get("page")) or clean((cr or {}).get("article-number")),
         "doi": doi,
-        "url": preferred_url(detail, doi),
-        "orcid_url": f"https://orcid.org/{ORCID_ID}",
+        "url": url,
         "authors": authors,
-        "authors_html": authors_html,
-        "external_ids": [
-            {
-                "type": clean_text(ext.get("external-id-type")),
-                "value": clean_text(ext.get("external-id-value")),
-                "url": clean_text(ext.get("external-id-url", {}).get("value")),
-            }
-            for ext in external_ids.get("external-id", [])
-            if clean_text(ext.get("external-id-value"))
-        ],
+        "authors_html": authors_html or "Authors unavailable",
+        "first_author": first_author,
     }
 
 
-def publication_sort_key(item: dict[str, Any]) -> tuple[int, int, int, str]:
-    year = int(item.get("publication_year") or 0)
-    month = int(item.get("publication_month") or 0)
-    day = int(item.get("publication_day") or 0)
-    title = item.get("title", "").lower()
-    return (year, month, day, title)
-
-
-def build_payload() -> tuple[dict[str, Any], dict[str, int]]:
-    works_payload = fetch_json(f"{API_ROOT}/works")
-    groups = works_payload.get("group", [])
+def build_payload() -> dict[str, Any]:
+    groups = (fetch_json(f"{ORCID_API}/works") or {}).get("group") or []
     publications: list[dict[str, Any]] = []
-    skipped_non_publication = 0
-    skipped_invalid = 0
-
     for group in groups:
-        summaries = group.get("work-summary", [])
-        if not summaries:
-            skipped_invalid += 1
+        summary = (group.get("work-summary") or [None])[0]
+        if not summary or summary.get("put-code") is None:
             continue
-
-        summary = summaries[0]
-        work_type = clean_text(summary.get("type"))
-        if not work_type:
-            skipped_invalid += 1
+        if (clean(summary.get("type")) or "").lower() not in PUBLICATION_TYPES:
             continue
-        if work_type.lower() not in PUBLICATION_TYPES:
-            skipped_non_publication += 1
-            continue
-
-        put_code = summary.get("put-code")
-        if put_code is None:
-            skipped_invalid += 1
-            continue
-
-        detail = fetch_json(f"{API_ROOT}/work/{put_code}")
+        detail = fetch_json(f"{ORCID_API}/work/{summary['put-code']}") or {}
         publication = build_publication(summary, detail)
-        if publication is None:
-            skipped_invalid += 1
-            continue
-        publications.append(publication)
+        if publication:
+            log(f"  {publication['publication_year']}  {re.sub('<[^>]+>', '', publication['title'])[:72]}")
+            publications.append(publication)
 
-    publications.sort(key=publication_sort_key, reverse=True)
-
-    payload = {
+    publications.sort(
+        key=lambda p: (int(p["publication_year"] or 0), int(p["publication_month"] or 0), p["title"].lower()),
+        reverse=True,
+    )
+    return {
         "generated_at_utc": datetime.now(timezone.utc).replace(microsecond=0).isoformat(),
         "orcid_id": ORCID_ID,
-        "publication_types": sorted(PUBLICATION_TYPES),
+        "count": len(publications),
+        "first_author_count": sum(1 for p in publications if p["first_author"]),
         "publications": publications,
     }
-    stats = {
-        "fetched_groups": len(groups),
-        "written_publications": len(publications),
-        "skipped_non_publication": skipped_non_publication,
-        "skipped_invalid": skipped_invalid,
-    }
-    return payload, stats
-
-
-def parse_args() -> argparse.Namespace:
-    parser = argparse.ArgumentParser(description="Sync ORCID publications into Jekyll data.")
-    parser.add_argument("--dry-run", action="store_true", help="Fetch and validate data without writing the output file.")
-    return parser.parse_args()
 
 
 def main() -> int:
-    args = parse_args()
+    parser = argparse.ArgumentParser(description=__doc__.splitlines()[0])
+    parser.add_argument("--dry-run", action="store_true", help="Fetch and print without writing the data file.")
+    args = parser.parse_args()
+
     try:
-        payload, stats = build_payload()
-    except Exception as exc:  # pragma: no cover
-        print(f"Publication sync failed: {exc}", file=sys.stderr)
+        payload = build_payload()
+    except Exception as exc:
+        print(f"Publication sync failed, existing data left untouched: {exc}", file=sys.stderr)
         return 1
 
-    if not args.dry_run:
-        OUTPUT_PATH.parent.mkdir(parents=True, exist_ok=True)
-        OUTPUT_PATH.write_text(json.dumps(payload, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
+    if payload["count"] == 0:
+        print("ORCID returned no publications; existing data left untouched.", file=sys.stderr)
+        return 1
 
-    log(
-        "Publication sync complete: "
-        f"{stats['written_publications']} written, "
-        f"{stats['skipped_non_publication']} skipped as non-publication, "
-        f"{stats['skipped_invalid']} skipped as invalid, "
-        f"{stats['fetched_groups']} ORCID groups scanned."
-    )
+    if OUTPUT_PATH.exists():
+        previous = json.loads(OUTPUT_PATH.read_text(encoding="utf-8"))
+        if previous.get("publications") == payload["publications"]:
+            log(f"No changes ({payload['count']} publications).")
+            return 0
+
+    if args.dry_run:
+        log(f"Dry run: {payload['count']} publications fetched, nothing written.")
+        return 0
+
+    OUTPUT_PATH.parent.mkdir(parents=True, exist_ok=True)
+    OUTPUT_PATH.write_text(json.dumps(payload, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
+    log(f"Wrote {payload['count']} publications ({payload['first_author_count']} first-author) to {OUTPUT_PATH}.")
     return 0
 
 
