@@ -1,11 +1,30 @@
 {
-  "generated_at_utc": "2026-09-28T15:43:27+00:00",
+  "generated_at_utc": "2026-10-01T11:14:51+00:00",
   "orcid_id": "0000-0002-6037-814X",
-  "count": 11,
+  "count": 12,
   "first_author_count": 8,
   "publications": [
     {
-      "put_code": 184872538,
+      "put_code": 228072008,
+      "title": "Oxytocin neural responses distinguish social novelty from familiarity but not kin from non‐kin in male spiny mice",
+      "type": "journal-article",
+      "publication_year": "2025",
+      "publication_month": 12,
+      "journal_title": "Journal of Neuroendocrinology",
+      "volume": "37",
+      "pages": "e70089",
+      "doi": "10.1111/jne.70089",
+      "url": "https://doi.org/10.1111/jne.70089",
+      "authors": [
+        "Esquilin‐Rodriguez, C.J.",
+        "Fricker, B.A.",
+        "Kelly, A.M."
+      ],
+      "authors_html": "Esquilin‐Rodriguez, C.J., <strong>Fricker, B.A.</strong>, Kelly, A.M.",
+      "first_author": false
+    },
+    {
+      "put_code": 228072015,
       "title": "Not just for bonding: Nucleus accumbens oxytocin receptors facilitate huddling with strangers and feeding in male spiny mice",
       "type": "journal-article",
       "publication_year": "2025",
@@ -25,7 +44,7 @@
       "first_author": true
     },
     {
-      "put_code": 184876274,
+      "put_code": 228072014,
       "title": "Cingulate to septal circuitry facilitates the preference to affiliate with large peer groups",
       "type": "journal-article",
       "publication_year": "2024",
@@ -66,7 +85,7 @@
       "first_author": true
     },
     {
-      "put_code": 161864365,
+      "put_code": 228072006,
       "title": "From grouping and cooperation to menstruation: Spiny mice (Acomys cahirinus) are an emerging mammalian model for sociality and beyond",
       "type": "journal-article",
       "publication_year": "2024",
@@ -84,7 +103,7 @@
       "first_author": true
     },
     {
-      "put_code": 161864371,
+      "put_code": 228072013,
       "title": "Biased brain and behavioral responses towards kin in males of a communally breeding species",
       "type": "journal-article",
       "publication_year": "2023",
@@ -104,7 +123,7 @@
       "first_author": true
     },
     {
-      "put_code": 136068818,
+      "put_code": 228072004,
       "title": "An AAV-CRISPR/Cas9 strategy for gene editing across divergent rodent species: Targeting neural oxytocin receptors as a proof of concept",
       "type": "journal-article",
       "publication_year": "2023",
@@ -133,7 +152,7 @@
       "first_author": false
     },
     {
-      "put_code": 161864369,
+      "put_code": 228072012,
       "title": "Partner separation rescues pair bond-induced decreases in hypothalamic oxytocin neural densities",
       "type": "journal-article",
       "publication_year": "2023",
@@ -153,7 +172,7 @@
       "first_author": true
     },
     {
-      "put_code": 161864367,
+      "put_code": 228072011,
       "title": "Protocol for multiplex fluorescent immunohistochemistry in free-floating rodent brain tissues",
       "type": "journal-article",
       "publication_year": "2022",
@@ -172,7 +191,7 @@
       "first_author": false
     },
     {
-      "put_code": 161864368,
+      "put_code": 228072005,
       "title": "Species-typical group size differentially influences social reward neural circuitry during nonreproductive social interactions",
       "type": "journal-article",
       "publication_year": "2022",
@@ -194,7 +213,7 @@
       "first_author": false
     },
     {
-      "put_code": 101185131,
+      "put_code": 228072010,
       "title": "Characterization of social behavior in the spiny mouse, <i>Acomys cahirinus</i>",
       "type": "journal-article",
       "publication_year": "2022",
@@ -213,7 +232,7 @@
       "first_author": true
     },
     {
-      "put_code": 94683647,
+      "put_code": 228072007,
       "title": "Activity-dependent long-term potentiation of electrical synapses in the mammalian thalamus",
       "type": "journal-article",
       "publication_year": "2021",
