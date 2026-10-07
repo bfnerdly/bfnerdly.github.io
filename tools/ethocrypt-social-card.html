@@ -1,0 +1,36 @@
+<!doctype html><html><head><meta charset="utf-8"><style>
+@font-face{font-family:AHN;src:url(../../ethocrypt/docs/fonts/atkinson-hyperlegible-next-latin-wght.woff2) format("woff2");font-weight:200 800}
+@font-face{font-family:AHM;src:url(../../ethocrypt/docs/fonts/atkinson-hyperlegible-mono-latin-wght.woff2) format("woff2");font-weight:200 800}
+*{box-sizing:border-box;margin:0}
+html,body{width:1200px;height:630px;overflow:hidden}
+body{background:#3D2848;color:#F8F0F5;font-family:AHN,sans-serif;position:relative}
+.wrap{position:absolute;inset:0;padding:78px 84px;display:grid;grid-template-columns:250px 1fr;gap:56px;align-items:center}
+.mark{width:250px;height:250px}
+h1{font-weight:800;font-size:96px;line-height:1;letter-spacing:-.025em}
+.tag{font-size:31px;font-weight:600;color:#E3BFD6;margin-top:16px}
+.sub{font-family:AHM;font-size:19px;color:#D8C6D3;margin-top:28px;letter-spacing:.02em}
+.strands{position:absolute;left:84px;right:84px;bottom:64px;display:grid;gap:12px}
+.strand{height:22px;border-radius:11px;display:flex;overflow:hidden;background:#4E3758}
+.strand span{display:block;height:100%}
+.ruler{position:absolute;left:84px;right:84px;bottom:136px;height:1px;background:#5c4567}
+.lab{position:absolute;right:84px;top:64px;font-family:AHM;font-size:16px;color:#B8A3B5;letter-spacing:.08em;text-transform:uppercase}
+</style></head><body>
+<div class="lab">Elya Lab · Harvard</div>
+<div class="wrap" style="bottom:130px">
+ <img class="mark" src="../assets/images/ethocrypt/ethocrypt_mark_dark.svg" alt="">
+ <div>
+  <h1>EthoCrypt</h1>
+  <p class="tag">Unsupervised behaviour mapping of zombie flies</p>
+  <p class="sub">mirror rig · recorder · desktop app · cluster pipeline</p>
+ </div>
+</div>
+<div class="strands" id="s"></div>
+<script>
+const pal=["#E6CCDB","#C493B4","#965C88","#6A3A62","#EDCD98","#D6AAC6","#82597C","#C79DBB","#E9DCC0"];
+let seed=21;const r=()=>{seed=(seed*16807)%2147483647;return seed/2147483647};
+const s=document.getElementById('s');
+for(let row=0;row<2;row++){const d=document.createElement('div');d.className='strand';let left=100;
+ while(left>0){const w=Math.min(left,1.2+r()*5.5);const sp=document.createElement('span');sp.style.width=w+'%';sp.style.background=pal[Math.floor(r()*pal.length)];d.appendChild(sp);left-=w}
+ s.appendChild(d)}
+</script>
+</body></html>

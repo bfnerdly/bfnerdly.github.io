@@ -41,6 +41,7 @@ Save a general (not job-specific) PDF as `assets/files/Fricker_Resume.pdf`, then
 
 `assets/images/social-card.jpg` (1200×630) is the preview shown when the site is shared. Its source is
 `tools/social-card.html`: edit it, open it in Chrome at 1200×630, and screenshot it to regenerate.
+The EthoCrypt page's card is `tools/ethocrypt-social-card.html` (it reads fonts from the sibling `ethocrypt` repo).
 
 ## Local preview
 

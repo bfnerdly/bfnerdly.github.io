@@ -43,7 +43,8 @@ links:
 #                free with the GitHub Student Developer Pack, while it stays private)
 #   repo_public: set true if/when the repository itself is made public
 ethocrypt:
-  pages_live: false
+  version: "0.3.0"   # shown in the EthoCrypt page's status pill
+  pages_live: true
   repo_public: false
   pages_url: https://bfnerdly.github.io/ethocrypt/
   field_guide_url: https://bfnerdly.github.io/ethocrypt/EthoCrypt_Field_Guide.html

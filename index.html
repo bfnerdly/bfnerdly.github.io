@@ -75,14 +75,14 @@ body_class: home
       <article class="card">
         <div class="feature-icon">{% include icon.html name="scan" %}</div>
         <h3>Machine learning &amp; computer vision</h3>
-        <p>Unsupervised discovery with foundation models (SAM 2, DINOv2), PCA/UMAP and clustering, plus validation so noise is never reported as a new segment.</p>
+        <p>Unsupervised discovery with foundation models (SAM 2, DINOv3), PCA/UMAP and clustering, plus validation so noise is never reported as a new segment.</p>
         <p class="from"><strong>In the lab:</strong> <a href="{{ '/projects/ethocrypt/' | relative_url }}">EthoCrypt</a>, a keypoint-free behavior-mapping pipeline.</p>
       </article>
       <article class="card">
         <div class="feature-icon">{% include icon.html name="server" %}</div>
         <h3>Data pipelines at scale</h3>
         <p>Config-driven, resumable GPU/CPU batch jobs with preflight validation and automated reports, built to be rerun by someone who isn't me.</p>
-        <p class="from"><strong>In the lab:</strong> Slurm pipelines on Harvard's FASRC Cannon cluster.</p>
+        <p class="from"><strong>In the lab:</strong> Slurm pipelines on Harvard's FASRC Cannon cluster, plus a desktop app that lets non-programmers run them.</p>
       </article>
       <article class="card">
         <div class="feature-icon">{% include icon.html name="present" %}</div>
@@ -100,13 +100,13 @@ body_class: home
       <div>
         <p class="kicker">Featured project</p>
         <h2>EthoCrypt</h2>
-        <p>Unsupervised behavior mapping of zombie flies. EthoCrypt watches every frame, discovers the behaviors on its own, tests whether each one is reproducible, and compares healthy with infected animals. No keypoints, no hand labels.</p>
+        <p>Unsupervised behavior mapping of zombie flies, end to end: a mirror rig and recorder, a desktop app that sends recordings to the cluster, and a pipeline that discovers behaviors on its own, tests whether each is reproducible, and compares healthy with infected flies. No keypoints, no hand labels, no command line.</p>
         <ul class="chips" aria-label="Stack">
-          <li>PyTorch</li><li>SAM 2</li><li>DINOv2</li><li>UMAP</li><li>Slurm</li>
+          <li>PyTorch</li><li>SAM 2</li><li>DINOv3</li><li>UMAP</li><li>Slurm</li><li>Tauri · Rust</li>
         </ul>
         <p style="margin-top:22px"><span class="btn">Explore EthoCrypt {% include icon.html name="arrow" %}</span></p>
       </div>
-      <img class="promo__logo" src="{{ '/assets/images/ethocrypt/ethocrypt_icon.svg' | relative_url }}" alt="" width="260" height="260">
+      <img class="promo__logo" src="{{ '/assets/images/ethocrypt/ethocrypt_mark_dark.svg' | relative_url }}" alt="" width="260" height="260">
     </a>
   </div>
 </section>
