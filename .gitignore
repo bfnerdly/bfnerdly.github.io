@@ -8,3 +8,10 @@ __pycache__/
 *.pyc
 .DS_Store
 .claude/
+
+# Impeccable working files (the surface brief in .impeccable/surfaces is kept)
+.impeccable/review/
+.impeccable/questions/
+.impeccable/live/
+.impeccable/mocks/
+.impeccable/critique/

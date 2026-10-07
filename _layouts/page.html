@@ -2,12 +2,12 @@
 layout: default
 ---
 {% if page.hide_title != true %}
-<header class="page-head wrap">
-  {% if page.kicker %}<p class="kicker">{{ page.kicker }}</p>{% endif %}
-  <h1 class="page-title">{{ page.heading | default: page.title }}</h1>
-  {% if page.lede %}<p class="lede">{{ page.lede }}</p>{% endif %}
+<header class="page-head">
+  {% include dots.html %}
+  <div class="wrap">
+    <h1>{{ page.heading | default: page.title }}</h1>
+    {% if page.lede %}<p class="lede">{{ page.lede }}</p>{% endif %}
+  </div>
 </header>
 {% endif %}
-<div class="page-body{% if page.prose %} wrap prose{% endif %}">
-  {{ content }}
-</div>
+{{ content }}

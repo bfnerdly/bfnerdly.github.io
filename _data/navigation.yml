@@ -1,11 +1,9 @@
-# Top navigation. Order here is the order on the site.
-- title: About
-  url: /about/
+# Top navigation, in order. Contact is the header's action button, not a nav link.
+# "match" marks a section as current for every URL under it (so /projects/ethocrypt/ lights Projects).
 - title: Projects
   url: /projects/
-- title: EthoCrypt
-  url: /projects/ethocrypt/
+  match: /projects/
 - title: Publications
   url: /publications/
-- title: Contact
-  url: /contact/
+- title: About
+  url: /about/

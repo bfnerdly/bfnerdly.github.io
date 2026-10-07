@@ -5,8 +5,10 @@
 #   title:        replaces the synced title (HTML allowed, e.g. <i>species</i>)
 #   authors_html: replaces the synced author line (HTML allowed)
 #   note:         small line under the authors, e.g. "* Equal contribution"
+#   clusters:     which behavior-map regions the paper belongs to (ids from _data/clusters.yml)
 
 "10.1016/j.cub.2024.08.019":
+  clusters: [c4, c3]
   featured: true
   summary: >-
     Male spiny mice prefer to join larger peer groups. Chemogenetically silencing one
@@ -14,6 +16,7 @@
     causal test of a single circuit, with a matched non-social control.
 
 "10.1016/j.psyneuen.2025.107496":
+  clusters: [c4, c2]
   featured: true
   summary: >-
     Gene-editing (AAV-CRISPR/Cas9) knockdown of oxytocin receptors in the nucleus
@@ -21,22 +24,42 @@
     spiny mice.
 
 "10.1038/s41598-023-44257-6":
+  clusters: [c3, c1]
   featured: true
   summary: >-
     Kinship cues bias both behavior and neural responses in males of a communally
     breeding species, shaping who they choose to affiliate with.
 
 "10.1038/s41598-023-32076-8":
+  clusters: [c3]
   summary: >-
     Pair bonding lowers hypothalamic oxytocin neuron densities in prairie voles;
     separating the pair reverses the effect.
 
 "10.1016/j.bbr.2024.115181":
+  clusters: [c3]
   authors_html: "<strong>Fricker, B.A.</strong>*, Jiang, J.*, Esquilin-Rodriguez, C.J., Dowling, M.L., Kelly, A.M."
   note: "* Equal contribution"
 
 "10.1016/j.yhbeh.2023.105462":
+  clusters: [c3]
   title: "From grouping and cooperation to menstruation: Spiny mice (<i>Acomys cahirinus</i>) are an emerging mammalian model for sociality and beyond"
 
 "10.1152/jn.00471.2020":
+  clusters: [c4, c1]
   authors_html: "<strong>Fricker, B.A.</strong>, Heckman, E., Cunningham, P.C., Wang, H., Haas, J.S."
+
+"10.1111/jne.70089":
+  clusters: [c3, c1]
+
+"10.1126/sciadv.adf4950":
+  clusters: [c2, c4]
+
+"10.1016/j.xpro.2022.101672":
+  clusters: [c2]
+
+"10.1016/j.isci.2022.104230":
+  clusters: [c3, c1]
+
+"10.1111/eth.13234":
+  clusters: [c3]

@@ -10,259 +10,131 @@ touch_icon: /assets/images/ethocrypt/ethocrypt_icon_180.png
 {%- assign eth = site.ethocrypt -%}
 {%- assign img = '/assets/images/ethocrypt/' | relative_url -%}
 
-<section class="eth-hero">
-  <div class="wrap">
-    <img class="eth-lockup only-light" src="{{ img }}ethocrypt_lockup.svg" alt="EthoCrypt" width="460" height="134">
-    <img class="eth-lockup only-dark" src="{{ img }}ethocrypt_lockup_dark.svg" alt="EthoCrypt" width="460" height="134">
-    <div><span class="pill pill--gold"><span class="pill__dot" aria-hidden="true"></span>Pre-release · v{{ eth.version }} · first real recordings running on FASRC; settings not frozen yet</span></div>
-    <h1 class="visually-hidden">EthoCrypt</h1>
-    <p class="lede">
-      <strong>Unsupervised behavior mapping of zombie flies.</strong> EthoCrypt films one fruit fly from above
-      and below, sorts every moment into behaviors it discovers on its own, checks that each behavior is real,
-      and compares healthy flies with <em>Entomophthora muscae</em>-infected ones. No keypoints, no skeletons,
-      no trained detectors, and no command line for the people running it.
-    </p>
-    <div class="btn-row">
-      {% if eth.pages_live %}
-        <a class="btn" href="{{ eth.field_guide_url }}" rel="noopener">Field Guide {% include icon.html name="external" %}</a>
-        <a class="btn btn--ghost" href="{{ eth.report_url }}" rel="noopener">Example run report {% include icon.html name="external" %}</a>
-      {% else %}
-        <span class="btn" aria-disabled="true">{% include icon.html name="lock" %} Field Guide · coming soon</span>
-        <span class="btn btn--ghost" aria-disabled="true">Example report · coming soon</span>
-      {% endif %}
-      {% if eth.repo_public %}
-        <a class="btn btn--ghost" href="{{ eth.repo_url }}" rel="noopener">{% include icon.html name="github" %} Code on GitHub</a>
-      {% endif %}
+<header class="page-head">
+  <div class="wrap eth-hero">
+    <div>
+      <img class="eth-hero__lockup" src="{{ img }}ethocrypt_lockup_dark.svg" alt="EthoCrypt" width="400" height="117">
+      <h1 class="visually-hidden">EthoCrypt</h1>
+      <p class="lede"><strong>Unsupervised behavior mapping of zombie flies.</strong> EthoCrypt films one fruit fly from above and below, sorts every moment into behaviors it discovers on its own, checks that each behavior is real, and compares healthy flies with <em>Entomophthora muscae</em>-infected ones. No keypoints, no hand labels, and no command line for the people running it.</p>
+      <div class="btn-row">
+        {% if eth.pages_live %}
+          <a class="btn" href="{{ eth.field_guide_url }}" rel="noopener">Field Guide {% include icon.html name="external" %}</a>
+          <a class="btn btn--line" href="{{ eth.report_url }}" rel="noopener">Example run report {% include icon.html name="external" %}</a>
+        {% else %}
+          <span class="btn" aria-disabled="true">{% include icon.html name="lock" %} Field Guide coming soon</span>
+        {% endif %}
+        {% if eth.repo_public %}<a class="btn btn--line" href="{{ eth.repo_url }}" rel="noopener">{% include icon.html name="github" %} Code</a>{% endif %}
+      </div>
+      <p class="eth-status"><b>Pre-release, v{{ eth.version }}.</b> Running on its first real recordings on Harvard's cluster; settings aren't frozen yet.{% unless eth.repo_public %} The code is private until the paper.{% endunless %}</p>
     </div>
-    {% unless eth.pages_live %}
-      <p class="eth-note">{% include icon.html name="lock" %} The code is private while in pre-release. The Field Guide, with live demos, and an example run report will be published here soon.</p>
-    {% endunless %}
+    <figure class="fig eth-hero__shot">
+      <img src="{{ img }}app-experiment-dark.jpg" alt="EthoCrypt desktop app, experiment page: a stage line from Find fly to Report for the top and bottom camera views, and each fly drawn as a strand colored by its most common behavior every 10 seconds" width="1600" height="1000">
+    </figure>
+  </div>
+</header>
+
+<section class="band" aria-labelledby="why-h" data-c="c1 c2 c3">
+  <div class="wrap">
+    <div class="band__head">
+      <div>
+        <h2 id="why-h">Why it matters beyond flies</h2>
+        <p>Strip away the fruit flies and EthoCrypt solves a familiar data problem: find natural segments in high-dimensional behavior, prove they're real, and put the answer in front of the people who decide.</p>
+      </div>
+    </div>
+    <div class="why">
+      <div>
+        <h3>Discovery without labels</h3>
+        <p>Pretrained vision models describe every frame, and behaviors emerge as clusters on a map. Nobody decides in advance what to count.</p>
+      </div>
+      <div>
+        <h3>Never over-claim a segment</h3>
+        <p>Each cluster is tested across random seeds and held-out animals, checked for confounds like body size, and statistics count each animal once.</p>
+      </div>
+      <div>
+        <h3>Built for the people who use it</h3>
+        <p>A desktop app turns a cluster pipeline into four screens, so an undergraduate can record, upload and run an analysis on day one.</p>
+      </div>
+    </div>
   </div>
 </section>
 
-<section class="section section--tint">
+<section class="band band--tint" aria-labelledby="system-h">
   <div class="wrap">
-    <div class="section__head">
+    <div class="band__head">
       <div>
-        <p class="kicker">One system</p>
-        <h2>From a fly in the rig to a behavior you can trust</h2>
-        <p>EthoCrypt started as a cluster pipeline. It is now the whole path: hardware to film the fly, software to record it, an app to send it to the cluster, and a report to read the result.</p>
+        <h2 id="system-h">One system, four parts</h2>
+        <p>EthoCrypt started as a cluster pipeline. It is now the whole path from a fly in the rig to a result.</p>
       </div>
     </div>
-    <ol class="flow">
-      <li class="card">
-        <span class="flow__step">01 · Film</span>
-        <h3>Mirror rig</h3>
-        <p>Two 45° mirrors show one camera the fly from above and below at once, under infrared light, so recordings run through the night.</p>
-      </li>
-      <li class="card">
-        <span class="flow__step">02 · Record</span>
-        <h3>Recorder</h3>
-        <p>Fixes the camera settings, cuts out and flips each view, saves hourly files with a timestamp per frame, and writes the metadata the pipeline reads.</p>
-      </li>
-      <li class="card">
-        <span class="flow__step">03 · Send</span>
-        <h3>Desktop app</h3>
-        <p>Signs in to the cluster, uploads the recording, starts the analysis from a lab preset and shows each fly's progress. No terminal, no Slurm.</p>
-      </li>
-      <li class="card">
-        <span class="flow__step">04 · Read</span>
-        <h3>Pipeline &amp; report</h3>
-        <p>Ten GPU/CPU stages on Harvard's FASRC cluster end in one interactive report: what differs between groups, every cluster's clip, and a verdict on each.</p>
-      </li>
+    <ol class="flowline">
+      <li><h3>Film</h3><p>A mirror rig shows one camera the fly from above and below at once, under infrared light, so recordings run through the night.</p></li>
+      <li><h3>Record</h3><p>The recorder fixes camera settings, splits the two views, and saves hourly files with a timestamp for every frame.</p></li>
+      <li><h3>Send</h3><p>The desktop app signs in to the cluster, resumes uploads that drop, starts the analysis from a lab preset and shows each fly's progress.</p></li>
+      <li><h3>Read</h3><p>A GPU pipeline ends in one report: what differs between groups, a clip of every behavior, and a verdict on each.</p></li>
     </ol>
   </div>
 </section>
 
-<section class="section">
+<section class="band" aria-labelledby="app-h">
   <div class="wrap">
-    <div class="section__head">
+    <div class="band__head">
       <div>
-        <p class="kicker">New in 0.3 · The desktop app</p>
-        <h2>Built so an undergraduate can run it on day one</h2>
-        <p>The people who record flies are biologists, often undergraduates with little coding experience. The app hides the cluster behind four screens: Today, Record, Recordings and Experiments.</p>
+        <h2 id="app-h">The desktop app</h2>
+        <p>Tracking quality is rated good, check or poor for every fly, with the reasons and the exact frames flagged. Shown here with demo data.</p>
       </div>
     </div>
-    <figure class="shot">
-      <img class="only-light" src="{{ img }}app-today.jpg" alt="EthoCrypt desktop app, Today screen: a recorded fly ready to upload, a fly being tracked on the cluster shown as a filling progress strand for its top and bottom views, and finished reports" width="1600" height="1000" loading="lazy">
-      <img class="only-dark" src="{{ img }}app-today-dark.jpg" alt="EthoCrypt desktop app, Today screen in dark mode" width="1600" height="1000" loading="lazy">
-      <figcaption>The Today screen: what needs you, each fly's progress as a "strand" that fills in as the cluster works, and the finished reports. Demo data.</figcaption>
-    </figure>
-    <div class="grid grid--3" style="margin-top: 28px;">
-      <article class="card">
-        <div class="feature-icon">{% include icon.html name="lock" %}</div>
-        <h3>One sign-in, one connection</h3>
-        <p>A Rust core holds a single connection to the cluster (password and two-factor code, or a key on Harvard networks) for uploads, jobs and progress, so nobody hits the cluster's session limit.</p>
-      </article>
-      <article class="card">
-        <div class="feature-icon">{% include icon.html name="server" %}</div>
-        <h3>Uploads and runs that survive</h3>
-        <p>Uploads resume where they stopped. Adding a fly only processes the new videos, then rebuilds the map and report across every fly. Flies can be pulled in from another experiment without redoing their work.</p>
-      </article>
-      <article class="card">
-        <div class="feature-icon">{% include icon.html name="check" %}</div>
-        <h3>Tracking quality, in plain words</h3>
-        <p>Every fly and view gets good / check / poor, with reasons (frames missed, long gaps, outlines the wrong size, jumps) and pictures of the exact moments flagged.</p>
-      </article>
-    </div>
-    <figure class="shot" style="margin-top: 28px;">
-      <img class="only-light" src="{{ img }}app-experiment.jpg" alt="EthoCrypt desktop app, experiment page: a stage line from Find fly to Report for the top and bottom views, and each fly's recording as a strand colored by its most common behavior every 10 seconds" width="1600" height="1000" loading="lazy">
-      <img class="only-dark" src="{{ img }}app-experiment-dark.jpg" alt="EthoCrypt desktop app, experiment page in dark mode" width="1600" height="1000" loading="lazy">
-      <figcaption>An experiment: the run's stage line for each camera view, and each fly as a strand, colored by its most common behavior every 10 seconds once it's on the map. Demo data.</figcaption>
-    </figure>
-  </div>
-</section>
-
-<section class="section section--tint">
-  <div class="wrap">
-    <div class="section__head">
-      <div>
-        <p class="kicker">The problem</p>
-        <h2>Scoring behavior by eye doesn't scale, and it misses what you didn't know to look for</h2>
-        <p>The fungus changes a fly's behavior in ways that are dramatic at the end and subtle before it. To catch the subtle part, you need to measure everything, without deciding in advance what to count.</p>
-      </div>
-    </div>
-    <div class="compare">
-      <div>
-        <h3>Typical approach</h3>
-        <ul>
-          <li>Hand-score a few predefined behaviors</li>
-          <li>Or train a pose tracker on thousands of labeled keypoints</li>
-          <li>Categories fixed before the data are seen</li>
-          <li>Hard to tell a real new behavior from clustering noise</li>
-        </ul>
-      </div>
-      <div>
-        <h3>EthoCrypt</h3>
-        <ul>
-          <li>Segments the whole fly automatically with a foundation model</li>
-          <li>No labels, keypoints or training needed</li>
-          <li>Behaviors emerge from the data and are named afterwards</li>
-          <li>Every cluster is stress-tested for reproducibility before it's reported</li>
-        </ul>
-      </div>
+    <div class="shots">
+      <figure class="fig">
+        <img class="only-light" src="{{ img }}app-today.jpg" alt="Today screen: a recorded fly ready to upload, a fly being tracked shown as a filling strand, and finished reports" width="1600" height="1000" loading="lazy">
+        <img class="only-dark" src="{{ img }}app-today-dark.jpg" alt="Today screen in dark mode" width="1600" height="1000" loading="lazy">
+        <figcaption><b>Fig. 1</b> Today: what needs you, each fly's progress, finished reports.</figcaption>
+      </figure>
+      <figure class="fig">
+        <img class="only-light" src="{{ img }}app-experiment.jpg" alt="Experiment screen: stage line per camera view and each fly as a strand colored by behavior" width="1600" height="1000" loading="lazy">
+        <img class="only-dark" src="{{ img }}app-experiment-dark.jpg" alt="Experiment screen in dark mode" width="1600" height="1000" loading="lazy">
+        <figcaption><b>Fig. 2</b> An experiment: each fly as a strand, colored by its most common behavior every 10 seconds.</figcaption>
+      </figure>
     </div>
   </div>
 </section>
 
-<section class="section">
-  <div class="wrap">
-    <div class="section__head">
-      <div>
-        <p class="kicker">How it works</p>
-        <h2>Ten stages, from raw video to a validated behavior map</h2>
-        <p>Each stage is a resumable batch job on Harvard's FASRC Cannon cluster, safe to pre-empt. A preflight check catches missing videos, metadata mismatches or model weights in seconds, before anything is queued.</p>
-      </div>
+<section class="band band--tint" aria-labelledby="how-h">
+  <div class="wrap two-col">
+    <div class="prose">
+      <h2 id="how-h">How the analysis works</h2>
+      <p>A foundation model (SAM 2) outlines the fly in every frame. Another (DINOv3) describes each body region, and optical flow measures how the legs and wings move. Those numbers are compressed, laid out on a two-dimensional map, and the dense regions become candidate behaviors.</p>
+      <p>Before anything is reported, each behavior has to reappear with new random seeds and in maps built from different flies. Then the groups are compared fly by fly.</p>
+      <details class="stages">
+        <summary>All ten stages</summary>
+        <ol>
+          <li><b>Find the fly</b>: model the empty arena; the fly is what differs</li>
+          <li><b>Follow it</b>: SAM 2 tracks a full-body outline</li>
+          <li><b>Line it up</b>: crop, scale and rotate every frame</li>
+          <li><b>Describe it</b>: DINOv3 per body region, plus optical flow</li>
+          <li><b>Compress</b>: PCA, with the variance kept reported</li>
+          <li><b>Add time</b>: wavelet rhythms or short frame windows</li>
+          <li><b>Map and cluster</b>: UMAP, then dense peaks</li>
+          <li><b>Zoom in</b>: re-map one behavior into sub-types</li>
+          <li><b>Check it's real</b>: seeds, held-out flies, confounds</li>
+          <li><b>Compare</b>: time budgets, bouts and transitions per fly</li>
+        </ol>
+      </details>
     </div>
-    <ol class="pipeline">
-      <li><span class="stage-tag">CPU</span><strong>Find the fly</strong><span>Model the empty arena; the fly is whatever differs from it.</span></li>
-      <li><span class="stage-tag stage-tag--gpu">GPU</span><strong>Follow it</strong><span>SAM 2 tracks a full-body outline, legs and wings included, through every frame.</span></li>
-      <li><span class="stage-tag stage-tag--gpu">GPU</span><strong>Line it up</strong><span>Crop, scale and rotate so every fly is the same size and orientation.</span></li>
-      <li><span class="stage-tag stage-tag--gpu">GPU</span><strong>Describe it</strong><span>DINOv3 features per body region, plus optical flow for limb and wing motion.</span></li>
-      <li><span class="stage-tag">CPU</span><strong>Compress</strong><span>PCA, with the variance retained reported every run.</span></li>
-      <li><span class="stage-tag">CPU</span><strong>Add time</strong><span>Wavelet rhythms (Berman) or short frame windows (CASTLE).</span></li>
-      <li><span class="stage-tag">CPU</span><strong>Map &amp; cluster</strong><span>UMAP lays every moment on a 2-D map; dense peaks become candidate behaviors.</span></li>
-      <li><span class="stage-tag">CPU</span><strong>Zoom in</strong><span>The behavior microscope re-maps one behavior to split it into sub-types.</span></li>
-      <li><span class="stage-tag">CPU</span><strong>Check it's real</strong><span>Does each cluster survive new random seeds and held-out flies?</span></li>
-      <li><span class="stage-tag">CPU</span><strong>Compare</strong><span>Time budgets, bout lengths and transitions: healthy vs infected, per fly.</span></li>
-    </ol>
-  </div>
-</section>
-
-<section class="section section--tint">
-  <div class="wrap">
-    <div class="grid grid--3">
-      <article class="card">
-        <div class="feature-icon">{% include icon.html name="scan" %}</div>
-        <h3>Keypoint-free</h3>
-        <p>SAM 2 outlines the fly, DINOv3 (or DINOv2) describes each body region, and optical flow measures limb and wing motion relative to the body. Nothing has to be hand-labeled.</p>
-      </article>
-      <article class="card">
-        <div class="feature-icon">{% include icon.html name="chart" %}</div>
-        <h3>Two ways to add time</h3>
-        <p>Berman-style wavelet spectra, as in MotionMapper, capture rhythmic movements like grooming. CASTLE-style short windows capture brief transitions.</p>
-      </article>
-      <article class="card">
-        <div class="feature-icon">{% include icon.html name="target" %}</div>
-        <h3>Behavior microscope</h3>
-        <p>Name a behavior (say, "grooming"), then rebuild the map from only those frames to split it into sub-types and microbehaviors that the whole-repertoire map blurs together.</p>
-      </article>
-      <article class="card">
-        <div class="feature-icon">{% include icon.html name="check" %}</div>
-        <h3>Never over-claim a behavior</h3>
-        <p>Each cluster is tested across random seeds, split halves of the flies, per-fly prevalence and nuisance factors like body size, then marked reproducible, intermediate or unstable.</p>
-      </article>
-      <article class="card">
-        <div class="feature-icon">{% include icon.html name="split" %}</div>
-        <h3>The fly is the unit</h3>
-        <p>A long recording saved as hourly files still counts as one fly: files that share a fly ID are pooled before any test, so ten hours of one fly can't pass for ten flies.</p>
-      </article>
-      <article class="card">
-        <div class="feature-icon">{% include icon.html name="present" %}</div>
-        <h3>A report that leads with the answer</h3>
-        <p>Each map opens on "What differs" between groups, then a review queue sorted by verdict, then the explorable map. Lab members name clusters, or mark "no clear behavior", in the browser.</p>
-      </article>
-    </div>
-  </div>
-</section>
-
-<section class="section">
-  <div class="wrap feature">
-    <div>
-      <p class="kicker">Hardware</p>
-      <h2>The mirror rig</h2>
-      <p>The fly walks in a flat chamber 1.6 mm deep, between two glass cover slips. A mirror at 45° above it and one below turn both sides toward one camera on the same rail, so a single picture shows the fly from above and from below.</p>
-      <p>Infrared LED strips light it and an 850 nm filter on the lens blocks visible light, so recordings can run through the flies' dark phase, when the zombie behaviors happen.</p>
-      <ul class="chips" aria-label="Parts">
-        <li>FLIR Blackfly S</li><li>850 nm IR filter</li><li>IR LED strips</li><li>1 × 3 in T-slot rail</li><li>3-D printed housing</li>
-      </ul>
-    </div>
-    <figure>
-      <img src="{{ img }}ethocrypt_rig.jpg" alt="3-D render of the EthoCrypt mirror rig: a black printed housing with an upper and lower 45° mirror around a flat chamber, and a camera with an IR filter facing it along a T-slot rail" width="1600" height="830" loading="lazy" style="aspect-ratio: 1600 / 830; object-fit: contain; background: #F4F0F3;">
-      <figcaption>Rendered from the lab's CAD model of the rig.</figcaption>
+    <figure class="fig">
+      <div class="rig"><img src="{{ img }}ethocrypt_rig.jpg" alt="3-D render of the EthoCrypt mirror rig: a printed housing holding an upper and a lower 45° mirror around a flat chamber, facing a camera with an infrared filter along a rail" width="1600" height="830" loading="lazy"></div>
+      <figcaption><b>Fig. 3</b> The mirror rig, rendered from the lab's CAD model: FLIR Blackfly S camera, 850 nm IR filter, IR LED strips, a 1.6 mm-deep chamber between cover slips.</figcaption>
     </figure>
   </div>
 </section>
 
-<section class="section section--tint">
-  <div class="wrap feature">
-    <div>
-      <p class="kicker">Beyond flies</p>
-      <h2>Behavioral segmentation, shipped as a product</h2>
-      <p>Strip away the fruit flies and EthoCrypt solves a familiar data-science problem: <strong>find natural segments in high-dimensional behavioral data, prove they're real, and put the answer in front of the people who decide</strong>.</p>
-      <ul>
-        <li><strong>Representation learning</strong> with pretrained foundation models instead of hand-built features.</li>
-        <li><strong>Segment validation</strong>: stability across seeds and held-out subjects, and checks that no single subject drives a segment.</li>
-        <li><strong>The right unit of analysis</strong>: statistics per fly, never pooled frames, the same discipline as per-user rather than per-event metrics in an A/B test.</li>
-        <li><strong>Designed around its users</strong>: written product principles, a design system shared by the app, report and docs, and plain-language status everywhere.</li>
-      </ul>
+<section class="band" aria-labelledby="credits-h">
+  <div class="wrap two-col">
+    <div class="prose">
+      <h2 id="credits-h">Credits</h2>
+      <p>Built by Brandon Fricker in the <a href="https://carolynelya.com/" rel="noopener">Elya Lab</a>, Harvard University. A standalone, cluster-friendly reimplementation of the <a href="https://doi.org/10.1101/2025.08.22.671685" rel="noopener">CASTLE</a> approach (Liu et al., 2025), with movement encoding after <a href="https://doi.org/10.1098/rsif.2014.0672" rel="noopener">Berman et al. (2014)</a>. Licensed GPL-3.0-or-later.</p>
     </div>
-    <div class="card">
-      <h3>Product principles</h3>
-      <ol class="principles">
-        <li><strong>Anyone in the lab can act on it</strong> without machine-vision or command-line training.</li>
-        <li><strong>Never over-claim a behavior.</strong> Uncertain results look uncertain.</li>
-        <li><strong>Failure is visible and recoverable.</strong> Missing inputs and failed jobs surface as plain "needs attention" items, never silent gaps.</li>
-        <li><strong>Outputs that go into papers stay neutral.</strong> Figures and clips serve the science, not the brand.</li>
-      </ol>
-    </div>
+    <p class="muted">Python 3.11, PyTorch, SAM 2, DINOv3, OpenCV, scikit-learn, umap-learn, pandas, h5py, Slurm on Harvard's FASRC Cannon cluster; a Tauri 2 desktop app with a Rust core; camera control through FLIR's Spinnaker SDK.</p>
   </div>
 </section>
 
-<section class="section">
-  <div class="wrap grid grid--2">
-    <div class="card">
-      <h3>Stack</h3>
-      <ul class="chips">
-        <li>Python 3.11</li><li>PyTorch</li><li>SAM 2</li><li>DINOv3 / DINOv2</li><li>OpenCV</li>
-        <li>scikit-learn</li><li>umap-learn</li><li>pandas</li><li>h5py</li><li>Slurm</li><li>FASRC Cannon</li>
-        <li>Tauri 2</li><li>Rust</li><li>HTML / CSS / JS</li><li>PySpin · Spinnaker</li><li>GitHub Actions</li>
-      </ul>
-    </div>
-    <div class="card credits">
-      <h3>Credits &amp; license</h3>
-      <p>Built by Brandon Fricker in the <a href="https://carolynelya.com/" rel="noopener">Elya Lab</a>, Harvard University. A standalone, cluster-friendly reimplementation of the <a href="https://doi.org/10.1101/2025.08.22.671685" rel="noopener">CASTLE</a> approach (Liu et al., 2025), with movement encoding after <a href="https://doi.org/10.1098/rsif.2014.0672" rel="noopener">Berman et al. (2014)</a>.</p>
-      <p>Licensed GPL-3.0-or-later. If you use EthoCrypt, please cite it along with CASTLE and Berman et al.</p>
-    </div>
-  </div>
-</section>
+{% include close.html heading="Questions about EthoCrypt, or data like this?" text="I'm glad to walk through the design, the validation, or how it could apply to your problem." %}

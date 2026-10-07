@@ -10,7 +10,7 @@ lang: en_US
 timezone: America/New_York
 
 # Shown as a small status pill on the home page. Delete the line to hide it.
-open_to: "Open to decision science, experimentation & behavioral data science roles"
+open_to: "Open to data science, biostatistics and decision science roles"
 
 author:
   name: "Brandon Fricker"
@@ -82,6 +82,8 @@ defaults:
       layout: page
 
 exclude:
+  - PRODUCT.md
+  - DESIGN.md
   - Gemfile
   - Gemfile.lock
   - README.md

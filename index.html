@@ -1,160 +1,254 @@
 ---
 layout: default
-title: "Brandon Fricker, PhD · Behavioral neuroscientist & decision scientist"
-body_class: home
+title: "Brandon Fricker, PhD · Data scientist & behavioral neuroscientist"
+description: "Brandon Fricker, PhD: I turn messy, high-dimensional behavior data into clear answers, and build the tools that get there. Data science, biostatistics and experimentation."
+map: true
 ---
 {%- assign pubs = site.data.orcid_publications.publications -%}
-{%- assign first_count = pubs | where: "first_author", true | size -%}
+{%- assign eth = site.ethocrypt -%}
 
-<section class="hero">
-  <div class="wrap hero__grid">
-    <div>
-      {% if site.open_to %}<span class="pill"><span class="pill__dot" aria-hidden="true"></span>{{ site.open_to }}</span>{% endif %}
-      <h1>Brandon Fricker<span class="accent">, PhD</span></h1>
-      <p class="hero__role">Behavioral neuroscientist &amp; decision scientist</p>
-      <p class="hero__lede">
-        I design controlled experiments, measure behavior at scale, and turn noisy, high-dimensional
-        data into decisions people can act on.
-      </p>
-      <p class="hero__lede">
-        At Harvard I study how a fungus hijacks a fly's brain. The toolkit behind that work
-        (randomized and blinded designs, causal interventions, time-to-event and time-series models,
-        and ML pipelines on GPU clusters) is the same one that drives product experimentation.
-      </p>
-      <div class="btn-row">
-        <a class="btn" href="#toolkit">How I work {% include icon.html name="arrow" %}</a>
-        <a class="btn btn--ghost" href="{{ '/projects/ethocrypt/' | relative_url }}">EthoCrypt</a>
-        {% if site.links.cv != "" %}<a class="btn btn--ghost" href="{{ site.links.cv | relative_url }}">{% include icon.html name="file" %} Résumé</a>{% endif %}
-        <a class="btn btn--ghost" href="{{ site.links.linkedin }}" rel="noopener">{% include icon.html name="linkedin" %} LinkedIn</a>
-      </div>
-    </div>
-    <figure class="portrait">
-      <img src="{{ '/assets/images/headshot-square.jpg' | relative_url }}" alt="Portrait of Brandon Fricker" width="640" height="640" fetchpriority="high">
-      <figcaption><strong>Postdoctoral Fellow</strong>Harvard University · Elya Lab</figcaption>
-    </figure>
-  </div>
-</section>
-
-<section class="wrap" aria-label="At a glance">
-  <div class="stats">
-    <div class="stat"><div class="stat__num">{{ pubs.size }}</div><div class="stat__label">peer-reviewed publications</div></div>
-    <div class="stat"><div class="stat__num">{{ first_count }}</div><div class="stat__label">as first author, incl. <em>Current Biology</em></div></div>
-    <div class="stat"><div class="stat__num">NDSEG</div><div class="stat__label">3-year U.S. Department of Defense fellowship</div></div>
-    <div class="stat"><div class="stat__num">4</div><div class="stat__label">species studied, from voles to fruit flies</div></div>
-  </div>
-</section>
-
-<section class="section" id="toolkit">
-  <div class="wrap">
-    <div class="section__head">
-      <div>
-        <p class="kicker">Research skills → industry outcomes</p>
-        <h2>What I bring to a data team</h2>
-        <p>Neuroscience is applied decision science under hard constraints: small samples, noisy signals, expensive experiments and real stakes on getting the causal story right.</p>
-      </div>
-    </div>
-    <div class="grid grid--3">
-      <article class="card">
-        <div class="feature-icon">{% include icon.html name="split" %}</div>
-        <h3>Experimentation &amp; A/B testing</h3>
-        <p>Randomized, blinded, controlled designs with pre-specified comparisons and adequate power. Define the metric, randomize, remove confounds, then make the call.</p>
-        <p class="from"><strong>In the lab:</strong> treatment-vs-control behavioral assays, plus a blinded re-scoring audit I built (BlindTOD) to test a key outcome metric for bias.</p>
-      </article>
-      <article class="card">
-        <div class="feature-icon">{% include icon.html name="target" %}</div>
-        <h3>Causal inference</h3>
-        <p>Correlation is where I start, not where I stop. I test mechanisms by intervening directly, then confirm the effect is specific with matched controls.</p>
-        <p class="from"><strong>In the lab:</strong> chemogenetic circuit silencing and CRISPR knockdowns with non-social control conditions.</p>
-      </article>
-      <article class="card">
-        <div class="feature-icon">{% include icon.html name="chart" %}</div>
-        <h3>Behavioral &amp; time-series analytics</h3>
-        <p>Survival (time-to-event) models, rhythms and periodicity, bout and transition analysis: the same math as retention, seasonality and user funnels.</p>
-        <p class="from"><strong>In the lab:</strong> circadian activity, periodograms and time-of-death analyses in infected flies.</p>
-      </article>
-      <article class="card">
-        <div class="feature-icon">{% include icon.html name="scan" %}</div>
-        <h3>Machine learning &amp; computer vision</h3>
-        <p>Unsupervised discovery with foundation models (SAM 2, DINOv3), PCA/UMAP and clustering, plus validation so noise is never reported as a new segment.</p>
-        <p class="from"><strong>In the lab:</strong> <a href="{{ '/projects/ethocrypt/' | relative_url }}">EthoCrypt</a>, a keypoint-free behavior-mapping pipeline.</p>
-      </article>
-      <article class="card">
-        <div class="feature-icon">{% include icon.html name="server" %}</div>
-        <h3>Data pipelines at scale</h3>
-        <p>Config-driven, resumable GPU/CPU batch jobs with preflight validation and automated reports, built to be rerun by someone who isn't me.</p>
-        <p class="from"><strong>In the lab:</strong> Slurm pipelines on Harvard's FASRC Cannon cluster, plus a desktop app that lets non-programmers run them.</p>
-      </article>
-      <article class="card">
-        <div class="feature-icon">{% include icon.html name="present" %}</div>
-        <h3>Communicating to decision-makers</h3>
-        <p>Clear narratives from complex data: {{ pubs.size }} peer-reviewed papers, conference talks, a competitive federal fellowship, and interactive reports for non-specialists.</p>
-        <p class="from"><strong>In the lab:</strong> plain-language field guides and HTML run reports for colleagues new to machine vision.</p>
-      </article>
-    </div>
-  </div>
-</section>
-
-<section class="section section--tight">
-  <div class="wrap">
-    <a class="promo" href="{{ '/projects/ethocrypt/' | relative_url }}" aria-label="Read about EthoCrypt">
-      <div>
-        <p class="kicker">Featured project</p>
-        <h2>EthoCrypt</h2>
-        <p>Unsupervised behavior mapping of zombie flies, end to end: a mirror rig and recorder, a desktop app that sends recordings to the cluster, and a pipeline that discovers behaviors on its own, tests whether each is reproducible, and compares healthy with infected flies. No keypoints, no hand labels, no command line.</p>
-        <ul class="chips" aria-label="Stack">
-          <li>PyTorch</li><li>SAM 2</li><li>DINOv3</li><li>UMAP</li><li>Slurm</li><li>Tauri · Rust</li>
-        </ul>
-        <p style="margin-top:22px"><span class="btn">Explore EthoCrypt {% include icon.html name="arrow" %}</span></p>
-      </div>
-      <img class="promo__logo" src="{{ '/assets/images/ethocrypt/ethocrypt_mark_dark.svg' | relative_url }}" alt="" width="260" height="260">
+<section class="mapfig" data-map aria-labelledby="who">
+  <div class="mapfig__field" style="--fallback: url('{{ '/assets/images/map-fallback.jpg' | relative_url }}'); --fallback-m: url('{{ '/assets/images/map-fallback-m.jpg' | relative_url }}');">
+    <canvas aria-hidden="true"></canvas>
+    <div class="mapfig__axes" aria-hidden="true"></div>
+    <span class="axis-label axis-label--x" aria-hidden="true">dim 1 →</span>
+    <span class="axis-label axis-label--y" aria-hidden="true">dim 2 →</span>
+    {%- for c in site.data.clusters %}
+    <a class="region-label" href="#{{ c.id }}" data-brush="{{ c.id }}" data-cluster="{{ c.id }}"
+       data-x="{{ c.x }}" data-y="{{ c.y }}" data-mx="{{ c.mx }}" data-my="{{ c.my }}"
+       data-spread="{{ c.spread }}" data-weight="{{ c.weight }}" data-color="{{ c.color }}"
+       style="--x: {{ c.x }}; --y: {{ c.y }}; --mx: {{ c.mx }}; --my: {{ c.my }};">
+      <span class="region-label__key">{{ c.key }}</span>
+      <span class="region-label__name">{{ c.name }}</span>
     </a>
+    {%- endfor %}
   </div>
-</section>
 
-<section class="section">
-  <div class="wrap feature">
-    <div>
-      <p class="kicker">Current research</p>
-      <h2>How does a parasite take the wheel?</h2>
-      <p>The fungus <em>Entomophthora muscae</em> infects fruit flies and, just before dusk on the day it kills them, drives a precise sequence: climbing ("summiting"), gluing the mouthparts down, and raising the wings to spread spores.</p>
-      <p>I study which neural and hormonal changes make that takeover possible, from disrupted circadian clock output to the circuit that triggers summiting.</p>
-      <a class="section__link" href="{{ '/about/' | relative_url }}">More about my research {% include icon.html name="arrow" %}</a>
+  <div class="legend">
+    <h1 id="who">Brandon Fricker, PhD</h1>
+    <p class="legend__role">Data scientist &amp; behavioral neuroscientist</p>
+    <div class="legend__who">
+      <img src="{{ '/assets/images/headshot-square.jpg' | relative_url }}" alt="Portrait of Brandon Fricker" width="58" height="58">
+      <p class="legend__where"><b>Postdoctoral Fellow, Harvard University</b>Elya Lab · Cambridge, MA</p>
     </div>
-    <figure>
-      <img src="{{ '/assets/images/zombies-1600.jpg' | relative_url }}" alt="Fruit flies killed by Entomophthora muscae, wings raised" width="1600" height="1200" loading="lazy">
-      <figcaption>Flies after <em>E. muscae</em> infection. Photo by Dr. Carolyn Elya.</figcaption>
-    </figure>
+    <p class="legend__pitch">I turn messy, high-dimensional behavior data into clear answers, and build the tools that get there: from study design and data collection to models and software other people use.</p>
+    <div class="btn-row">
+      <a class="btn" href="mailto:{{ site.author.email }}">{% include icon.html name="mail" %} Email me</a>
+      {% if site.links.cv != "" %}<a class="btn btn--line" href="{{ site.links.cv | relative_url }}">{% include icon.html name="file" %} Résumé (PDF)</a>{% endif %}
+      <a class="btn btn--line" href="{{ site.links.linkedin }}" rel="noopener">{% include icon.html name="linkedin" %} LinkedIn</a>
+    </div>
+    <ul class="keys legend__keys" aria-label="Map regions: jump to each">
+      {%- for c in site.data.clusters %}
+      <li><a class="key key--{{ c.id }}" href="#{{ c.id }}" data-brush="{{ c.id }}"><span class="key__id">{{ c.key }}</span> {{ c.name }}</a></li>
+      {%- endfor %}
+    </ul>
+    {% if site.open_to %}<p class="legend__open">{{ site.open_to }}.</p>{% endif %}
   </div>
+
+  <p class="mapfig__caption"><b>Fig. 1</b> An illustrative behavior map, not real data. Each point is a moment of work; the regions are what I do.</p>
 </section>
 
-<section class="section section--tint">
+<section class="band" aria-labelledby="regions-h">
   <div class="wrap">
-    <div class="section__head">
+    <div class="band__head">
       <div>
-        <p class="kicker">Selected publications</p>
-        <h2>Recent work</h2>
+        <h2 id="regions-h">Four regions, one through-line</h2>
+        <p>Every project I run passes through all four. Hover or tap a key to light up its evidence across this page.</p>
       </div>
-      <a class="section__link" href="{{ '/publications/' | relative_url }}">All {{ pubs.size }} publications {% include icon.html name="arrow" %}</a>
     </div>
-    <div class="pub-list">
-      {%- for p in pubs -%}
-        {%- assign o = site.data.publication_overrides[p.doi] -%}
-        {%- if o.featured -%}{% include pub.html pub=p show_year=true %}{%- endif -%}
-      {%- endfor -%}
+
+    <div class="regions">
+      <article class="region region--c1" id="c1" data-c="c1">
+        {% include locator.html here="c1" %}
+        <div class="region__body">
+          <h3><span class="key key--c1" data-brush="c1" data-name="Model the data"><span class="key__id">C1</span></span>Model the data</h3>
+          <p>Time-to-event, longitudinal and time-series models, and unsupervised learning on behavioral datasets of millions of points, in Python and R.</p>
+        </div>
+        <ul class="evidence">
+          <li><b>Survival-aligned activity and rhythms</b><span>Multi-day tracking turned into actograms, periodograms and time-of-death curves</span></li>
+          <li><b>Unsupervised behavior maps</b><span>Foundation-model features, UMAP, and clusters tested for reproducibility</span></li>
+          <li><b>Neural-network methods for transcriptomics</b><span>Characterizing gene expression in large datasets</span></li>
+        </ul>
+      </article>
+
+      <article class="region region--c2" id="c2" data-c="c2">
+        {% include locator.html here="c2" %}
+        <div class="region__body">
+          <h3><span class="key key--c2" data-brush="c2" data-name="Build the tool"><span class="key__id">C2</span></span>Build the tool</h3>
+          <p>From hardware to software people use: a recording rig, a cluster pipeline, and a desktop app designed so an undergraduate can run the analysis without a terminal.</p>
+        </div>
+        <ul class="evidence">
+          <li><b><a href="{{ '/projects/ethocrypt/' | relative_url }}">EthoCrypt</a></b><span>Recording rig, desktop app and GPU pipeline, end to end</span></li>
+          <li><b><a href="https://github.com/Elya-Lab/BlindTOD" rel="noopener">BlindTOD</a></b><span>A blinded re-scoring tool for a key outcome measure</span></li>
+          <li><b>Gene editing across species</b><span>An AAV-CRISPR/Cas9 strategy for divergent rodents (2023)</span></li>
+        </ul>
+      </article>
+
+      <article class="region region--c3" id="c3" data-c="c3">
+        {% include locator.html here="c3" %}
+        <div class="region__body">
+          <h3><span class="key key--c3" data-brush="c3" data-name="Design the study"><span class="key__id">C3</span></span>Design the study</h3>
+          <p>Randomized, blinded, controlled designs with the right unit of analysis: the same discipline that makes an A/B test trustworthy.</p>
+        </div>
+        <ul class="evidence">
+          <li><b>A measurement-bias audit</b><span>Outcomes re-scored with the condition hidden, then compared</span></li>
+          <li><b>Institutional Review Board member</b><span>Reviewed clinical study protocols for rigor and safety, 2017–2019</span></li>
+          <li><b>The subject is the unit</b><span>Statistics per animal, never pooled frames</span></li>
+        </ul>
+      </article>
+
+      <article class="region region--c4" id="c4" data-c="c4">
+        {% include locator.html here="c4" %}
+        <div class="region__body">
+          <h3><span class="key key--c4" data-brush="c4" data-name="Test the cause"><span class="key__id">C4</span></span>Test the cause</h3>
+          <p>Correlation is where I start. I intervene, silencing a circuit or editing a gene, with matched controls to show what actually drives a behavior.</p>
+        </div>
+        <ul class="evidence">
+          <li><b><a href="#fig2">Silencing one circuit reverses a choice</a></b><span>Read as an A/B test in Fig. 2 below</span></li>
+          <li><b>Gene knockdown changes social behavior</b><span>CRISPR knockdown of oxytocin receptors (2025)</span></li>
+        </ul>
+      </article>
     </div>
   </div>
 </section>
 
-<section class="section">
+<section class="band band--tint" id="fig2" aria-labelledby="fig2-h" data-c="c4 c3">
   <div class="wrap">
-    <div class="card" style="padding: clamp(28px, 5vw, 48px); text-align: center;">
-      <p class="kicker">Get in touch</p>
-      <h2>Building an experimentation or decision science team?</h2>
-      <p class="muted" style="max-width: 56ch; margin-inline: auto;">I'd love to hear about it. I'm also always happy to talk zombie flies, social behavior, or unsupervised behavior mapping.</p>
-      <div class="btn-row" style="justify-content: center; margin-top: 22px;">
-        <a class="btn" href="mailto:{{ site.author.email }}">{% include icon.html name="mail" %} Email me</a>
-        <a class="btn btn--ghost" href="{{ site.links.linkedin }}" rel="noopener">{% include icon.html name="linkedin" %} LinkedIn</a>
+    <div class="band__head">
+      <div>
+        <h2 id="fig2-h">One experiment, read like an A/B test</h2>
+        <p>My <em>Current Biology</em> study asked whether a single brain circuit drives the choice to join a bigger group. Here is the design as a decision-maker would read it.</p>
+      </div>
+    </div>
+    <div class="readout">
+      <figure class="fig">
+        <div class="fig__frame readout__schema">
+          <svg viewBox="0 0 520 330" role="img" aria-labelledby="fig2-title fig2-desc">
+            <title id="fig2-title">Design schematic of the circuit-silencing experiment</title>
+            <desc id="fig2-desc">Two conditions side by side. With the circuit active, the animal moves toward the larger group. With the circuit silenced, it moves toward the smaller group. A second row repeats the test with objects instead of animals, and silencing makes no difference there.</desc>
+            <line class="schema-rule" x1="260" y1="16" x2="260" y2="292"/>
+            <line class="schema-rule" x1="20" y1="168" x2="500" y2="168" stroke-dasharray="3 4"/>
+            <text class="schema-mono" x="130" y="28" text-anchor="middle">CONTROL · CIRCUIT ACTIVE</text>
+            <text class="schema-mono" x="390" y="28" text-anchor="middle">TREATMENT · CIRCUIT SILENCED</text>
+            <text class="schema-text" x="130" y="64" text-anchor="middle">Peers: smaller vs. larger group</text>
+            <text class="schema-text" x="390" y="64" text-anchor="middle">Peers: smaller vs. larger group</text>
+            <g class="schema-dot">
+              <circle cx="52" cy="104" r="5"/><circle cx="64" cy="116" r="5"/><circle cx="48" cy="122" r="5"/>
+              <circle cx="196" cy="96" r="5"/><circle cx="210" cy="104" r="5"/><circle cx="222" cy="96" r="5"/><circle cx="200" cy="114" r="5"/><circle cx="216" cy="122" r="5"/><circle cx="230" cy="112" r="5"/><circle cx="206" cy="132" r="5"/><circle cx="224" cy="132" r="5"/>
+              <circle cx="312" cy="104" r="5"/><circle cx="324" cy="116" r="5"/><circle cx="308" cy="122" r="5"/>
+              <circle cx="456" cy="96" r="5"/><circle cx="470" cy="104" r="5"/><circle cx="482" cy="96" r="5"/><circle cx="460" cy="114" r="5"/><circle cx="476" cy="122" r="5"/><circle cx="490" cy="112" r="5"/><circle cx="466" cy="132" r="5"/><circle cx="484" cy="132" r="5"/>
+            </g>
+            <circle class="schema-subject" cx="130" cy="114" r="8"/>
+            <path class="schema-arrow" d="M142 114 H174"/><path class="schema-arrow-head" d="M184 114 l-11 -7 v14 z"/>
+            <circle class="schema-subject" cx="390" cy="114" r="8"/>
+            <path class="schema-arrow" d="M378 114 H346"/><path class="schema-arrow-head" d="M336 114 l11 -7 v14 z"/>
+            <text class="schema-text" x="130" y="156" text-anchor="middle">prefers the larger group</text>
+            <text class="schema-text" x="390" y="156" text-anchor="middle">preference reversed</text>
+
+            <text class="schema-text" x="130" y="196" text-anchor="middle">Objects: smaller vs. larger set</text>
+            <text class="schema-text" x="390" y="196" text-anchor="middle">Objects: smaller vs. larger set</text>
+            <g class="schema-dot">
+              <rect x="44" y="226" width="9" height="9"/><rect x="58" y="238" width="9" height="9"/><rect x="44" y="244" width="9" height="9"/>
+              <rect x="194" y="220" width="9" height="9"/><rect x="208" y="228" width="9" height="9"/><rect x="222" y="220" width="9" height="9"/><rect x="198" y="240" width="9" height="9"/><rect x="214" y="246" width="9" height="9"/><rect x="228" y="236" width="9" height="9"/><rect x="204" y="258" width="9" height="9"/><rect x="222" y="258" width="9" height="9"/>
+              <rect x="304" y="226" width="9" height="9"/><rect x="318" y="238" width="9" height="9"/><rect x="304" y="244" width="9" height="9"/>
+              <rect x="454" y="220" width="9" height="9"/><rect x="468" y="228" width="9" height="9"/><rect x="482" y="220" width="9" height="9"/><rect x="458" y="240" width="9" height="9"/><rect x="474" y="246" width="9" height="9"/><rect x="488" y="236" width="9" height="9"/><rect x="464" y="258" width="9" height="9"/><rect x="482" y="258" width="9" height="9"/>
+            </g>
+            <circle class="schema-subject" cx="130" cy="242" r="8"/>
+            <circle class="schema-subject" cx="390" cy="242" r="8"/>
+            <line class="schema-equal" x1="250" y1="236" x2="270" y2="236"/><line class="schema-equal" x1="250" y1="246" x2="270" y2="246"/>
+            <text class="schema-text" x="390" y="284" text-anchor="middle">no change</text>
+            <text class="schema-mono" x="260" y="318" text-anchor="middle">SCHEMATIC OF THE DESIGN · NOT DATA</text>
+          </svg>
+        </div>
+        <figcaption><b>Fig. 2</b> Design of the circuit-silencing experiment, drawn for this site. Results as reported in Fricker et al., <em>Current Biology</em> (2024).</figcaption>
+      </figure>
+      <div>
+        <dl>
+          <dt>Question</dt><dd>Does one brain circuit drive the choice to join a larger group?</dd>
+          <dt>Unit</dt><dd>The individual animal (male spiny mice)</dd>
+          <dt>Treatment</dt><dd>Anterior cingulate → lateral septum circuit silenced with chemogenetics</dd>
+          <dt>Control</dt><dd>Same test, circuit not silenced</dd>
+          <dt>Primary metric</dt><dd>Preference for the larger vs. the smaller group of peers</dd>
+          <dt>Negative control</dt><dd>The same test with groups of novel objects</dd>
+          <dt>Result</dt><dd class="is-result">Preference for the larger group reversed. Objects: no effect.</dd>
+          <dt>Source</dt><dd><a href="https://doi.org/10.1016/j.cub.2024.08.019" rel="noopener">Fricker et al., <em>Current Biology</em> 2024</a></dd>
+        </dl>
+        <p class="readout__why">The negative control is what makes this useful to a decision-maker: it shows the effect is about social choice, not about "more stuff" in general. It does the same job as a guardrail metric in an A/B test.</p>
       </div>
     </div>
   </div>
 </section>
+
+<section class="band" aria-labelledby="work-h">
+  <div class="wrap">
+    <div class="band__head">
+      <div>
+        <h2 id="work-h">Tools I've built</h2>
+        <p>Built for real lab problems, and for colleagues who aren't programmers.</p>
+      </div>
+      <a class="band__more" href="{{ '/projects/' | relative_url }}">All projects {% include icon.html name="arrow" %}</a>
+    </div>
+
+    <div class="work-lead" data-c="c2 c1">
+      <div>
+        <div class="ethomark">
+          <img class="only-light" src="{{ '/assets/images/ethocrypt/ethocrypt_mark.svg' | relative_url }}" alt="" width="44" height="44">
+          <img class="only-dark" src="{{ '/assets/images/ethocrypt/ethocrypt_mark_dark.svg' | relative_url }}" alt="" width="44" height="44">
+        </div>
+        <h3>EthoCrypt</h3>
+        <p class="work-lead__meta">Python + Rust · v{{ eth.version }} · pre-release</p>
+        {% assign ids = "c2,c1" | split: "," %}{% include keys.html ids=ids %}
+        <p>Finds and measures fly behavior with no labels and no keypoints: a mirror rig films each fly, a GPU pipeline maps every moment into behaviors it discovers on its own, and each behavior is tested for reproducibility before it's reported. A desktop app lets lab members run all of it without a terminal.</p>
+        <div class="btn-row">
+          <a class="btn btn--line" href="{{ '/projects/ethocrypt/' | relative_url }}">How EthoCrypt works {% include icon.html name="arrow" %}</a>
+        </div>
+      </div>
+      <figure class="fig work-lead__shot">
+        <img class="only-light" src="{{ '/assets/images/ethocrypt/app-today.jpg' | relative_url }}" alt="EthoCrypt desktop app: a recorded fly ready to upload, and a fly being tracked on the cluster shown as a filling progress strand" width="1600" height="1000" loading="lazy">
+        <img class="only-dark" src="{{ '/assets/images/ethocrypt/app-today-dark.jpg' | relative_url }}" alt="EthoCrypt desktop app in dark mode" width="1600" height="1000" loading="lazy">
+        <figcaption><b>Fig. 3</b> The EthoCrypt desktop app, shown with demo data.</figcaption>
+      </figure>
+    </div>
+
+    <ul class="worklist">
+      <li data-c="c1">
+        <div><h3>Behavior analytics pipelines</h3>{% assign ids = "c1" | split: "," %}{% include keys.html ids=ids %}</div>
+        <p>Multi-day locomotor tracking turned into actograms, rhythm statistics and survival-aligned activity, with checks that an intervention didn't land unevenly across the arena grid.</p>
+        <span class="worklist__private">private repo</span>
+      </li>
+      <li data-c="c3 c2">
+        <div><h3>BlindTOD</h3>{% assign ids = "c3,c2" | split: "," %}{% include keys.html ids=ids %}</div>
+        <p>A bias audit as a tool: scrambles the arenas, hides box, date and genotype, and has me re-call each fly's time of death so blinded and original calls can be compared.</p>
+        <a class="worklist__link" href="https://github.com/Elya-Lab/BlindTOD" rel="noopener">GitHub {% include icon.html name="external" %}</a>
+      </li>
+      <li data-c="c2">
+        <div><h3>Brain registration pipeline</h3>{% assign ids = "c2" | split: "," %}{% include keys.html ids=ids %}</div>
+        <p>From image stacks to registered <em>Drosophila</em> brains and per-region cell counts, built on the natverse toolkit in R.</p>
+        <a class="worklist__link" href="https://github.com/bfnerdly/Drosophila-Brain-Registration-and-Neuropil-Analysis-Pipeline" rel="noopener">GitHub {% include icon.html name="external" %}</a>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<section class="band" aria-labelledby="papers-h">
+  <div class="wrap">
+    <div class="band__head">
+      <div>
+        <h2 id="papers-h">Selected publications</h2>
+        <p>{{ pubs.size }} peer-reviewed papers, {{ pubs | where: "first_author", true | size }} as first author.</p>
+      </div>
+      <a class="band__more" href="{{ '/publications/' | relative_url }}">All publications {% include icon.html name="arrow" %}</a>
+    </div>
+    {%- capture featured -%}
+      {%- for p in pubs -%}{%- assign o = site.data.publication_overrides[p.doi] -%}{%- if o.featured -%}{% include pub.html pub=p show_year=true %}{%- endif -%}{%- endfor -%}
+    {%- endcapture -%}
+    {%- assign featured_clean = featured | strip -%}
+    {% if featured_clean != "" %}
+      <ul class="pubs">{{ featured }}</ul>
+    {% else %}
+      <p>See the full list on <a href="{{ site.links.scholar }}" rel="noopener">Google Scholar</a>.</p>
+    {% endif %}
+  </div>
+</section>
+
+{% include close.html %}

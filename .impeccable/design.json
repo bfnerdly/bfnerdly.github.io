@@ -1,0 +1,722 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-10-07T21:06:21.293232+00:00",
+  "title": "Design System: Brandon Fricker, PhD",
+  "extensions": {
+    "colorMeta": {
+      "magma-0-plum-black": {
+        "role": "tertiary",
+        "displayName": "Plum Black",
+        "tonalRamp": [
+          "#0D0716",
+          "#1C1044",
+          "#3B0F70",
+          "#8C2981",
+          "#DE4968",
+          "#FE9F6D",
+          "#FECF92",
+          "#FCFDBF"
+        ]
+      },
+      "magma-1": {
+        "role": "tertiary",
+        "displayName": "Midnight Indigo",
+        "tonalRamp": [
+          "#0D0716",
+          "#1C1044",
+          "#3B0F70",
+          "#8C2981",
+          "#DE4968",
+          "#FE9F6D",
+          "#FECF92",
+          "#FCFDBF"
+        ]
+      },
+      "magma-2": {
+        "role": "tertiary",
+        "displayName": "Ink Violet",
+        "tonalRamp": [
+          "#0D0716",
+          "#1C1044",
+          "#3B0F70",
+          "#8C2981",
+          "#DE4968",
+          "#FE9F6D",
+          "#FECF92",
+          "#FCFDBF"
+        ]
+      },
+      "magma-3-deep-violet": {
+        "role": "primary",
+        "displayName": "Deep Violet",
+        "tonalRamp": [
+          "#0D0716",
+          "#1C1044",
+          "#3B0F70",
+          "#8C2981",
+          "#DE4968",
+          "#FE9F6D",
+          "#FECF92",
+          "#FCFDBF"
+        ]
+      },
+      "magma-4-orchid": {
+        "role": "primary",
+        "displayName": "Orchid",
+        "tonalRamp": [
+          "#0D0716",
+          "#1C1044",
+          "#3B0F70",
+          "#8C2981",
+          "#DE4968",
+          "#FE9F6D",
+          "#FECF92",
+          "#FCFDBF"
+        ]
+      },
+      "magma-5-raspberry": {
+        "role": "secondary",
+        "displayName": "Raspberry",
+        "tonalRamp": [
+          "#0D0716",
+          "#1C1044",
+          "#3B0F70",
+          "#8C2981",
+          "#DE4968",
+          "#FE9F6D",
+          "#FECF92",
+          "#FCFDBF"
+        ]
+      },
+      "magma-6-coral-rose": {
+        "role": "secondary",
+        "displayName": "Coral Rose",
+        "tonalRamp": [
+          "#0D0716",
+          "#1C1044",
+          "#3B0F70",
+          "#8C2981",
+          "#DE4968",
+          "#FE9F6D",
+          "#FECF92",
+          "#FCFDBF"
+        ]
+      },
+      "magma-7": {
+        "role": "tertiary",
+        "displayName": "Salmon",
+        "tonalRamp": [
+          "#0D0716",
+          "#1C1044",
+          "#3B0F70",
+          "#8C2981",
+          "#DE4968",
+          "#FE9F6D",
+          "#FECF92",
+          "#FCFDBF"
+        ]
+      },
+      "magma-8-apricot": {
+        "role": "primary",
+        "displayName": "Apricot",
+        "tonalRamp": [
+          "#0D0716",
+          "#1C1044",
+          "#3B0F70",
+          "#8C2981",
+          "#DE4968",
+          "#FE9F6D",
+          "#FECF92",
+          "#FCFDBF"
+        ]
+      },
+      "magma-9-peach-cream": {
+        "role": "tertiary",
+        "displayName": "Peach Cream",
+        "tonalRamp": [
+          "#0D0716",
+          "#1C1044",
+          "#3B0F70",
+          "#8C2981",
+          "#DE4968",
+          "#FE9F6D",
+          "#FECF92",
+          "#FCFDBF"
+        ]
+      },
+      "magma-10-pale-yellow": {
+        "role": "tertiary",
+        "displayName": "Pale Yellow",
+        "tonalRamp": [
+          "#0D0716",
+          "#1C1044",
+          "#3B0F70",
+          "#8C2981",
+          "#DE4968",
+          "#FE9F6D",
+          "#FECF92",
+          "#FCFDBF"
+        ]
+      },
+      "cluster-c1": {
+        "role": "secondary",
+        "displayName": "C1 Model the data",
+        "tonalRamp": [
+          "#0D0716",
+          "#1C1044",
+          "#3B0F70",
+          "#8C2981",
+          "#DE4968",
+          "#FE9F6D",
+          "#FECF92",
+          "#FCFDBF"
+        ]
+      },
+      "cluster-c2": {
+        "role": "secondary",
+        "displayName": "C2 Build the tool",
+        "tonalRamp": [
+          "#0D0716",
+          "#1C1044",
+          "#3B0F70",
+          "#8C2981",
+          "#DE4968",
+          "#FE9F6D",
+          "#FECF92",
+          "#FCFDBF"
+        ]
+      },
+      "cluster-c3": {
+        "role": "secondary",
+        "displayName": "C3 Design the study",
+        "tonalRamp": [
+          "#0D0716",
+          "#1C1044",
+          "#3B0F70",
+          "#8C2981",
+          "#DE4968",
+          "#FE9F6D",
+          "#FECF92",
+          "#FCFDBF"
+        ]
+      },
+      "cluster-c4": {
+        "role": "secondary",
+        "displayName": "C4 Test the cause",
+        "tonalRamp": [
+          "#0D0716",
+          "#1C1044",
+          "#3B0F70",
+          "#8C2981",
+          "#DE4968",
+          "#FE9F6D",
+          "#FECF92",
+          "#FCFDBF"
+        ]
+      },
+      "field": {
+        "role": "neutral",
+        "displayName": "Field",
+        "tonalRamp": [
+          "#0D0716",
+          "#150B22",
+          "#160C25",
+          "#2A1E37",
+          "#43334F",
+          "#A898B1",
+          "#D8C9DD",
+          "#F6EFF4"
+        ]
+      },
+      "field-2": {
+        "role": "neutral",
+        "displayName": "Field 2",
+        "tonalRamp": [
+          "#0D0716",
+          "#150B22",
+          "#160C25",
+          "#2A1E37",
+          "#43334F",
+          "#A898B1",
+          "#D8C9DD",
+          "#F6EFF4"
+        ]
+      },
+      "field-ink": {
+        "role": "neutral",
+        "displayName": "Field Ink",
+        "tonalRamp": [
+          "#0D0716",
+          "#150B22",
+          "#160C25",
+          "#2A1E37",
+          "#43334F",
+          "#A898B1",
+          "#D8C9DD",
+          "#F6EFF4"
+        ]
+      },
+      "field-ink-2": {
+        "role": "neutral",
+        "displayName": "Field Ink 2",
+        "tonalRamp": [
+          "#0D0716",
+          "#150B22",
+          "#160C25",
+          "#2A1E37",
+          "#43334F",
+          "#A898B1",
+          "#D8C9DD",
+          "#F6EFF4"
+        ]
+      },
+      "field-muted": {
+        "role": "neutral",
+        "displayName": "Field Muted",
+        "tonalRamp": [
+          "#0D0716",
+          "#150B22",
+          "#160C25",
+          "#2A1E37",
+          "#43334F",
+          "#A898B1",
+          "#D8C9DD",
+          "#F6EFF4"
+        ]
+      },
+      "field-rule": {
+        "role": "neutral",
+        "displayName": "Field Rule",
+        "tonalRamp": [
+          "#0D0716",
+          "#150B22",
+          "#160C25",
+          "#2A1E37",
+          "#43334F",
+          "#A898B1",
+          "#D8C9DD",
+          "#F6EFF4"
+        ],
+        "canonical": "rgba(252, 253, 191, .14)"
+      },
+      "ground": {
+        "role": "neutral",
+        "displayName": "Plot-Paper White",
+        "tonalRamp": [
+          "#0D0716",
+          "#1A1024",
+          "#2A1E37",
+          "#44384F",
+          "#675B71",
+          "#C9C0D3",
+          "#E2DDE8",
+          "#FAF9FB"
+        ]
+      },
+      "ground-2": {
+        "role": "neutral",
+        "displayName": "Tinted Band",
+        "tonalRamp": [
+          "#0D0716",
+          "#1A1024",
+          "#2A1E37",
+          "#44384F",
+          "#675B71",
+          "#C9C0D3",
+          "#E2DDE8",
+          "#FAF9FB"
+        ]
+      },
+      "ink": {
+        "role": "neutral",
+        "displayName": "Ink",
+        "tonalRamp": [
+          "#0D0716",
+          "#1A1024",
+          "#2A1E37",
+          "#44384F",
+          "#675B71",
+          "#C9C0D3",
+          "#E2DDE8",
+          "#FAF9FB"
+        ]
+      },
+      "ink-2": {
+        "role": "neutral",
+        "displayName": "Ink 2",
+        "tonalRamp": [
+          "#0D0716",
+          "#1A1024",
+          "#2A1E37",
+          "#44384F",
+          "#675B71",
+          "#C9C0D3",
+          "#E2DDE8",
+          "#FAF9FB"
+        ]
+      },
+      "muted": {
+        "role": "neutral",
+        "displayName": "Muted",
+        "tonalRamp": [
+          "#0D0716",
+          "#1A1024",
+          "#2A1E37",
+          "#44384F",
+          "#675B71",
+          "#C9C0D3",
+          "#E2DDE8",
+          "#FAF9FB"
+        ]
+      },
+      "rule": {
+        "role": "neutral",
+        "displayName": "Rule",
+        "tonalRamp": [
+          "#0D0716",
+          "#1A1024",
+          "#2A1E37",
+          "#44384F",
+          "#675B71",
+          "#C9C0D3",
+          "#E2DDE8",
+          "#FAF9FB"
+        ]
+      },
+      "rule-strong": {
+        "role": "neutral",
+        "displayName": "Rule Strong",
+        "tonalRamp": [
+          "#0D0716",
+          "#1A1024",
+          "#2A1E37",
+          "#44384F",
+          "#675B71",
+          "#C9C0D3",
+          "#E2DDE8",
+          "#FAF9FB"
+        ]
+      },
+      "ground-dark": {
+        "role": "neutral",
+        "displayName": "Ground (dark theme)",
+        "tonalRamp": [
+          "#0D0716",
+          "#150B22",
+          "#160C25",
+          "#2A1E37",
+          "#43334F",
+          "#A898B1",
+          "#D8C9DD",
+          "#F6EFF4"
+        ]
+      },
+      "ground-2-dark": {
+        "role": "neutral",
+        "displayName": "Ground 2 (dark theme)",
+        "tonalRamp": [
+          "#0D0716",
+          "#150B22",
+          "#160C25",
+          "#2A1E37",
+          "#43334F",
+          "#A898B1",
+          "#D8C9DD",
+          "#F6EFF4"
+        ]
+      },
+      "ink-dark": {
+        "role": "neutral",
+        "displayName": "Ink (dark theme)",
+        "tonalRamp": [
+          "#0D0716",
+          "#150B22",
+          "#160C25",
+          "#2A1E37",
+          "#43334F",
+          "#A898B1",
+          "#D8C9DD",
+          "#F6EFF4"
+        ]
+      },
+      "ink-2-dark": {
+        "role": "neutral",
+        "displayName": "Ink 2 (dark theme)",
+        "tonalRamp": [
+          "#0D0716",
+          "#150B22",
+          "#160C25",
+          "#2A1E37",
+          "#43334F",
+          "#A898B1",
+          "#D8C9DD",
+          "#F6EFF4"
+        ]
+      },
+      "muted-dark": {
+        "role": "neutral",
+        "displayName": "Muted (dark theme)",
+        "tonalRamp": [
+          "#0D0716",
+          "#150B22",
+          "#160C25",
+          "#2A1E37",
+          "#43334F",
+          "#A898B1",
+          "#D8C9DD",
+          "#F6EFF4"
+        ]
+      },
+      "rule-dark": {
+        "role": "neutral",
+        "displayName": "Rule (dark theme)",
+        "tonalRamp": [
+          "#0D0716",
+          "#150B22",
+          "#160C25",
+          "#2A1E37",
+          "#43334F",
+          "#A898B1",
+          "#D8C9DD",
+          "#F6EFF4"
+        ]
+      },
+      "rule-strong-dark": {
+        "role": "neutral",
+        "displayName": "Rule Strong (dark theme)",
+        "tonalRamp": [
+          "#0D0716",
+          "#150B22",
+          "#160C25",
+          "#2A1E37",
+          "#43334F",
+          "#A898B1",
+          "#D8C9DD",
+          "#F6EFF4"
+        ]
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Display",
+        "purpose": "Page h1 in the legend panel and page heads."
+      },
+      "headline": {
+        "displayName": "Headline",
+        "purpose": "Band headings and the closing band."
+      },
+      "title": {
+        "displayName": "Title",
+        "purpose": "Region, project and paper titles."
+      },
+      "body": {
+        "displayName": "Body",
+        "purpose": "All reading text."
+      },
+      "label-caps": {
+        "displayName": "Label caps",
+        "purpose": "Readout labels and publication flags."
+      },
+      "region-name": {
+        "displayName": "Region name",
+        "purpose": "Map region names on the field, cartographic caps."
+      },
+      "mono-id": {
+        "displayName": "Mono",
+        "purpose": "Cluster IDs, axes, DOIs, years, dates, counts, figure numbers only."
+      }
+    },
+    "shadows": [
+      {
+        "name": "field-text-halo",
+        "value": "0 1px 10px rgba(13, 7, 22, .9), 0 0 3px rgba(13, 7, 22, .9)",
+        "purpose": "Legibility halo for region labels over the map heat. Not elevation."
+      },
+      {
+        "name": "brush-ring",
+        "value": "0 0 0 4px rgba(<cluster rgb>, .35 to .4)",
+        "purpose": "Ring on a cluster dot while its cluster is brushed."
+      },
+      {
+        "name": "dot-edge",
+        "value": "0 0 0 1px rgba(13, 7, 22, .25)",
+        "purpose": "Edge on cluster key dots so pale cluster colors hold on white."
+      }
+    ],
+    "motion": [
+      {
+        "name": "ease-out",
+        "value": "cubic-bezier(.16, 1, .3, 1)",
+        "purpose": "All state transitions (.2s color/border, .25s brushing opacity, .6s region label fade-in)."
+      },
+      {
+        "name": "map-settle",
+        "value": "easeOutExpo per point, staggered; static under prefers-reduced-motion",
+        "purpose": "Noise settles into the four clusters once on load."
+      },
+      {
+        "name": "brush-dim",
+        "value": "opacity .28",
+        "purpose": "Items tagged with another cluster recede while one is brushed."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "legend-keys-1col",
+        "value": "380px"
+      },
+      {
+        "name": "timeline-stack",
+        "value": "520px"
+      },
+      {
+        "name": "region-stack",
+        "value": "600px"
+      },
+      {
+        "name": "band-head-stack",
+        "value": "640px"
+      },
+      {
+        "name": "two-col-stack",
+        "value": "900px"
+      },
+      {
+        "name": "header-sticky-map-desktop",
+        "value": "820px"
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "Apricot action, used for the primary contact action.",
+      "html": "<a class=\"ds-btn\" href=\"#\"><svg width=\"16\" height=\"16\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"><rect x=\"3\" y=\"5\" width=\"18\" height=\"14\" rx=\"1\"/><path d=\"m3 7 9 6 9-6\"/></svg> Email me</a>",
+      "css": ":host{--m0:#0D0716;--m3:#641A80;--m4:#8C2981;--m5:#B73779;--m6:#DE4968;--m8:#FE9F6D;--m9:#FECF92;--field:#0D0716;--field-ink:#F6EFF4;--field-ink-2:#D8C9DD;--field-muted:#A898B1;--field-rule:rgba(252,253,191,.14);--ground:#FAF9FB;--ink:#1A1024;--ink-2:#44384F;--muted:#675B71;--rule:#E2DDE8;--rule-strong:#C9C0D3;--r:2px;--sans:'Archivo',ui-sans-serif,system-ui,sans-serif;--mono:'Martian Mono',ui-monospace,Menlo,monospace;--ease-out:cubic-bezier(.16,1,.3,1);font-family:var(--sans);} .ds-btn{display:inline-flex;align-items:center;gap:.5em;min-height:44px;padding:.6em 1.15em;border:1px solid transparent;border-radius:var(--r);font-weight:650;font-size:.95rem;line-height:1.2;text-decoration:none;background:var(--m8);color:var(--ink);transition:background-color .2s var(--ease-out);} .ds-btn:hover{background:var(--m9);} .ds-btn:focus-visible{outline:2px solid var(--m4);outline-offset:3px;}"
+    },
+    {
+      "name": "Line Button",
+      "kind": "button",
+      "refersTo": "button-line",
+      "description": "Secondary action with a hairline border.",
+      "html": "<a class=\"ds-btn-line\" href=\"#\">LinkedIn</a>",
+      "css": ":host{--m0:#0D0716;--m3:#641A80;--m4:#8C2981;--m5:#B73779;--m6:#DE4968;--m8:#FE9F6D;--m9:#FECF92;--field:#0D0716;--field-ink:#F6EFF4;--field-ink-2:#D8C9DD;--field-muted:#A898B1;--field-rule:rgba(252,253,191,.14);--ground:#FAF9FB;--ink:#1A1024;--ink-2:#44384F;--muted:#675B71;--rule:#E2DDE8;--rule-strong:#C9C0D3;--r:2px;--sans:'Archivo',ui-sans-serif,system-ui,sans-serif;--mono:'Martian Mono',ui-monospace,Menlo,monospace;--ease-out:cubic-bezier(.16,1,.3,1);font-family:var(--sans);} .ds-btn-line{display:inline-flex;align-items:center;min-height:44px;padding:.6em 1.15em;border:1px solid var(--rule-strong);border-radius:var(--r);font-weight:650;font-size:.95rem;text-decoration:none;background:transparent;color:var(--ink);transition:border-color .2s var(--ease-out);} .ds-btn-line:hover{border-color:var(--ink);} .ds-btn-line:focus-visible{outline:2px solid var(--m4);outline-offset:3px;}"
+    },
+    {
+      "name": "Cluster Key",
+      "kind": "chip",
+      "refersTo": "cluster-key",
+      "description": "The one labeling system: cluster-colored dot, mono ID, Archivo name in ink.",
+      "html": "<ul class=\"ds-keys\"><li><a class=\"ds-key\" style=\"--kc:#FECF92\" href=\"#\"><span class=\"ds-key__id\">C1</span> Model the data</a></li><li><a class=\"ds-key\" style=\"--kc:#DE4968\" href=\"#\"><span class=\"ds-key__id\">C3</span> Design the study</a></li></ul>",
+      "css": ":host{--m0:#0D0716;--m3:#641A80;--m4:#8C2981;--m5:#B73779;--m6:#DE4968;--m8:#FE9F6D;--m9:#FECF92;--field:#0D0716;--field-ink:#F6EFF4;--field-ink-2:#D8C9DD;--field-muted:#A898B1;--field-rule:rgba(252,253,191,.14);--ground:#FAF9FB;--ink:#1A1024;--ink-2:#44384F;--muted:#675B71;--rule:#E2DDE8;--rule-strong:#C9C0D3;--r:2px;--sans:'Archivo',ui-sans-serif,system-ui,sans-serif;--mono:'Martian Mono',ui-monospace,Menlo,monospace;--ease-out:cubic-bezier(.16,1,.3,1);font-family:var(--sans);} .ds-keys{display:flex;flex-wrap:wrap;gap:4px 14px;margin:0;padding:0;list-style:none;} .ds-key{display:inline-flex;align-items:center;gap:.45em;font-size:.86rem;font-weight:540;color:var(--ink-2);text-decoration:none;white-space:nowrap;} .ds-key::before{content:'';width:.7em;height:.7em;border-radius:50%;background:var(--kc);box-shadow:0 0 0 1px rgba(13,7,22,.25);transition:box-shadow .25s var(--ease-out);} .ds-key__id{font-family:var(--mono);font-stretch:75%;font-size:.86em;font-weight:500;letter-spacing:.02em;} .ds-key:hover,.ds-key:focus-visible{color:var(--ink);text-decoration:underline;text-decoration-color:var(--kc);text-decoration-thickness:2px;text-underline-offset:.3em;} .ds-key:hover::before{box-shadow:0 0 0 4px rgba(254,159,109,.4);} .ds-key:focus-visible{outline:2px solid var(--m4);outline-offset:3px;}"
+    },
+    {
+      "name": "Site Header",
+      "kind": "nav",
+      "refersTo": "nav-header",
+      "description": "Dark field header; current page underlined in Apricot.",
+      "html": "<nav class=\"ds-nav\"><span class=\"ds-nav__brand\">Brandon Fricker</span><a href=\"#\" aria-current=\"page\">Projects</a><a href=\"#\">Publications</a><a href=\"#\">About</a><a class=\"ds-nav__cta\" href=\"#\">Contact</a></nav>",
+      "css": ":host{--m0:#0D0716;--m3:#641A80;--m4:#8C2981;--m5:#B73779;--m6:#DE4968;--m8:#FE9F6D;--m9:#FECF92;--field:#0D0716;--field-ink:#F6EFF4;--field-ink-2:#D8C9DD;--field-muted:#A898B1;--field-rule:rgba(252,253,191,.14);--ground:#FAF9FB;--ink:#1A1024;--ink-2:#44384F;--muted:#675B71;--rule:#E2DDE8;--rule-strong:#C9C0D3;--r:2px;--sans:'Archivo',ui-sans-serif,system-ui,sans-serif;--mono:'Martian Mono',ui-monospace,Menlo,monospace;--ease-out:cubic-bezier(.16,1,.3,1);font-family:var(--sans);} .ds-nav{display:flex;align-items:center;gap:20px;min-height:64px;padding:0 24px;background:var(--field);border-bottom:1px solid var(--field-rule);} .ds-nav__brand{margin-right:auto;color:var(--field-ink);font-weight:700;font-stretch:112%;} .ds-nav a{color:var(--field-ink-2);text-decoration:none;font-size:.95rem;font-weight:520;padding:6px 0;border-bottom:2px solid transparent;} .ds-nav a:hover{color:var(--field-ink);border-bottom-color:var(--field-rule);} .ds-nav a[aria-current=page]{color:var(--field-ink);border-bottom-color:var(--m8);} .ds-nav a.ds-nav__cta{min-height:38px;display:inline-flex;align-items:center;padding:.45em .95em;border:0;border-radius:var(--r);background:var(--m8);color:var(--m0);font-weight:650;} .ds-nav a.ds-nav__cta:hover{background:var(--m9);} .ds-nav a:focus-visible{outline:2px solid var(--m9);outline-offset:3px;}"
+    },
+    {
+      "name": "Publication Flag",
+      "kind": "chip",
+      "refersTo": "pub-flag",
+      "description": "Expanded tracked caps in a hairline box.",
+      "html": "<span class=\"ds-flag\">First author</span>",
+      "css": ":host{--m0:#0D0716;--m3:#641A80;--m4:#8C2981;--m5:#B73779;--m6:#DE4968;--m8:#FE9F6D;--m9:#FECF92;--field:#0D0716;--field-ink:#F6EFF4;--field-ink-2:#D8C9DD;--field-muted:#A898B1;--field-rule:rgba(252,253,191,.14);--ground:#FAF9FB;--ink:#1A1024;--ink-2:#44384F;--muted:#675B71;--rule:#E2DDE8;--rule-strong:#C9C0D3;--r:2px;--sans:'Archivo',ui-sans-serif,system-ui,sans-serif;--mono:'Martian Mono',ui-monospace,Menlo,monospace;--ease-out:cubic-bezier(.16,1,.3,1);font-family:var(--sans);} .ds-flag{font-stretch:118%;font-weight:620;font-size:.66rem;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-2);padding:2px 7px;border:1px solid var(--rule-strong);border-radius:var(--r);}"
+    },
+    {
+      "name": "Segmented Filter",
+      "kind": "input",
+      "refersTo": "segmented-on",
+      "description": "Publication filter; pressed segment inverts.",
+      "html": "<div class=\"ds-seg\"><button aria-pressed=\"true\">All</button><button aria-pressed=\"false\">First author</button></div>",
+      "css": ":host{--m0:#0D0716;--m3:#641A80;--m4:#8C2981;--m5:#B73779;--m6:#DE4968;--m8:#FE9F6D;--m9:#FECF92;--field:#0D0716;--field-ink:#F6EFF4;--field-ink-2:#D8C9DD;--field-muted:#A898B1;--field-rule:rgba(252,253,191,.14);--ground:#FAF9FB;--ink:#1A1024;--ink-2:#44384F;--muted:#675B71;--rule:#E2DDE8;--rule-strong:#C9C0D3;--r:2px;--sans:'Archivo',ui-sans-serif,system-ui,sans-serif;--mono:'Martian Mono',ui-monospace,Menlo,monospace;--ease-out:cubic-bezier(.16,1,.3,1);font-family:var(--sans);} .ds-seg{display:inline-flex;border:1px solid var(--rule-strong);border-radius:var(--r);overflow:hidden;} .ds-seg button{font:inherit;font-size:.9rem;font-weight:560;padding:9px 16px;min-height:40px;border:0;background:transparent;color:var(--ink-2);cursor:pointer;} .ds-seg button+button{border-left:1px solid var(--rule-strong);} .ds-seg button:hover{color:var(--ink);} .ds-seg button[aria-pressed=true]{background:var(--ink);color:var(--ground);} .ds-seg button:focus-visible{outline:2px solid var(--m4);outline-offset:-3px;}"
+    },
+    {
+      "name": "Map Region Label",
+      "kind": "custom",
+      "refersTo": "region-name",
+      "description": "Cartographic label on the field: dot plus mono ID over tracked caps name.",
+      "html": "<div class=\"ds-field\"><a class=\"ds-region\" style=\"--kc:#FE9F6D\" href=\"#\"><span class=\"ds-region__key\">C2</span><span class=\"ds-region__name\">Build the tool</span></a></div>",
+      "css": ":host{--m0:#0D0716;--m3:#641A80;--m4:#8C2981;--m5:#B73779;--m6:#DE4968;--m8:#FE9F6D;--m9:#FECF92;--field:#0D0716;--field-ink:#F6EFF4;--field-ink-2:#D8C9DD;--field-muted:#A898B1;--field-rule:rgba(252,253,191,.14);--ground:#FAF9FB;--ink:#1A1024;--ink-2:#44384F;--muted:#675B71;--rule:#E2DDE8;--rule-strong:#C9C0D3;--r:2px;--sans:'Archivo',ui-sans-serif,system-ui,sans-serif;--mono:'Martian Mono',ui-monospace,Menlo,monospace;--ease-out:cubic-bezier(.16,1,.3,1);font-family:var(--sans);} .ds-field{background:var(--field);padding:40px;} .ds-region{display:inline-grid;justify-items:center;gap:2px;color:var(--field-ink);text-decoration:none;padding:4px 8px;border-radius:var(--r);} .ds-region__key{display:inline-flex;align-items:center;gap:.4em;font-family:var(--mono);font-stretch:75%;font-size:.74rem;letter-spacing:.04em;text-shadow:0 1px 10px rgba(13,7,22,.9);} .ds-region__key::before{content:'';width:.62em;height:.62em;border-radius:50%;background:var(--kc);box-shadow:0 0 0 2px rgba(13,7,22,.85);} .ds-region__name{font-stretch:125%;font-weight:650;font-size:.74rem;letter-spacing:.16em;text-transform:uppercase;text-shadow:0 1px 10px rgba(13,7,22,.85);} .ds-region:hover,.ds-region:focus-visible{color:#fff;} .ds-region:hover .ds-region__name{text-decoration:underline;text-decoration-color:var(--kc);text-decoration-thickness:2px;text-underline-offset:.35em;} .ds-region:focus-visible{outline:2px solid var(--m9);outline-offset:3px;}"
+    },
+    {
+      "name": "Email Close",
+      "kind": "card",
+      "description": "Mono email address in a hairline box on the field with a Copy button.",
+      "html": "<div class=\"ds-field2\"><div class=\"ds-mail\"><a href=\"#\">name@example.edu</a><button class=\"ds-copy\">Copy</button></div></div>",
+      "css": ":host{--m0:#0D0716;--m3:#641A80;--m4:#8C2981;--m5:#B73779;--m6:#DE4968;--m8:#FE9F6D;--m9:#FECF92;--field:#0D0716;--field-ink:#F6EFF4;--field-ink-2:#D8C9DD;--field-muted:#A898B1;--field-rule:rgba(252,253,191,.14);--ground:#FAF9FB;--ink:#1A1024;--ink-2:#44384F;--muted:#675B71;--rule:#E2DDE8;--rule-strong:#C9C0D3;--r:2px;--sans:'Archivo',ui-sans-serif,system-ui,sans-serif;--mono:'Martian Mono',ui-monospace,Menlo,monospace;--ease-out:cubic-bezier(.16,1,.3,1);font-family:var(--sans);} .ds-field2{background:var(--field);padding:32px;} .ds-mail{display:flex;align-items:center;gap:14px;padding:16px 18px;border:1px solid var(--field-rule);border-radius:var(--r);font-family:var(--mono);font-stretch:75%;font-size:1rem;} .ds-mail a{color:var(--field-ink);text-decoration:none;} .ds-mail a:hover{color:var(--m9);} .ds-copy{margin-left:auto;font-family:var(--sans);font-size:.82rem;font-weight:600;padding:7px 12px;min-height:36px;border-radius:var(--r);border:1px solid var(--field-rule);background:transparent;color:var(--field-ink-2);cursor:pointer;} .ds-copy:hover{color:var(--field-ink);border-color:var(--field-muted);} .ds-copy:focus-visible{outline:2px solid var(--m9);outline-offset:3px;}"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Behavior Map",
+    "overview": "The site reads like a behavior-space density map. A dark field of smooth magma heat, thin contour lines and a dust of points sits at the top of every page; the work is organized into four labeled regions (C1 Model the data, C2 Build the tool, C3 Design the study, C4 Test the cause), and that one cluster-ID labeling system tags every project and paper. On the home page the points start as uniform noise and settle into the clusters once; under reduced motion the settled map draws at once. Hovering or focusing a key lights its region and every item tagged with it across the page (linked brushing).\n\nBelow the field, reading happens on cool plot-paper white, or on the field's own black in the dark theme. Structure comes from hairline rules and grid rows, not containers: lists of regions, works, papers and timeline entries are ruled rows. Figures are numbered and captioned (\"Fig. 1\", \"Fig. 2\") the way a paper's are, and every chart is an original drawing or a design schematic.\n\nThe density is calm: generous band padding, one idea per band, short ruled rows. The world refuses the portfolio template (name hero beside a portrait, stats strip, icon-card grid, chip clouds, kickers) and the faculty CV.",
+    "keyCharacteristics": [
+      "One colormap (magma) supplies every color, including the four cluster colors.",
+      "A dark map field anchors every page top (map hero on home, point-cloud page head inside) and the closing band and footer.",
+      "Archivo variable width for all reading text; Martian Mono only for IDs, axes, DOIs, years and counts.",
+      "Square 2px corners, hairline rules, no elevation.",
+      "Cluster keys (colored dot plus ID and name) are the single labeling system site-wide, and they drive linked brushing."
+    ],
+    "rules": [
+      {
+        "name": "The One Colormap Rule",
+        "body": "No color enters the system that is not a magma sample or a magma-tinted neutral. A new accent is a new magma stop, not a new hue.",
+        "section": "colors"
+      },
+      {
+        "name": "The Cluster Color Is a Key Rule",
+        "body": "Cluster colors only identify a region (dots, bullets, underlines, lit points). They never fill buttons, backgrounds or text.",
+        "section": "colors"
+      },
+      {
+        "name": "The Field Is Always Dark Rule",
+        "body": "The map field, page heads, closing band and footer use the Field tokens in both themes; only reading surfaces switch.",
+        "section": "colors"
+      },
+      {
+        "name": "The Mono Is For Values Rule",
+        "body": "Martian Mono sets only IDs, axes, DOIs, years, dates, counts and figure numbers. Cluster names, flags, readout labels and all prose are Archivo.",
+        "section": "typography"
+      },
+      {
+        "name": "The Meta Below Rule",
+        "body": "No kicker or eyebrow above a heading. Meta lines (version, status, role) sit directly below the heading they describe.",
+        "section": "typography"
+      },
+      {
+        "name": "The Field Is the Depth Rule",
+        "body": "Surfaces never lift. To separate, use a hairline, a tinted band, or the dark field.",
+        "section": "elevation"
+      },
+      {
+        "name": "The Points Are Round Rule",
+        "body": "Round shapes mean data points or cluster keys. Containers stay square.",
+        "section": "shapes"
+      }
+    ],
+    "dos": [
+      "**Do** take every new color from magma or the magma-tinted neutrals.",
+      "**Do** tag projects and papers with cluster keys (dot, mono ID, Archivo name) and wire them to linked brushing.",
+      "**Do** set IDs, axes, DOIs, years, dates and counts in Martian Mono at width 75, and everything else in Archivo.",
+      "**Do** put small labels in expanded tracked Archivo caps (width 118 to 125, .1 to .16em).",
+      "**Do** place meta lines (version, status, role) below the heading.",
+      "**Do** caption figures with a mono \"Fig. N\" and keep charts original or schematic.",
+      "**Do** gate JS-dependent hiding on the live state (`.mapfig.is-live`, `.js`) so the page reads fully without JavaScript.",
+      "**Do** make every motion static under prefers-reduced-motion.",
+      "**Do** flex a page's single field band down to the footer."
+    ],
+    "donts": [
+      "**Don't** add kickers or eyebrows above headings.",
+      "**Don't** lift surfaces with drop shadows or use cards as structure; text halos on the field and brushing rings on cluster dots are the only shadows.",
+      "**Don't** color text or fills with cluster colors; cluster color lives in the dot.",
+      "**Don't** set names, flags, labels or prose in Martian Mono.",
+      "**Don't** round containers past 2px.",
+      "**Don't** build portfolio tropes: a name hero beside a portrait, stats strips, icon-card grids, chip clouds."
+    ]
+  }
+}

@@ -1,0 +1,18 @@
+{%- comment -%} A miniature of the home map: every region as a small magma heat spot, include.here lit with its contour rings. {%- endcomment -%}
+<svg class="locator" viewBox="0 0 160 100" role="img" aria-label="Where this region sits on the map">
+  <defs>
+    <radialGradient id="loc-hot-{{ include.here }}"><stop offset="0" stop-color="#FCFDBF"/><stop offset=".25" stop-color="#FE9F6D"/><stop offset=".55" stop-color="#DE4968"/><stop offset=".8" stop-color="#641A80"/><stop offset="1" stop-color="#3B0F70" stop-opacity="0"/></radialGradient>
+    <radialGradient id="loc-dim-{{ include.here }}"><stop offset="0" stop-color="#8C2981" stop-opacity=".75"/><stop offset=".6" stop-color="#3B0F70" stop-opacity=".55"/><stop offset="1" stop-color="#1C1044" stop-opacity="0"/></radialGradient>
+  </defs>
+  <rect width="160" height="100" fill="#0D0716"/>
+  {%- for c in site.data.clusters -%}
+  {%- assign cx = c.x | times: 160 -%}{%- assign cy = c.y | times: 100 -%}{%- assign r = c.weight | times: 60 | plus: 10 -%}
+  {%- if c.id == include.here -%}
+  <ellipse cx="{{ cx }}" cy="{{ cy }}" rx="{{ r | times: 1.25 }}" ry="{{ r | times: 0.9 }}" fill="url(#loc-hot-{{ include.here }})"/>
+  <ellipse cx="{{ cx }}" cy="{{ cy }}" rx="{{ r | times: 0.75 }}" ry="{{ r | times: 0.54 }}" fill="none" stroke="#FECF92" stroke-opacity=".7" stroke-width=".8"/>
+  <ellipse cx="{{ cx }}" cy="{{ cy }}" rx="{{ r | times: 1.12 }}" ry="{{ r | times: 0.8 }}" fill="none" stroke="#FCFDBF" stroke-opacity=".28" stroke-width=".7" stroke-dasharray="2 2"/>
+  {%- else -%}
+  <ellipse cx="{{ cx }}" cy="{{ cy }}" rx="{{ r | times: 1.1 }}" ry="{{ r | times: 0.8 }}" fill="url(#loc-dim-{{ include.here }})"/>
+  {%- endif -%}
+  {%- endfor -%}
+</svg>

@@ -1,0 +1,8 @@
+{%- comment -%} Cluster keys for a list of ids (include.ids), as plain labels. {%- endcomment -%}
+{%- if include.ids and include.ids.size > 0 -%}
+<ul class="keys" aria-label="Map regions">
+  {%- for id in include.ids -%}{%- assign c = site.data.clusters | where: "id", id | first -%}
+  <li class="key key--{{ id }}"><span class="key__id">{{ c.key }}</span> {{ c.name }}</li>
+  {%- endfor -%}
+</ul>
+{%- endif -%}

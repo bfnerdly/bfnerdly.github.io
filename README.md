@@ -8,12 +8,18 @@ Plain Jekyll, built by GitHub Pages from `main`. No theme: layouts, includes and
 
 | To change… | Edit |
 |---|---|
-| Name, email, social links, "open to roles" pill, résumé link | `_config.yml` |
-| Top navigation | `_data/navigation.yml` |
-| Home / About / Projects / Contact | `index.html`, `about.html`, `projects/index.html`, `contact.html` |
-| EthoCrypt page | `projects/ethocrypt.html` (links controlled by `ethocrypt:` in `_config.yml`) |
-| Featured papers, plain-language summaries, equal-contribution marks | `_data/publication_overrides.yml` |
-| Colors, fonts, layout | `assets/css/main.css` (tokens at the top) |
+| Name, email, social links, "open to roles" line, résumé link | `_config.yml` |
+| Top navigation | `_data/navigation.yml` (Contact is the header button) |
+| The four map regions (names, colors, positions on the map) | `_data/clusters.yml` |
+| Home page sections, evidence lists, Fig. 2 readout | `index.html` |
+| About / Projects / Contact / EthoCrypt | `about.html`, `projects/index.html`, `contact.html`, `projects/ethocrypt.html` |
+| Closing "email me" band on every page | `_includes/close.html` |
+| Featured papers, summaries, cluster tags, equal-contribution marks | `_data/publication_overrides.yml` |
+| Colors, type, layout | `assets/css/main.css` (one magma colormap; tokens at the top) |
+| The animated map | `assets/js/behavior-map.js` (no-JS fallbacks: `assets/images/map-fallback*.jpg`) |
+| Inner-page dot graphic | `python3 tools/make_dots.py` regenerates `_includes/dots.html` |
+
+Design decisions and their reasons live in `PRODUCT.md` and `DESIGN.md` (neither is published on the site).
 
 ## Publications
 

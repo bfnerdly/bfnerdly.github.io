@@ -1,0 +1,43 @@
+# The four regions of the behavior map. One source of truth for the home map, section headings, tags on
+# projects and papers, and the linked highlighting. Positions are fractions of the map field (x from left,
+# y from top); "m" positions are used on narrow screens. spread = cluster size, weight = share of points.
+- id: c1
+  key: C1
+  name: Model the data
+  color: "#FECF92"
+  x: 0.64
+  y: 0.36
+  mx: 0.30
+  my: 0.36
+  spread: 0.10
+  weight: 0.34
+- id: c2
+  key: C2
+  name: Build the tool
+  color: "#FE9F6D"
+  x: 0.86
+  y: 0.62
+  mx: 0.74
+  my: 0.30
+  spread: 0.075
+  weight: 0.26
+- id: c3
+  key: C3
+  name: Design the study
+  color: "#DE4968"
+  x: 0.56
+  y: 0.74
+  mx: 0.30
+  my: 0.76
+  spread: 0.08
+  weight: 0.22
+- id: c4
+  key: C4
+  name: Test the cause
+  color: "#B73779"
+  x: 0.85
+  y: 0.24
+  mx: 0.74
+  my: 0.74
+  spread: 0.06
+  weight: 0.18

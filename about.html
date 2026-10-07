@@ -1,143 +1,92 @@
 ---
 title: About
 permalink: /about/
-kicker: About
-heading: "I study behavior: in brains, and in data"
+cluster: all
+heading: "A neuroscientist who works like a data scientist"
 lede: >-
-  I'm a behavioral neuroscientist trained to ask one question over and over: what actually
-  causes this behavior, and how sure are we? Along the way I've become a quantitative
-  generalist: experimental design, statistics, machine learning and the pipelines that tie them together.
-description: "Background, toolkit and research of Brandon Fricker, PhD: experimentation, causal inference, behavioral analytics and neuroscience."
+  Years of controlled experiments on behavior taught me the job: turn a fuzzy question into a measurable
+  outcome, design a study that can answer it, model the messy data honestly, and build the tools to do it again.
+description: "Background, toolkit and research of Brandon Fricker, PhD: data science, study design, causal tests and tool building."
 ---
 
-<section class="section" style="padding-top: 24px;">
-  <div class="wrap grid grid--2" style="align-items: start;">
+<section class="band" aria-labelledby="path-h">
+  <div class="wrap two-col">
     <div class="prose">
-      <p>I'm a postdoctoral fellow in the <a href="https://carolynelya.com/" rel="noopener">Elya Lab</a> at Harvard University, where I study how the fungus <em>Entomophthora muscae</em> manipulates the behavior of the fruit flies it infects. Before that I earned my PhD at Emory University studying the neural circuits behind social decisions in rodents, and as an undergraduate at Lehigh I recorded from pairs of neurons to understand how electrical synapses learn.</p>
-      <p>Across all three, the work has had the same shape as good decision science: turn a fuzzy question into a measurable outcome, design an experiment that can actually answer it, intervene to establish cause, and communicate the answer so others can act on it. I'm now looking to bring that to industry, in experimentation, decision science and behavioral data science.</p>
+      <p>I'm a postdoctoral fellow in the <a href="https://carolynelya.com/" rel="noopener">Elya Lab</a> at Harvard, where I lead four concurrent quantitative projects on how a fungus, <em>Entomophthora muscae</em>, takes over the behavior of the fruit flies it infects. The work runs on computer-vision tracking and noisy datasets of millions of points.</p>
+      <p>Before that, my PhD at Emory asked what brain circuits drive social decisions in rodents, and as an undergraduate at Lehigh I recorded from pairs of neurons to see how electrical synapses learn.</p>
+      <p>Across all three, the part I enjoy most is the same: getting from a messy recording to an answer someone can act on, and building the tools that let other people get there too. I'm now taking that into industry, in data science, biostatistics and decision science.</p>
     </div>
-    <aside class="card">
-      <h3>At a glance</h3>
+    <div>
+      <h2 id="path-h" class="visually-hidden">Path</h2>
       <ol class="timeline">
-        <li>
-          <div class="timeline__when">2024 – present</div>
-          <div class="timeline__what">Postdoctoral Fellow</div>
-          <div class="timeline__where">Harvard University · Elya Lab</div>
-          <div class="timeline__note">Neural basis of parasite-driven behavior; built EthoCrypt.</div>
-        </li>
-        <li>
-          <div class="timeline__when">2019 – 2024</div>
-          <div class="timeline__what">PhD &amp; MA, Psychology</div>
-          <div class="timeline__where">Emory University · Behavioral &amp; Systems Neuroscience</div>
-          <div class="timeline__note">NDSEG Fellow (U.S. Department of Defense), Kelly Lab.</div>
-        </li>
-        <li>
-          <div class="timeline__when">2019</div>
-          <div class="timeline__what">BS, Behavioral Neuroscience · BS, Psychology</div>
-          <div class="timeline__where">Lehigh University · Haas Lab</div>
-        </li>
+        <li><time>2024 – now</time><div><b>Postdoctoral Fellow, Harvard University</b><span>Elya Lab. Built EthoCrypt; mentor and supervise 7+ trainees, from high school to graduate students.</span></div></li>
+        <li><time>2019 – 2024</time><div><b>PhD, Behavioral &amp; Systems Neuroscience, Emory University</b><span>Kelly Lab. MS en route (2021). NDSEG Fellow, U.S. Department of Defense (3 years). Mentored five undergraduates.</span></div></li>
+        <li><time>2017 – 2019</time><div><b>IRB member, St. Luke's Hospital</b><span>Reviewed clinical study protocols for methodological rigor, participant safety and ethical risk.</span></div></li>
+        <li><time>2016 – 2019</time><div><b>BS, Behavioral Neuroscience · BS, Social Psychology, Lehigh University</b><span>Honors research in the Haas Lab. GPA 3.97.</span></div></li>
       </ol>
-    </aside>
+    </div>
   </div>
 </section>
 
-<section class="section section--tint">
+<section class="band band--tint" aria-labelledby="toolkit-h">
   <div class="wrap">
-    <div class="section__head">
+    <div class="band__head">
       <div>
-        <p class="kicker">Toolkit</p>
-        <h2>Methods I use day to day</h2>
+        <h2 id="toolkit-h">Toolkit, by region</h2>
+        <p>The same four regions as the map on the home page, with the methods I use in each.</p>
       </div>
     </div>
-    <div class="skill-groups">
-      <div class="card">
-        <h3>Experimentation &amp; statistics</h3>
-        <ul class="chips">
-          <li>Experimental design</li><li>Randomization &amp; blinding</li><li>Power analysis</li>
-          <li>Hypothesis testing</li><li>Regression &amp; predictive modeling</li><li>Survival analysis</li>
-          <li>Time-series &amp; periodograms</li>
-        </ul>
+    <div class="toolkit">
+      <div data-c="c1">
+        <h3><span class="key key--c1" data-brush="c1" data-name="Model the data"><span class="key__id">C1</span></span>Model the data</h3>
+        <p>Python (pandas, NumPy, SciPy, statsmodels, scikit-learn, matplotlib), R and MATLAB. Survival, longitudinal and time-series analysis; PCA, UMAP and clustering; PyTorch with SAM 2 and DINOv3.</p>
       </div>
-      <div class="card">
-        <h3>Machine learning &amp; vision</h3>
-        <ul class="chips">
-          <li>PyTorch</li><li>SAM 2</li><li>DINOv3 / DINOv2</li><li>Optical flow</li>
-          <li>PCA</li><li>UMAP</li><li>Clustering</li><li>scikit-learn</li><li>Cluster validation</li>
-        </ul>
+      <div data-c="c2">
+        <h3><span class="key key--c2" data-brush="c2" data-name="Build the tool"><span class="key__id">C2</span></span>Build the tool</h3>
+        <p>Batch pipelines on Slurm clusters, Git and GitHub Actions, a Tauri desktop app, camera acquisition for a custom recording rig, and protocols other labs reuse.</p>
       </div>
-      <div class="card">
-        <h3>Languages &amp; infrastructure</h3>
-        <ul class="chips">
-          <li>Python</li><li>pandas / NumPy / SciPy</li><li>matplotlib / seaborn</li><li>R</li>
-          <li>MATLAB</li><li>Bash</li><li>Slurm / HPC</li><li>Git &amp; GitHub Actions</li><li>Conda</li><li>Tauri desktop apps</li>
-        </ul>
+      <div data-c="c3">
+        <h3><span class="key key--c3" data-brush="c3" data-name="Design the study"><span class="key__id">C3</span></span>Design the study</h3>
+        <p>Experimental design and hypothesis testing, blinded scoring, negative controls, choosing the right unit of analysis, clinical protocol review, and new behavioral assays.</p>
       </div>
-      <div class="card">
-        <h3>Lab methods</h3>
-        <ul class="chips">
-          <li>Behavioral assay design</li><li>Chemogenetics</li><li>CRISPR-Cas9</li><li>Fiber photometry</li>
-          <li>Neural tracing</li><li>iDISCO</li><li>Immunohistochemistry</li><li>Patch-clamp electrophysiology</li>
-          <li><i>Drosophila</i> genetics</li>
-        </ul>
+      <div data-c="c4">
+        <h3><span class="key key--c4" data-brush="c4" data-name="Test the cause"><span class="key__id">C4</span></span>Test the cause</h3>
+        <p>Chemogenetic circuit silencing, CRISPR-Cas9 gene editing, fiber photometry, neural tracing, tissue clearing (iDISCO), immunohistochemistry and patch-clamp electrophysiology.</p>
       </div>
     </div>
   </div>
 </section>
 
-<section class="section">
+<section class="band" aria-labelledby="research-h">
   <div class="wrap">
-    <article class="research-block">
-      <div class="feature">
-        <div>
-          <div class="research-block__meta"><span class="pill pill--gold"><span class="pill__dot" aria-hidden="true"></span>Now · Harvard University</span></div>
-          <h2>The neural basis of zombie-fly behavior</h2>
-          <p>In the Elya Lab I study how parasitic infections manipulate animal behavior through neural pathways, and how compact nervous systems like an insect's produce complex, highly stereotyped behavior.</p>
-          <p>The <em>Drosophila</em>–<em>Entomophthora muscae</em> "zombie fly" system is a rare model: the fungus consumes the fly from within and, before death, controls its behavior through the nervous system.</p>
-        </div>
-        <figure>
-          <img src="{{ '/assets/images/zombies-1600.jpg' | relative_url }}" alt="Fruit flies killed by Entomophthora muscae, wings raised" width="1600" height="1200" loading="lazy">
-          <figcaption>A group of zombie flies. Image by Dr. Carolyn Elya.</figcaption>
-        </figure>
+    <div class="band__head">
+      <div>
+        <h2 id="research-h">The research behind it</h2>
       </div>
-      <div class="question-list">
-        <div class="card">
-          <p class="card__eyebrow">Question 01</p>
-          <h3>Why does the clock break?</h3>
-          <p><em>E. muscae</em> triggers dramatic changes just before dusk: summiting (a sharp burst of climbing), proboscis extension and adhesion, and wing raising. Our lab found infected flies also lose their morning activity peak on their final day, a behavior governed by well-defined clock neurons. I'm investigating which neural changes cause that circadian impairment.</p>
-        </div>
-        <div class="card">
-          <p class="card__eyebrow">Question 02</p>
-          <h3>What drives summiting?</h3>
-          <p>Earlier work in our lab showed the pars intercerebralis → corpus allatum circuit is essential for summiting, implicating juvenile hormone; disrupting it abolishes the behavior. I'm now measuring how activity in this circuit changes to enable such precise, parasite-driven control.</p>
-        </div>
-        <div class="card">
-          <p class="card__eyebrow">Question 03</p>
-          <h3>What else changes that we can't see?</h3>
-          <p>To find subtle behaviors no one has named yet, I built <a href="{{ '/projects/ethocrypt/' | relative_url }}">EthoCrypt</a>, an unsupervised system, from recording rig to desktop app to cluster pipeline, that maps every moment of a fly's behavior and compares healthy with infected animals.</p>
-        </div>
+    </div>
+    <div class="two-col" data-c="c1 c2 c4">
+      <div class="prose">
+        <h3>Now: how a parasite takes the wheel</h3>
+        <p>Just before dusk on the day it kills them, <em>E. muscae</em> drives infected flies through a precise routine: they climb, glue their mouthparts down, and raise their wings so spores can spread. Our lab found they also lose their morning activity peak on that last day.</p>
+        <p>I'm working out which neural and hormonal changes make that takeover possible, from disrupted clock neurons to the circuit that triggers the climb, and built EthoCrypt to find the subtler changes no one has named yet.</p>
       </div>
-    </article>
-
-    <article class="research-block">
-      <div class="feature feature--flip">
-        <div>
-          <div class="research-block__meta"><span class="pill">2019 – 2024 · Emory University</span></div>
-          <h2>The neural underpinnings of bonding and grouping</h2>
-          <p>In the Kelly Lab my work focused on the neural mechanisms of social behavior in non-model rodents. In prairie voles, <em>Microtus ochrogaster</em>, I found that pair bonding reduces paraventricular (PVN) oxytocin neurons, an effect reversed by partner separation, with related results in Mongolian gerbils.</p>
-          <p>I then turned to the communally breeding spiny mouse, <em>Acomys dimidiatus</em>. Males prefer larger social groups and use kinship cues in social decisions, and with chemogenetics I identified an anterior cingulate cortex → lateral septum projection that regulates group-size preference.</p>
-          <p>Along the way I developed and validated the lab's toolkit for spiny mice: iDISCO, fiber photometry, CRISPR-Cas9, Cre-dependent chemogenetics and neural tracing.</p>
-        </div>
-        <figure>
-          <img src="{{ '/assets/images/smice-1600.jpg' | relative_url }}" alt="A group of spiny mice huddled together" width="1600" height="913" loading="lazy">
-          <figcaption>A group of spiny mice. Image by Dr. Aubrey Kelly.</figcaption>
-        </figure>
+      <figure class="fig">
+        <img src="{{ '/assets/images/zombies-1600.jpg' | relative_url }}" alt="A row of fruit flies killed by Entomophthora muscae, wings raised and fungal bands showing" width="1600" height="1200" loading="lazy">
+        <figcaption>Flies after <em>E. muscae</em> infection. Photo by Dr. Carolyn Elya.</figcaption>
+      </figure>
+    </div>
+    <div class="two-col two-col--next" data-c="c3 c4">
+      <div class="prose">
+        <h3>PhD: the circuits behind social choices</h3>
+        <p>In prairie voles and Mongolian gerbils I found that pair bonding and partner separation reshape the oxytocin and vasopressin neurons of the hypothalamus.</p>
+        <p>In spiny mice, a communally breeding rodent, I showed that males prefer larger groups and favor kin, then silenced one cortical circuit to reverse the group preference (<a href="{{ '/#fig2' | relative_url }}">read as an A/B test</a>). Along the way I brought the lab's core methods to a species no one had used them in.</p>
       </div>
-    </article>
-
-    <article class="research-block prose">
-      <div class="research-block__meta"><span class="pill">Undergraduate · Lehigh University</span></div>
-      <h2>Where it started: electrical synapses</h2>
-      <p>In Dr. Julie Haas's lab I used dual whole-cell patch clamp in brain slices, alongside two-neuron circuit models, to show that electrical synapses in the thalamus undergo activity-dependent long-term potentiation. It taught me early that the <em>pattern</em> of activity, not only its amount, determines what a system does next.</p>
-    </article>
+      <figure class="fig">
+        <img src="{{ '/assets/images/smice-1600.jpg' | relative_url }}" alt="A group of spiny mice huddled together" width="1600" height="913" loading="lazy">
+        <figcaption>Spiny mice. Photo by Dr. Aubrey Kelly.</figcaption>
+      </figure>
+    </div>
   </div>
 </section>
+
+{% include close.html heading="Next: real-world behavior, at industry scale" %}

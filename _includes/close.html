@@ -1,0 +1,31 @@
+{%- comment -%} The closing contact band. include.heading / include.text override the defaults. {%- endcomment -%}
+<section class="band band--field" aria-labelledby="close-h">
+  <div class="wrap close">
+    <div>
+      {%- assign tag = include.tag | default: "h2" -%}
+      <{{ tag }} id="close-h">{{ include.heading | default: "Have messy data that needs a clear answer?" }}</{{ tag }}>
+      <p>{{ include.text | default: "I'm looking for data science, biostatistics and decision science roles. Email is the fastest way to reach me." }}</p>
+      {% if include.channels %}
+      <ul class="channels" aria-label="Other ways to reach me">
+        <li><a href="{{ site.links.linkedin }}" rel="noopener">{% include icon.html name="linkedin" %} LinkedIn</a></li>
+        <li><a href="{{ site.links.github }}" rel="noopener">{% include icon.html name="github" %} GitHub</a></li>
+        <li><a href="{{ site.links.scholar }}" rel="noopener">{% include icon.html name="scholar" %} Google Scholar</a></li>
+        <li><a href="{{ site.links.orcid }}" rel="noopener">{% include icon.html name="orcid" %} ORCID</a></li>
+        <li><a href="{{ site.links.bluesky }}" rel="noopener">{% include icon.html name="bluesky" %} Bluesky</a></li>
+      </ul>
+      {% endif %}
+    </div>
+    <div class="mail">
+      <div class="mail__address">
+        <a href="mailto:{{ site.author.email }}">{{ site.author.email }}</a>
+        <button class="copy js-only" type="button" data-copy="{{ site.author.email }}">Copy</button>
+        <span class="visually-hidden" aria-live="polite" data-copy-status></span>
+      </div>
+      <div class="btn-row">
+        <a class="btn" href="mailto:{{ site.author.email }}">{% include icon.html name="mail" %} Email me</a>
+        {% if site.links.cv != "" %}<a class="btn btn--line" href="{{ site.links.cv | relative_url }}">{% include icon.html name="file" %} Résumé (PDF)</a>{% endif %}
+        <a class="btn btn--line" href="{{ site.links.linkedin }}" rel="noopener">{% include icon.html name="linkedin" %} LinkedIn</a>
+      </div>
+    </div>
+  </div>
+</section>

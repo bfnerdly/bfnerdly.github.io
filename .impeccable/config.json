@@ -1,0 +1,17 @@
+{
+  "detector": {
+    "ignoreRules": [],
+    "ignoreFiles": [],
+    "ignoreValues": [
+      {
+        "rule": "border-accent-on-rounded",
+        "value": "*",
+        "files": [
+          "assets/css/main.css"
+        ],
+        "createdAt": "2026-10-07T20:56:32.472Z",
+        "reason": "agent decided: L479 is .flowline step markers, a 3px border-top timeline track on unrounded list items plus a separate borderless circular ::before dot; no rounded element carries a thick accent border"
+      }
+    ]
+  }
+}
