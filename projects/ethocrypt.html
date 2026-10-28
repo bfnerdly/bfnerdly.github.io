@@ -25,7 +25,7 @@ touch_icon: /assets/images/ethocrypt/ethocrypt_icon_180.png
         {% endif %}
         {% if eth.repo_public %}<a class="btn btn--line" href="{{ eth.repo_url }}" rel="noopener">{% include icon.html name="github" %} Code</a>{% endif %}
       </div>
-      <p class="eth-status"><b>Pre-release, v{{ eth.version }}.</b> Running on its first real recordings on Harvard's cluster; settings aren't frozen yet.{% unless eth.repo_public %} The code is private until the paper.{% endunless %}</p>
+      <p class="eth-status"><b>Pre-release, v{{ eth.version }}.</b> Running on mirror-rig recordings on Harvard's cluster; settings aren't frozen yet.{% unless eth.repo_public %} The code is private until the paper.{% endunless %}</p>
     </div>
     <figure class="fig eth-hero__shot">
       <img src="{{ img }}app-experiment-dark.jpg" alt="EthoCrypt desktop app, experiment page: a stage line from Find fly to Report for the top and bottom camera views, and each fly drawn as a strand colored by its most common behavior every 10 seconds" width="1600" height="1000">
@@ -69,7 +69,7 @@ touch_icon: /assets/images/ethocrypt/ethocrypt_icon_180.png
     <ol class="flowline">
       <li><h3>Film</h3><p>A mirror rig shows one camera the fly from above and below at once, under infrared light, so recordings run through the night.</p></li>
       <li><h3>Record</h3><p>The recorder fixes camera settings, splits the two views, and saves hourly files with a timestamp for every frame.</p></li>
-      <li><h3>Send</h3><p>The desktop app signs in to the cluster, resumes uploads that drop, starts the analysis from a lab preset and shows each fly's progress.</p></li>
+      <li><h3>Send</h3><p>The desktop app signs in to the cluster, resumes dropped uploads, starts a run from a lab preset, tracks each fly's progress and archives recordings and results.</p></li>
       <li><h3>Read</h3><p>A GPU pipeline ends in one report: what differs between groups, a clip of every behavior, and a verdict on each.</p></li>
     </ol>
   </div>
@@ -103,6 +103,7 @@ touch_icon: /assets/images/ethocrypt/ethocrypt_icon_180.png
     <div class="prose">
       <h2 id="how-h">How the analysis works</h2>
       <p>A foundation model (SAM 2) outlines the fly in every frame. Another (DINOv3) describes each body region, and optical flow measures how the legs and wings move. Those numbers are compressed, laid out on a two-dimensional map, and the dense regions become candidate behaviors.</p>
+      <p>An optional motion-led setting counts movement three times as much as appearance and subtracts each fly's resting look first, so clusters follow what flies do rather than how individual flies look.</p>
       <p>Before anything is reported, each behavior has to reappear with new random seeds and in maps built from different flies. Then the groups are compared fly by fly.</p>
       <details class="stages">
         <summary>All ten stages</summary>
